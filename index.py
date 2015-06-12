@@ -28,12 +28,12 @@ def home():
 # An individual link
 @app.route('/link/<link_id>')
 def link(link_id):
-  return 'This is the link: ' + str(link_id)
+  return render_template('link/index.html')
 
 # Commenting on a link
 @app.route('/link/<link_id>/comment')
 def linkComment(link_id):
-  return 'Where to comment on link: '+ str(link_id)
+  return render_template('link/comment.html')
 
 # Posting a link
 @app.route('/link/post')
