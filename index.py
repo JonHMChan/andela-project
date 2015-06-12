@@ -1,6 +1,21 @@
 from flask import Flask
 app = Flask(__name__)
 
+links = {
+	"google": {
+		"url": "http://google.com/"
+	},
+	"facebook": {
+		"url": "http://facebook.com/"
+	},
+	"stack-overflow": {
+		"url": "http://stackoverflow.com/"
+	},
+	"andela": {
+		"url": "http://andela.co/"
+	}
+}
+
 # Home Page
 @app.route('/')
 def home():
