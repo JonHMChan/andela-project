@@ -1,25 +1,29 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
-links = {
-	"google": {
-		"url": "http://google.com/"
+links = [
+	{
+		"url": "http://google.com/",
+		"slug": "google"
 	},
-	"facebook": {
-		"url": "http://facebook.com/"
+	{
+		"url": "http://facebook.com/",
+		"slug": "facebook"
 	},
-	"stack-overflow": {
-		"url": "http://stackoverflow.com/"
+	{
+		"url": "http://stackoverflow.com/",
+		"slug": "stack-overflow"
 	},
-	"andela": {
-		"url": "http://andela.co/"
+	{
+		"url": "http://andela.co/",
+		"slug": "andela"
 	}
-}
+]
 
 # Home Page
 @app.route('/')
 def home():
-    return 'Hello Andela!'
+    return render_template('index.html', links = links, test = "HELLO")
 
 # An individual link
 @app.route('/link/<link_id>')
