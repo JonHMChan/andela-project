@@ -3,18 +3,22 @@ app = Flask(__name__)
 
 links = [
 	{
+		"title": "Google",
 		"url": "http://google.com/",
 		"slug": "google"
 	},
 	{
+		"title": "Facebook",
 		"url": "http://facebook.com/",
 		"slug": "facebook"
 	},
 	{
+		"title": "Stack Overflow",
 		"url": "http://stackoverflow.com/",
 		"slug": "stack-overflow"
 	},
 	{
+		"title": "Andela",
 		"url": "http://andela.co/",
 		"slug": "andela"
 	}
