@@ -3,23 +3,23 @@ app = Flask(__name__)
 
 # Home Page
 @app.route('/')
-def hello_world():
+def home():
     return 'Hello Andela!'
 
 # An individual link
-@app.route('/comment')
-def comment():
-  return 'Comments'
-
-# Posting a link
-@app.route('/posts')
-def post():
-  return 'Post things here'
+@app.route('/link/<link_id>')
+def link(link_id):
+  return 'This is the link: ' + str(link_id)
 
 # Commenting on a link
-@app.route('/comment/<int:comment_id>')
-def comment_link(comment_id):
-  return 'Comments on a link'+ str(comment_id)
+@app.route('/link/<link_id>/comment')
+def linkComment(link_id):
+  return 'Where to comment on link: '+ str(link_id)
+
+# Posting a link
+@app.route('/link/post')
+def linkPost():
+  return 'Post a new link here'
 
 if __name__ == '__main__':
     app.run(debug = True)
