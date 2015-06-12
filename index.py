@@ -28,7 +28,10 @@ def home():
 # An individual link
 @app.route('/link/<link_id>')
 def link(link_id):
-  return render_template('link/index.html')
+	for link in links:
+		if link["slug"] == link_id:
+  			return render_template('link/index.html', link = link)
+  	return 'No link found'
 
 # Commenting on a link
 @app.route('/link/<link_id>/comment')
