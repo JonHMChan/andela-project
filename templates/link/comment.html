@@ -18,6 +18,9 @@
         <!-- Add your site or application content here -->
 
         <h3>This is the links comments page</h3>
+        {% for comment in link.comments %}
+            <p>{{ comment }}</p>
+        {% endfor %}
 
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     </body>
