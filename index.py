@@ -23,7 +23,7 @@ links = [
 # Home Page
 @app.route('/')
 def home():
-    return render_template('index.html', links = links, test = "HELLO")
+    return render_template('index.html', links = links)
 
 # An individual link
 @app.route('/link/<link_id>')
