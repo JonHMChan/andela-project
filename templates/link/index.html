@@ -17,9 +17,12 @@
 
         <!-- Add your site or application content here -->
 
-        <h3>
-            <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
-        </h3>
+        <h2><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></h2>
+        <h3>Comments</h3>
+        {% for comment in link.comments %}
+            <p>{{ comment }}</p>
+        {% endfor %}
+        <p><a href="/link/{{ link.slug }}/comment">Add a comment</a></p>
 
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     </body>

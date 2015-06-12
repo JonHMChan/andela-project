@@ -17,10 +17,11 @@
 
         <!-- Add your site or application content here -->
 
-        <h3>This is the links comments page</h3>
-        {% for comment in link.comments %}
-            <p>{{ comment }}</p>
-        {% endfor %}
+        <h2>Comment on {{ link.title }}</h2>
+        <p><a href="/link/{{ link.slug }}">Go back to comments</a></p>
+        <form>
+            <textarea></textarea>
+        </form>
 
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     </body>
