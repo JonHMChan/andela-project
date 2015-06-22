@@ -112,6 +112,11 @@ def submitComment():
         comment = request.form['comment']
         return json.dumps({'status': 'OK', 'comment': comment})
 
+#linkedin
+@app.route('/auth/callback')
+def linkedInAuth():
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
