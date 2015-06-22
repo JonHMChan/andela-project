@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, json
-from flask.ext.sqlalchemy import SQLAlchemy
+# from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userposts.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userposts.db'
 
-db = SQLAlchemy(app)
-from models import *
+# db = SQLAlchemy(app)
+# from models import *
 
 links = [
     {
@@ -84,10 +84,11 @@ def homeContactForm():
 # Show Link
 @app.route('/link/<link_id>')
 def link(link_id):
-    posts = db.session.query(UserPost).all()
+    # posts = db.session.query(UserPost).all()
     for link in links:
         if link["slug"] == link_id:
-            return render_template('link/index.html', link=link, post=posts)
+    #         return render_template('link/index.html', link=link, post=posts)
+            return render_template('link/index.html', link=link)
     return "No link found"
 
 #comments on a link
