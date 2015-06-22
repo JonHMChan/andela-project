@@ -114,7 +114,7 @@ def submitComment():
         return json.dumps({'status': 'OK', 'comment': comment})
 
 # Handle redirect
-@app.route('auth/linkedin/callback')
+@app.route('/auth/linkedin/callback')
 def authLinkedinCallback():
     code = request.args.get("code")
     if code:
