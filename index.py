@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, json
+import requests, os
 # from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -111,6 +112,20 @@ def submitComment():
     if request.method == "POST":
         comment = request.form['comment']
         return json.dumps({'status': 'OK', 'comment': comment})
+
+# Handle redirect
+@app.route('auth/linkedin/callback')
+def authLinkedinCallback():
+    code = request.args.get("code")
+    if code:
+        requests.post('https://www.linkedin.com/uas/oauth2/accessToken', data = {
+            "grant_type": "authorization_code",
+            "code": code,
+            "redirect_uri": "http://localhost:5000/",
+            "client_id": "77owz0iuacm1h8",
+            "client_secret": os.environ.get('LINKEDIN_API_SECRET', "")
+            })
+
 
 if __name__ == '__main__':
     app.run(debug=True)
