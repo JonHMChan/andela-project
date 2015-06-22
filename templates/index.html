@@ -1,29 +1,217 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'static.html' %}
+{% block content %}
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!-- Section: intro -->
+    <section id="intro" class="intro">
+        <div class="slogan">
+            <h1>Now We're Here</h1>
+            <p>Share materials, resources and tools you used while coming up as a software developer. Help others.</p>
+            <a href="#about" class="btn btn-skin scroll">Learn more</a>
+        </div>  
+    </section>
+    <!-- /Section: intro -->
 
-        <!-- Add your site or application content here -->
+    <!-- Section: contribs -->
+    <section id="contributors" class="home-section text-center bg-gray">
+        <div class="heading-about marginbot-50">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+        
+                    <div class="section-heading">
+                    <h2>Contributors</h2>
+                    <p>Lorem ipsum dolor sit amet, no nisl mentitum recusabo per, vim at blandit qualisque dissentiunt.
+                        Diam efficiantur conclusionemque ut has</p>
+                    </div>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
 
-        {% for link in links %}
-            <p>
-                <a href="{{ link.url }}" target="_blank">{{ link.title }}</a><br/>
-                <a href="/link/{{ link.slug }}">See comments</a>
-            </p>
-        {% endfor %}
+          <div class="row">
+              {% for link in links if link.vip == True%}
+                <div class="col-xs-6 col-sm-3 col-md-3">
 
-        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    </body>
-</html>
+                  <div class="team boxed-grey">
+                      <div class="inner">
+                          <h5><a href='link/{{link.slug}}'>{{link.name}}</a></h5>
+                          <p class="subtitle">{{link.title}}</p>
+                          <div class="avatar"><img src="{{url_for('static', filename=link.image)}}" alt=""
+                                                   class="img-responsive" /></div>
+                      </div>
+                  </div>
+            
+                </div>
+              {% endfor %}
+          </div>      
+        </div>
+    </section>
+    <!-- /Section: contribs -->
+    
+    
+    <!-- Section: languages -->
+    <section id="service" class="home-section text-center">
+        
+        <div class="heading-about marginbot-50">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+        
+                    <div class="section-heading">
+                    <h2>Languages</h2>
+                    <p>Choose your preferred programming language, educate yourself and study wisely</p>
+                    </div>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+            
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="language">
+                            <img src="static/img/languages/js.png" width="42px" height="43px">
+                        </i>
+                    </div>
+                    <div class="service-desc">
+                        <h5>Javascript</h5>
+                        <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram
+                            accommodare.</p>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="col-sm-3 col-md-3">
+    
+                <div class="service-box">
+                    <div class="service-icon">
+                       <i class="language">
+                            <img src="static/img/languages/python.png" width="42px" height="43px">
+                        </i>
+                    </div>
+                    <div class="service-desc">
+                        <h5>Python</h5>
+                        <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram
+                            accommodare.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3 col-md-3">
+
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="language">
+                            <img src="static/img/languages/ruby-on-rails.jpg" width="42px" height="43px">
+                        </i>
+                    </div>
+                    <div class="service-desc">
+                        <h5>Ruby on Rails</h5>
+                        <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram
+                            accommodare.</p>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-sm-3 col-md-3">
+    
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="language">
+                            <img src="static/img/languages/c++.png" width="42px" height="43px">
+                        </i>
+                    </div>
+                    <div class="service-desc">
+                        <h5>C++</h5>
+                        <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>      
+        </div>
+    </section>
+    <!-- /Section: languages -->
+
+    <!-- Section: contact -->
+    <section id="contact" class="home-section text-center bg-gray">
+        <div class="heading-contact marginbot-50">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+    
+                    <div class="section-heading">
+                    <h2>Get in touch</h2>
+                    <p>Lorem ipsum dolor sit amet, no nisl mentitum recusabo per, vim at blandit qualisque dissentiunt.
+                        Diam efficiantur conclusionemque ut has</p>
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+
+    <div class="row">
+        <div class="col-lg-8 col-md-offset-2">
+            <div class="boxed-grey">
+                <form id="contact-form" method="post" action="" role="form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter name"
+                                   required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter
+                                email"
+                                       required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-skin pull-right home-btn" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+
+                    <p class="comment-success bg-success">Comment Successfully Sent</p>
+                </div>
+                </form>
+            </div>
+            
+    </div>
+
+        </div>
+    </section>
+    <!-- /Section: contact -->
+
+{%  endblock %}
