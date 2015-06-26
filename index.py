@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, json, url_for, redirect, session
+from flask.ext.login import login_required,login_user, LoginManager
 import requests, os
 from dummyJson import sampleData
 from flask_oauthlib.client import OAuth
 from flask.ext.sqlalchemy import SQLAlchemy
+
+
 
 app = Flask(__name__)
 app.config.from_object('config.BaseConfig')
@@ -16,6 +19,9 @@ db.session.commit()
 #-------------------------------END -----------------------#
 
 oauth = OAuth(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
 
 demoJson = sampleData()
 links = demoJson.content()
@@ -65,6 +71,9 @@ def link(link_id):
             return render_template('link/index.html', link=link)
     return "No link found"
 
+@login_manager.user_loader
+def load_user(userid):
+    return User.query.get(int(id))
 
 @app.route('/login')
 def login():
@@ -133,6 +142,7 @@ def linkComment(link_id):
 
 # Logged in homepage
 @app.route('/users/<user_id>')
+@login_required
 def users():
     return 'Post a new link here'
 
