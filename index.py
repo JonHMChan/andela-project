@@ -1,78 +1,52 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, request, json, url_for, redirect, session
 import requests, os
-# from flask.ext.sqlalchemy import SQLAlchemy
+from dummyJson import sampleData
+from flask_oauthlib.client import OAuth
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userposts.db'
+app.config.from_object('config.BaseConfig')
 
-# db = SQLAlchemy(app)
-# from models import *
+db = SQLAlchemy(app)
+#------------------------DB CONFIG ---------------------#
+from models import *
 
-links = [
-    {
-        "title": "Google",
-        "url": "http://google.com/",
-        "slug": "google",
-        "name": "Addy Osmani",
-        "comments": ["This is Google", "A step further"],
-        "image": "img/contribs/1.jpg",
-        "primary_technology": ["Javascript"],
-        "secondary_technology":["EmberJs", "Engine"],
-        "vip": True
+db.create_all()
+db.session.commit()
+#-------------------------------END -----------------------#
+
+oauth = OAuth(app)
+
+demoJson = sampleData()
+links = demoJson.content()
+
+linkedin = oauth.remote_app(
+    'linkedin',
+    consumer_key='77owz0iuacm1h8',
+    consumer_secret='k7SKZUcbVvxqRYIq',
+    request_token_params={
+        'scope': ['r_basicprofile', 'r_emailaddress'],
+        'state': 'RandomString',
     },
-    {
-        "title": "Facebook",
-        "url": "http://facebook.com/",
-        "slug": "facebook",
-        "name": "Mark Zuckerberg",
-        "comments": ["This is facebook", "A step further on facebook"],
-        "image": "img/contribs/2.jpg",
-        "primary_technology": ["PHP"],
-        "secondary_technology":["C#", "jQuery"],
-        "vip": True
-    },
-    {
-        "title": "Stack Overflow",
-        "url": "http://stackoverflow.com/",
-        "slug": "stack-overflow",
-        "name": "Jon Chan",
-        "comments": ["This is stackoverflow", "A step further on stackoverflow"],
-        "image": "img/contribs/johnchan.jpeg",
-        "primary_technology": ["Python"],
-        "secondary_technology":["C#", "AngularJs"],
-        "vip": True
-    },
-    {
-        "title": "Andela",
-        "url": "http://andela.co/",
-        "slug": "andela",
-        "name": "Babajide Fowotade",
-        "comments": ["This is andela", "A step further at Andela"],
-        "image": "img/contribs/babajide.jpg",
-        "primary_technology": ["Javascript"],
-        "secondary_technology":["Firebase", "AngularJs", "NodeJs", "ExpressJs"],
-        "vip": False
-    },
-    {
-        "title": "CTO Andela",
-        "url": "http://andela.co/",
-        "slug": "dueprops",
-        "name": "Obie Fernandez",
-        "comments": ["This is obie", "A step further at obies"],
-        "image": "img/contribs/obie.jpg",
-        "primary_technology": ["Ruby on Rails"],
-        "secondary_technology":["Firebase", "AngularJs", "NodeJs", "ExpressJs"],
-        "vip": True
-    }
-]
+    base_url='https://api.linkedin.com/v1/',
+    request_token_url=None,
+    access_token_method='POST',
+    access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',
+    authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
+)
 
 # Home Page
 @app.route('/')
 def home():
+    if 'linkedin_token' in session:
+        me = linkedin.get('people/~')
+        emailadd = linkedin.get('people/~/email-address')
+
+        print emailadd.data
     return render_template('index.html', links=links)
 
-#Home Page Contact Form
 
+# Home Page Contact Form
 @app.route('/homeContact', methods=["POST"])
 def homeContactForm():
     if request.method == "POST":
@@ -80,19 +54,75 @@ def homeContactForm():
         email = request.form['email']
         subject = request.form['subject']
         message = request.form['message']
-        return json.dumps({'status': 'Ok', 'details': [name, email, subject, message] })
+        return json.dumps({'status': 'Ok', 'details': [name, email, subject, message]})
+
 
 # Show Link
 @app.route('/link/<link_id>')
 def link(link_id):
-    # posts = db.session.query(UserPost).all()
     for link in links:
         if link["slug"] == link_id:
-    #         return render_template('link/index.html', link=link, post=posts)
             return render_template('link/index.html', link=link)
     return "No link found"
 
-#comments on a link
+
+@app.route('/login')
+def login():
+    return linkedin.authorize(callback=url_for('authorized', _external=True))
+
+
+@app.route('/logout')
+def logout():
+    session.pop('linkedin_token', None)
+    return redirect(url_for('home'))
+
+
+@app.route('/login/authorized')
+def authorized():
+    resp = linkedin.authorized_response()
+    if resp is None:
+        return 'Access denied: reason=%s error=%s' % (
+            request.args['error_reason'],
+            request.args['error_description']
+        )
+    session['linkedin_token'] = (resp['access_token'], '')
+
+    user = linkedin.get('people/~')
+    emailaddress = linkedin.get('people/~/email-address')
+
+    if User.query.filter_by(email=emailaddress.data).first() is None:
+        reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data,
+               user.data['siteStandardProfileRequest']['url'])
+        db.session.add(reg)
+        try:
+            db.session.commit()
+        except:
+            db.session.rollback()
+            raise
+    return redirect(url_for('home'))
+
+
+@linkedin.tokengetter
+def get_linkedin_oauth_token():
+    return session.get('linkedin_token')
+
+
+def change_linkedin_query(uri, headers, body):
+    auth = headers.pop('Authorization')
+    headers['x-li-format'] = 'json'
+    if auth:
+        auth = auth.replace('Bearer', '').strip()
+        if '?' in uri:
+            uri += '&oauth2_access_token=' + auth
+        else:
+            uri += '?oauth2_access_token=' + auth
+    return uri, headers, body
+
+
+linkedin.pre_request = change_linkedin_query
+
+
+# comments on a link
 @app.route('/link/<link_id>/comment')
 def linkComment(link_id):
     for link in links:
@@ -113,18 +143,19 @@ def submitComment():
         comment = request.form['comment']
         return json.dumps({'status': 'OK', 'comment': comment})
 
+
 # Handle redirect
 @app.route('/auth/linkedin/callback')
 def authLinkedinCallback():
     code = request.args.get("code")
     if code:
-        requests.post('https://www.linkedin.com/uas/oauth2/accessToken', data = {
+        requests.post('https://www.linkedin.com/uas/oauth2/accessToken', data={
             "grant_type": "authorization_code",
             "code": code,
             "redirect_uri": "http://localhost:5000/",
             "client_id": "77owz0iuacm1h8",
             "client_secret": os.environ.get('LINKEDIN_API_SECRET', "")
-            })
+        })
 
 
 if __name__ == '__main__':

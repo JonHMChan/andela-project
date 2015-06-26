@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b92bea5d-6ea6-4eda-8e9d-9f04b879b299" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dummyJson.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db_create.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/userposts.db" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models.py" afterPath="$PROJECT_DIR$/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/static.html" afterPath="$PROJECT_DIR$/templates/static.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="andela-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,8 +25,59 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/andela-project$andela_project.coverage" NAME="andela-project Coverage Results" MODIFIED="1435044739212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - nowwehere@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="nowwehere.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - nowwehere@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="nowwehere.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="users" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - nowwehere@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -24,96 +85,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="static.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/static.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.92424244">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_create.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_create.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="20" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82476634">
-              <caret line="132" column="40" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/users/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/link/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="918" column="0" selection-start-line="918" selection-start-column="0" selection-end-line="932" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="static.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/static.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="57" column="105" selection-start-line="57" selection-start-column="105" selection-end-line="57" selection-end-column="105" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -126,18 +127,33 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db_create.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/templates/header.html" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/templates/link/comment.html" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/static/js/core_script.js" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/templates/link/index.html" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/templates/users/index.html" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/.gitignore" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/requirements.txt" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/nowappfig.cfg" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/config.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/link.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/templates/index.html" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/static/css/style.css" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/templates/static.html" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/index.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/route.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/models.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/db_create.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/__init__.py" />
+        <option value="$PROJECT_DIR$/../andela_project/andela_project/setup.py" />
+        <option value="$PROJECT_DIR$/dummyJson.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/728d08ba-1897-4cf1-a00f-9fdd18201077/console.sql" />
+        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/models.py" />
-        <option value="$PROJECT_DIR$/templates/header.html" />
-        <option value="$PROJECT_DIR$/templates/link/comment.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/static/js/core_script.js" />
-        <option value="$PROJECT_DIR$/templates/link/index.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/users/index.html" />
-        <option value="$PROJECT_DIR$/templates/static.html" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/index.py" />
+        <option value="$PROJECT_DIR$/templates/static.html" />
       </list>
     </option>
   </component>
@@ -192,8 +208,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,20 +244,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="andela-project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="andela-project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -251,6 +255,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Python.andela-project">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -476,51 +481,40 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30593607" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31603053" sideWeight="0.49353796" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25686592" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39878234" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31603053" sideWeight="0.50646204" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19789983" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21243942" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31450382" sideWeight="0.4951535" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30593607" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19789983" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -538,311 +532,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/link/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="918" column="0" selection-start-line="918" selection-start-column="0" selection-end-line="932" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#83#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="918" column="0" selection-start-line="918" selection-start-column="0" selection-end-line="932" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="101" selection-start-line="41" selection-start-column="101" selection-end-line="41" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="33" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="918" column="0" selection-start-line="918" selection-start-column="0" selection-end-line="932" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="101" selection-start-line="41" selection-start-column="101" selection-end-line="41" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/comment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="601" column="37" selection-start-line="601" selection-start-column="37" selection-end-line="601" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/comment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="601" column="37" selection-start-line="601" selection-start-column="37" selection-end-line="601" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/flask/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -877,48 +566,216 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/comment.html">
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75">
-          <caret line="22" column="88" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.33242506">
+          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/348993582/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.33227345">
+          <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="918" column="0" selection-start-line="918" selection-start-column="0" selection-end-line="932" selection-end-column="1" />
-          <folding />
+    <entry file="uml://DATABASE/728d08ba-1897-4cf1-a00f-9fdd18201077">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>728d08ba-1897-4cf1-a00f-9fdd18201077</OriginalElement>
+          <nodes>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_data_wrappers</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.triggered_update_columns</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_description</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_default_acl</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_locks</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_group</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.constraint_table_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_user_functions</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_roles</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_sizing_profiles</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_sys_sequences</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_largeobject_metadata</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_database</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_servers</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_dict</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.user_defined_types</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_conversion</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_available_extension_versions</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_collation</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.columns</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_operator</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_features</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_constraint</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.data_type_privileges</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.enabled_roles</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_attribute</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_udt_grants</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_sys_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_archiver</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.check_constraints</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_config_map</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.view_routine_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_config</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_foreign_table</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.information_schema_catalog_name</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_all_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_servers</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_namespace</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_prepared_statements</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.routine_privileges</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_trigger</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_server_options</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_user_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.user_mapping_options</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_settings</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.character_sets</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_pltemplate</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shadow</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_all_sequences</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stats</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_all_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_parts</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_user_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_domain_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_extension</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.attributes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_tablespace</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_column_grants</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.check_constraint_routine_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_rules</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_user_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_cursors</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_replication_slots</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_opclass</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shdepend</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_languages</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_cast</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_foreign_data_wrapper</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_data_wrappers</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_enum</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_all_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.routines</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_data_wrapper_options</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_seclabels</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sequences</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.usage_privileges</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.table_privileges</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_sys_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.administrable_role_authorizations</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_timezone_abbrevs</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_index</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_largeobject</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_type</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_event_trigger</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.table_constraints</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_opfamily</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_aggregate</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_proc</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_sys_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_depend</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_user_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.schemata</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_activity</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_database</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_database_conflicts</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.collation_character_set_applicability</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_user</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_user_mappings</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.parameters</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.udt_privileges</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.triggers</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_rewrite</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_parser</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_user_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_timezone_names</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_inherits</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_routine_grants</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_table_columns</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.constraint_column_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_class</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_implementation_info</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.domain_constraints</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_udt_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_options</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_prepared_xacts</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_matviews</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_usage_grants</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_sizing</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_sys_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.user_mappings</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_all_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.domain_udt_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shseclabel</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_table_grants</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_language</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_amop</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_am</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_auth_members</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_all_tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.view_column_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.element_types</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_table_options</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statistic</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.key_column_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_bgwriter</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.view_table_usage</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_db_role_setting</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.views</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shdescription</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_packages</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.collations</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.applicable_roles</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_attrdef</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_amproc</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_replication</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_foreign_server</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_views</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.public.users</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_user_mappings</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.referential_constraints</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_user_mapping</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_available_extensions</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_privileges</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_user_sequences</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_template</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_seclabel</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_range</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_user_functions</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_authid</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.tables</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_sys_indexes</node>
+            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.domains</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.06914985342300396" x="2686.0" y="2530.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydev_import_hook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.33175355">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/link/index.html">
+    <entry file="file://$PROJECT_DIR$/dummyJson.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -926,31 +783,62 @@
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="57" column="105" selection-start-line="57" selection-start-column="105" selection-end-line="57" selection-end-column="105" />
+    <entry file="dbDummy://dbtable:/ddf49d67/728d08ba-1897-4cf1-a00f-9fdd18201077/nowwehere.public.users_id_seq">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <caret line="4" column="94" selection-start-line="4" selection-start-column="94" selection-end-line="4" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/728d08ba-1897-4cf1-a00f-9fdd18201077/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="20" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -959,11 +847,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82476634">
-          <caret line="132" column="40" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#83#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/static.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92424244">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
