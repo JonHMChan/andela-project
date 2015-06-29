@@ -1,5 +1,6 @@
-from index import db
+from setup import db
 from datetime import datetime
+
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -10,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String(80), unique=True)
     profile = db.Column(db.String)
     registeredOn = db.Column(db.DateTime)
-
+    photo = db.Column(db.String)
 
     def __init__(self, uid, firstname, lastname, email, profile):
         self.uid = uid
@@ -21,7 +22,7 @@ class User(db.Model):
         self.registeredOn = datetime.utcnow()
 
     def is_authenticated(self):
-        return True
+        return self.email
 
     def is_active(self):
         return True
@@ -30,9 +31,14 @@ class User(db.Model):
         return False
 
     def get_id(self):
-        return unicode(self.id)
+        return self.id
 
     def __repr__(self):
-        return '<{}>'.format(self.uid)
-
+        return '<{uid}{firstname}{lastname}{email}{profile}{registeredOn}{photo}>'.format(uid=self.uid,
+                                                                                          firstname=self.firstname,
+                                                                                          lastname=self.lastname,
+                                                                                          email=self.email,
+                                                                                          profile=self.profile,
+                                                                                          registeredOn=self.registeredOn,
+                                                                                          photo=self.photo)
 

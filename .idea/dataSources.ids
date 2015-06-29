@@ -2375,8 +2375,10 @@
       <column name="email" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="profile" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="registeredOn" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="photo" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="users_pkey" columns="id"/>
       <index name="unique_id" unique="true" columns="id"/>
+      <index name="unique_photo" unique="true" columns="photo"/>
     </table>
     <table name="users_id_seq" schema="public" catalog="nowwehere" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>

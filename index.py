@@ -1,27 +1,24 @@
-from flask import Flask, render_template, request, json, url_for, redirect, session
-from flask.ext.login import login_required,login_user, LoginManager
-import requests, os
+from flask import render_template, request, json, url_for, redirect, session, g
+from flask.ext.login import login_required,login_user, LoginManager, logout_user , current_user
+import os
 from dummyJson import sampleData
 from flask_oauthlib.client import OAuth
-from flask.ext.sqlalchemy import SQLAlchemy
-
-
-
-app = Flask(__name__)
-app.config.from_object('config.BaseConfig')
-
-db = SQLAlchemy(app)
-#------------------------DB CONFIG ---------------------#
-from models import *
-
-db.create_all()
-db.session.commit()
-#-------------------------------END -----------------------#
+from setup import app
+from models import User
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 oauth = OAuth(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'login_auth'
+
+cloudinary.config(
+  cloud_name = "dkgsqu3ym",
+  api_key = "847864466172127",
+  api_secret = "mE-JAQMj5qYrmZDgYggZqlC3m2w"
+)
 
 demoJson = sampleData()
 links = demoJson.content()
@@ -41,14 +38,15 @@ linkedin = oauth.remote_app(
     authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
 )
 
+
+@app.before_request
+def before_request():
+    g.user = current_user
+
+
 # Home Page
 @app.route('/')
 def home():
-    if 'linkedin_token' in session:
-        me = linkedin.get('people/~')
-        emailadd = linkedin.get('people/~/email-address')
-
-        print emailadd.data
     return render_template('index.html', links=links)
 
 
@@ -72,16 +70,20 @@ def link(link_id):
     return "No link found"
 
 @login_manager.user_loader
-def load_user(userid):
-    return User.query.get(int(id))
+def load_user(id):
+    return User.query.get(id)
 
 @app.route('/login')
 def login():
     return linkedin.authorize(callback=url_for('authorized', _external=True))
 
+@app.route('/login_auth')
+def login_auth():
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():
+    logout_user()
     session.pop('linkedin_token', None)
     return redirect(url_for('home'))
 
@@ -98,8 +100,8 @@ def authorized():
 
     user = linkedin.get('people/~')
     emailaddress = linkedin.get('people/~/email-address')
-
-    if User.query.filter_by(email=emailaddress.data).first() is None:
+    getData = User.query.filter_by(email=emailaddress.data).first()
+    if getData is None:
         reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data,
                user.data['siteStandardProfileRequest']['url'])
         db.session.add(reg)
@@ -108,7 +110,11 @@ def authorized():
         except:
             db.session.rollback()
             raise
-    return redirect(url_for('home'))
+    else:
+        login_user(getData)
+    for auth_user in User.query.all():
+        return redirect(request.args.get('next') or url_for('profile', id=auth_user.id,
+                                                            user_id=auth_user.firstname.lower()))
 
 
 @linkedin.tokengetter
@@ -139,33 +145,42 @@ def linkComment(link_id):
             return render_template('link/comment.html', link=link)
     return "No comments found"
 
+#
+# # Logged in homepage
+# @app.route('/user/<int:id>/<username>')
+# @login_required
+# def user(id, username=None):
+#     for user in User.query.all():
+#         if user.firstname.lower() == user_id:
+#             print user
+#             return render_template('users/index.html', link=user)
+#     return "No comments found"
 
-# Logged in homepage
-@app.route('/users/<user_id>')
+@app.route('/user/<int:id>', strict_slashes=False)
+@app.route('/user/<int:id>/<username>', strict_slashes=False)
 @login_required
-def users():
-    return 'Post a new link here'
+def profile(id, username=None):
+    user = User.query.get_or_404(id)
+    if current_user.firstname == user.firstname:
+        if user.firstname != username:
+            return render_template('users/index.html', id=id, username=user)
+        return render_template('users/index.html', user=user)
+    else:
+        return 'Unauthorized Access'
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return 'This page does not exist', 404
 
-@app.route('/submitComment', methods=["POST"])
-def submitComment():
-    if request.method == "POST":
-        comment = request.form['comment']
-        return json.dumps({'status': 'OK', 'comment': comment})
+@app.route('/fileUpload', methods=['POST'])
+def upload_file():
+    if request.method == 'POST':
+        file = request.files['image']
+        if file:
+            cloudinary_res = cloudinary.uploader.upload(file, options={'allowed_formats': ['jpg', 'png' , 'jpeg']})
+            print cloudinary_res
+        return json.dumps({'status': 'Ok', 'details': str(file)})
 
-
-# Handle redirect
-@app.route('/auth/linkedin/callback')
-def authLinkedinCallback():
-    code = request.args.get("code")
-    if code:
-        requests.post('https://www.linkedin.com/uas/oauth2/accessToken', data={
-            "grant_type": "authorization_code",
-            "code": code,
-            "redirect_uri": "http://localhost:5000/",
-            "client_id": "77owz0iuacm1h8",
-            "client_secret": os.environ.get('LINKEDIN_API_SECRET', "")
-        })
 
 
 if __name__ == '__main__':

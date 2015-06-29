@@ -3,3 +3,4 @@ Jinja2==2.7.3
 Flask-SQLAlchemy==2.0
 SQLAlchemy==1.0.5
 requests==2.7.0
+oauthlib==0.7.2

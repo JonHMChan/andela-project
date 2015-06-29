@@ -2,52 +2,61 @@
 {% block content %}
 
     <!-- Add your site or application content here -->
-    <div class="container profile-section">
-        <div class="col-md-4 col-xs-6">
-            <img src="{{ url_for('static', filename=link.image) }}" class="profile-img">
-            <span>
+	<div class="container profile-section">
+		<div class="col-md-4 col-xs-6">
+            {% if username.photo %}
+				<img src="{{ url_for('static', filename=username.photo) }}" class="profile-img">
+            {% endif %}
+            {% if not username.photo %}
+				<img src="{{ url_for('static', filename='img/gravatar-60-grey.jpg' ) }}" class="profile-img">
+            {% endif %}
+			<span>
                 <i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn" title="LinkedIn">
-                </i>
+				</i>
                 <i class="profile-social profile-social-twitter fa fa-twitter fa-2x" alt="Twitter" title="Twitter">
-                </i>
+				</i>
                 <i class="profile-social profile-social-github fa fa-github fa-2x" alt="Github" title="Github"></i>
                 <i class="profile-social profile-social-globe fa fa-globe fa-2x" alt="Website" title="Website"></i>
-				{% if link.vip == True %}
-				<i class="profile-social-verified profile-social-verified fa fa-check-square fa-2x" alt="verified"
-				   title="veirified"></i>
-				{% endif %}
+				<form action="" id="image-form" method="POST" enctype="multipart/form-data">
+					<input type="file" name="image"/>
+					<button type="button" class="btn btn-block btn-dark image-btn">Upload Image</button>
+				</form>
+                {% if username.vip == True %}
+					<i class="profile-social-verified profile-social-verified fa fa-check-square fa-2x" alt="verified"
+					   title="veirified"></i>
+                {% endif %}
             </span>
-        </div>
-        <div class="profile-second-section col-md-8 col-xs-12">
+		</div>
+		<div class="profile-second-section col-md-8 col-xs-12">
             <span>
                 <h5>Name</h5>
-                <p>{{ link.name }}</p>
+                <p>{{ username.firstname }} {{ username.lastname }}</p>
 				<hr/>
             </span>
             <span>
                 <h5>Job</h5>
-                <p>{{ link.title }}</p>
+                <p>{{ username.title }}</p>
 				<hr/>
             </span>
             <span>
                 <h5>About</h5>
-                {% for comment in link.comments %}
-                	<p>{{ comment }}</p>
+                {% for comment in username.comments %}
+					<p>{{ comment }}</p>
                 {% endfor %}
 				<hr/>
             </span>
 			<span>
                 <h5>Technology</h5>
-				{% for tech in link.primary_technology %}
-                	<p>Majors In: {{ tech }}</p>
-				{%  endfor %}
+                {% for tech in username.primary_technology %}
+					<p>Majors In: {{ tech }}</p>
+                {% endfor %}
 				<p>also knows:
-					{%  for secondary_tech in link.secondary_technology  %}
-						{{ secondary_tech }}
-						{%  if not loop.last %}
+                    {% for secondary_tech in username.secondary_technology %}
+                        {{ secondary_tech }}
+                        {% if not loop.last %}
 							,
-						{% endif %}
-					{% endfor %}
+                        {% endif %}
+                    {% endfor %}
 				</p>
 				<hr/>
             </span>
@@ -66,7 +75,7 @@
                 <p>Don't ever ever give up. Ability to change make it constant</p>
 				<hr/>
             </span>
-        </div>
-    </div>
+		</div>
+	</div>
 
 {% endblock %}
