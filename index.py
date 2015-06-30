@@ -120,7 +120,7 @@ def authorized():
     else:
         login_user(getData)
     return redirect(request.args.get('next') or url_for('profile', id=getData.id,
-                                                            user_id=getData.firstname.lower()))
+                                                        user_id=getData.firstname.lower()))
 
 
 @linkedin.tokengetter
@@ -172,10 +172,13 @@ def upload_file():
         file = request.files['image']
         if file:
             cloudinary_res = cloudinary.uploader.upload(file, width=350, height=350,
-                                                        options={'allowed_formats': ['jpg', 'png', 'jpeg']},
+                                                        allowed_formats=['jpg', 'png', 'jpeg'],
                                                         transformation=[
-                                                            {'width': 350, 'height': 350, 'crop': 'limit'}
-                                                        ])
+                                                            {"overlay": "text:courier_80:Now%20We%20Here",
+                                                             'crop': 'fill',
+                                                             'color': "#EB5D1E", 'height': 30,
+                                                             'gravity': "south_east", 'x': 8, 'y': 8}
+            ])
             print cloudinary_res
             getData = User.query.filter_by(email=current_user.email).first()
             getData.photo = cloudinary_res['secure_url']

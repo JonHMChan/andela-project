@@ -5,7 +5,7 @@
 	<div class="container profile-section">
 		<div class="col-md-4 col-xs-6">
             {% if username.photo %}
-				<img src="{{username.photo}}" class="profile-img" width="350" height="350">
+				<img src="{{ username.photo }}" class="profile-img" width="350" height="350">
             {% endif %}
             {% if not username.photo %}
 				<img src="{{ url_for('static', filename='img/gravatar-60-grey.jpg' ) }}" class="profile-img">
@@ -17,10 +17,15 @@
 				</i>
                 <i class="profile-social profile-social-github fa fa-github fa-2x" alt="Github" title="Github"></i>
                 <i class="profile-social profile-social-globe fa fa-globe fa-2x" alt="Website" title="Website"></i>
+
+				<span><img class="upload_loader" src="{{ url_for('static', filename='img/ajax-loader.gif') }}"></span>
 				<form action="" id="image-form" method="POST" enctype="multipart/form-data">
-					<input type="file" name="image"/>
+					<input id="file_field" type="file" name="image"/>
 					<button type="button" class="btn btn-block btn-dark image-btn">Upload Image</button>
 				</form>
+				<span>Please upload images of format: jpg, png, jpeg, and of equal width and height e.g 575px x
+					575px</span>
+				<p class="upload-success bg-success"></p>
                 {% if username.vip == True %}
 					<i class="profile-social-verified profile-social-verified fa fa-check-square fa-2x" alt="verified"
 					   title="veirified"></i>

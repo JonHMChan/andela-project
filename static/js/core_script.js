@@ -1,5 +1,8 @@
 $(function () {
     $('.comment-success').hide();
+    $('.upload_loader').hide();
+    $('.upload-success').hide();
+
     $('.home-btn').click(function () {
         var comment = $('txtComment').val();
         $.ajax({
@@ -16,26 +19,37 @@ $(function () {
         });
     });
 
-    $('.image-btn').click(function() {
-        var form_data = new FormData($('#image-form')[0]);
-        console.info(form_data)
-        $.ajax({
-            type: 'POST',
-            url: '/fileUpload',
-            data: form_data,
-            contentType: false,
-            cache: false,
-            processData: false,
-            async: false,
-            success: function(data) {
-                console.log('Success!', data);
-                var dataIT = jQuery.parseJSON(data);
-                console.log(dataIT.details.secure_url);
-                $('.profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
-            },
-            error: function(error) {
-                console.error(error);
-            }
-        });
+
+    $('.image-btn').click(function () {
+
+        var ext = $('#file_field').val().split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+            alert('invalid extension!');
+        }
+        else {
+            var form_data = new FormData($('#image-form')[0]);
+            $('.upload_loader').show();
+            $.ajax({
+                type: 'POST',
+                url: '/fileUpload',
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: false,
+                success: function (data) {
+                    var dataIT = jQuery.parseJSON(data);
+                    $('.profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
+                },
+                complete: function () {
+                    $('.upload_loader').hide();
+                    $('.upload-success').text('Image Successfully Uploaded').show();
+                    return true;
+                },
+                error: function (error) {
+                    return false;
+                }
+            });
+        }
     });
 });
