@@ -1,10 +1,10 @@
 from flask import render_template, request, json, url_for, redirect, session, g
-from flask.ext.login import login_required,login_user, LoginManager, logout_user , current_user
+from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os
 from dummyJson import sampleData
 from flask_oauthlib.client import OAuth
 from setup import app
-from models import User
+from models import User, db
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -15,9 +15,9 @@ login_manager.init_app(app)
 login_manager.login_view = 'login_auth'
 
 cloudinary.config(
-  cloud_name = "dkgsqu3ym",
-  api_key = "847864466172127",
-  api_secret = "mE-JAQMj5qYrmZDgYggZqlC3m2w"
+    cloud_name="dkgsqu3ym",
+    api_key="847864466172127",
+    api_secret="mE-JAQMj5qYrmZDgYggZqlC3m2w"
 )
 
 demoJson = sampleData()
@@ -44,7 +44,7 @@ def before_request():
     g.user = current_user
 
 
-# Home Page
+# --------------------------HOMEPAGE ROUTE
 @app.route('/')
 def home():
     return render_template('index.html', links=links)
@@ -61,6 +61,8 @@ def homeContactForm():
         return json.dumps({'status': 'Ok', 'details': [name, email, subject, message]})
 
 
+# ----------------------END HOMEPAGE ROUTE---------------------#
+
 # Show Link
 @app.route('/link/<link_id>')
 def link(link_id):
@@ -69,17 +71,21 @@ def link(link_id):
             return render_template('link/index.html', link=link)
     return "No link found"
 
+
 @login_manager.user_loader
 def load_user(id):
     return User.query.get(id)
+
 
 @app.route('/login')
 def login():
     return linkedin.authorize(callback=url_for('authorized', _external=True))
 
+
 @app.route('/login_auth')
 def login_auth():
     return render_template('login.html')
+
 
 @app.route('/logout')
 def logout():
@@ -88,6 +94,7 @@ def logout():
     return redirect(url_for('home'))
 
 
+# -------------------LINKED IN CONFIG -----------------------#
 @app.route('/login/authorized')
 def authorized():
     resp = linkedin.authorized_response()
@@ -103,7 +110,7 @@ def authorized():
     getData = User.query.filter_by(email=emailaddress.data).first()
     if getData is None:
         reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data,
-               user.data['siteStandardProfileRequest']['url'])
+                   user.data['siteStandardProfileRequest']['url'])
         db.session.add(reg)
         try:
             db.session.commit()
@@ -112,9 +119,8 @@ def authorized():
             raise
     else:
         login_user(getData)
-    for auth_user in User.query.all():
-        return redirect(request.args.get('next') or url_for('profile', id=auth_user.id,
-                                                            user_id=auth_user.firstname.lower()))
+    return redirect(request.args.get('next') or url_for('profile', id=getData.id,
+                                                            user_id=getData.firstname.lower()))
 
 
 @linkedin.tokengetter
@@ -136,26 +142,10 @@ def change_linkedin_query(uri, headers, body):
 
 linkedin.pre_request = change_linkedin_query
 
+# -----------------END LINKEDIN CONFIG --------------------------------#
 
-# comments on a link
-@app.route('/link/<link_id>/comment')
-def linkComment(link_id):
-    for link in links:
-        if link["slug"] == link_id:
-            return render_template('link/comment.html', link=link)
-    return "No comments found"
 
-#
-# # Logged in homepage
-# @app.route('/user/<int:id>/<username>')
-# @login_required
-# def user(id, username=None):
-#     for user in User.query.all():
-#         if user.firstname.lower() == user_id:
-#             print user
-#             return render_template('users/index.html', link=user)
-#     return "No comments found"
-
+# -----------------------USER PROFILE ROUTE CONFIG------------------#
 @app.route('/user/<int:id>', strict_slashes=False)
 @app.route('/user/<int:id>/<username>', strict_slashes=False)
 @login_required
@@ -168,19 +158,31 @@ def profile(id, username=None):
     else:
         return 'Unauthorized Access'
 
+
+# handle error
 @app.errorhandler(404)
 def page_not_found(error):
     return 'This page does not exist', 404
 
+
+# cloudinary file upload
 @app.route('/fileUpload', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
         file = request.files['image']
         if file:
-            cloudinary_res = cloudinary.uploader.upload(file, options={'allowed_formats': ['jpg', 'png' , 'jpeg']})
+            cloudinary_res = cloudinary.uploader.upload(file, width=350, height=350,
+                                                        options={'allowed_formats': ['jpg', 'png', 'jpeg']},
+                                                        transformation=[
+                                                            {'width': 350, 'height': 350, 'crop': 'limit'}
+                                                        ])
             print cloudinary_res
-        return json.dumps({'status': 'Ok', 'details': str(file)})
+            getData = User.query.filter_by(email=current_user.email).first()
+            getData.photo = cloudinary_res['secure_url']
+            db.session.commit()
+        return json.dumps({'status': 'Ok', 'details': cloudinary_res})
 
+# ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
 
 if __name__ == '__main__':

@@ -29,6 +29,9 @@ $(function () {
             async: false,
             success: function(data) {
                 console.log('Success!', data);
+                var dataIT = jQuery.parseJSON(data);
+                console.log(dataIT.details.secure_url);
+                $('.profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
             },
             error: function(error) {
                 console.error(error);
