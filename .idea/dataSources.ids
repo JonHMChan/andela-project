@@ -2373,9 +2373,15 @@
       <column name="firstname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="lastname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="email" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="profile" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="social_profile" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="registeredOn" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="photo" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="job" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="other_skills" sqlType="json" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
+      <column name="major_skill" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="about" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="had_known" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="advice" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="users_pkey" columns="id"/>
       <index name="unique_id" unique="true" columns="id"/>
       <index name="unique_photo" unique="true" columns="photo"/>

@@ -95,6 +95,12 @@ def logout():
 
 
 # -------------------LINKED IN CONFIG -----------------------#
+def get_redirect_email(email_address):
+    sort = User.query.filter_by(email=email_address).first()
+    login_user(sort)
+    return redirect(request.args.get('next') or url_for('profile', id=sort.id,
+                                                        user_id=sort.firstname.lower()))
+
 @app.route('/login/authorized')
 def authorized():
     resp = linkedin.authorized_response()
@@ -119,8 +125,7 @@ def authorized():
             raise
     else:
         login_user(getData)
-    return redirect(request.args.get('next') or url_for('profile', id=getData.id,
-                                                        user_id=getData.firstname.lower()))
+    return get_redirect_email(emailaddress.data)
 
 
 @linkedin.tokengetter
@@ -147,13 +152,13 @@ linkedin.pre_request = change_linkedin_query
 
 # -----------------------USER PROFILE ROUTE CONFIG------------------#
 @app.route('/user/<int:id>', strict_slashes=False)
-@app.route('/user/<int:id>/<username>', strict_slashes=False)
+@app.route('/user/<int:id>/<person>', strict_slashes=False)
 @login_required
-def profile(id, username=None):
+def profile(id, person=None):
     user = User.query.get_or_404(id)
     if current_user.firstname == user.firstname:
-        if user.firstname != username:
-            return render_template('users/index.html', id=id, username=user)
+        if user.firstname != person:
+            return render_template('users/index.html', id=id, person=user)
         return render_template('users/index.html', user=user)
     else:
         return 'Unauthorized Access'
@@ -178,12 +183,32 @@ def upload_file():
                                                              'crop': 'fill',
                                                              'color': "#EB5D1E", 'height': 30,
                                                              'gravity': "south_east", 'x': 8, 'y': 8}
-            ])
-            print cloudinary_res
+                                                        ])
             getData = User.query.filter_by(email=current_user.email).first()
             getData.photo = cloudinary_res['secure_url']
             db.session.commit()
         return json.dumps({'status': 'Ok', 'details': cloudinary_res})
+
+
+@app.route('/profileInfo', methods=["POST"])
+def profileInfoForm():
+    if request.method == "POST":
+        job = request.form['job']
+        about = request.form['about']
+        major_skill = request.form['major_skill']
+        other_skills = request.form['other_skills']
+        had_known = request.form['had_known']
+        advice = request.form['advice']
+        getData = User.query.filter_by(email=current_user.email).first()
+        getData.job = job
+        getData.major_skill = major_skill
+        getData.other_skills = other_skills
+        getData.about = about
+        getData.had_known = had_known
+        getData.advice = advice
+        db.session.commit()
+    return json.dumps({'status': 'Ok', 'details': [job, about, major_skill,
+                                                   had_known]})
 
 # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
