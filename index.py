@@ -15,9 +15,9 @@ login_manager.init_app(app)
 login_manager.login_view = 'login_auth'
 
 cloudinary.config(
-    cloud_name="dkgsqu3ym",
-    api_key="847864466172127",
-    api_secret="mE-JAQMj5qYrmZDgYggZqlC3m2w"
+    cloud_name=app.config['CLOUDINARY_NAME'],
+    api_key=app.config['CLOUDINARY_KEY'],
+    api_secret=app.config['CLOUDINARY_SECRET']
 )
 
 demoJson = sampleData()
@@ -25,8 +25,8 @@ links = demoJson.content()
 
 linkedin = oauth.remote_app(
     'linkedin',
-    consumer_key=app.config['CONSUMER_KEY'],
-    consumer_secret='k7SKZUcbVvxqRYIq',
+    consumer_key=app.config['LINKEDIN_CONSUMER_KEY'],
+    consumer_secret=app.config['LINKEDIN_CONSUMER_SECRET'],
     request_token_params={
         'scope': ['r_basicprofile', 'r_emailaddress'],
         'state': 'RandomString',
