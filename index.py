@@ -25,7 +25,7 @@ links = demoJson.content()
 
 linkedin = oauth.remote_app(
     'linkedin',
-    consumer_key='77owz0iuacm1h8',
+    consumer_key=app.config['CONSUMER_KEY'],
     consumer_secret='k7SKZUcbVvxqRYIq',
     request_token_params={
         'scope': ['r_basicprofile', 'r_emailaddress'],
