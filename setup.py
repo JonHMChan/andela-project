@@ -1,10 +1,13 @@
 
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+import os
 
 
 app = Flask(__name__)
-app.config.from_object('config.BaseConfig')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['SQLALCHEMY_DATABASE_URI']
+app.config['DEBUG'] = os.environ['DEBUG']
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 
 #------------------------DB CONFIG ---------------------#
