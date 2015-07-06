@@ -4,12 +4,13 @@
     <!-- Add your site or application content here -->
 	<div class="container profile-section">
 		<div class="row">
-			<div class="col-md-4 col-xs-6">
+			<div class="col-md-4 col-xs-12">
                 {% if person.photo %}
 					<img src="{{ person.photo }}" class="profile-img" width="350" height="350">
                 {% endif %}
                 {% if not person.photo %}
-					<img src="{{ url_for('static', filename='img/gravatar-60-grey.jpg' ) }}" class="profile-img">
+					<img src="{{ url_for('static', filename='img/gravatar-60-grey.jpg' ) }}" class="profile-img
+					img-responsive center-block">
                 {% endif %}
 				<span>
                 <i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn" title="LinkedIn">
@@ -99,6 +100,8 @@
             </span>
 					<button type="button" class="btn btn-block btn-dark profile-btn">Update Profile</button>
 				</form>
+				<p class="update-success bg-success">Profile Successfully Updated</p>
+				<p class="update-failure bg-danger">Fail :(, Please try again</p>
 			</div>
 		</div>
 	</div>
