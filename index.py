@@ -63,6 +63,7 @@ def homeContactForm():
 
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
+
 # Show Link
 @app.route('/link/<link_id>')
 def link(link_id):
@@ -92,6 +93,7 @@ def logout():
     logout_user()
     session.pop('linkedin_token', None)
     return redirect(url_for('home'))
+
 
 
 # -------------------LINKED IN CONFIG -----------------------#
@@ -148,6 +150,7 @@ def change_linkedin_query(uri, headers, body):
 linkedin.pre_request = change_linkedin_query
 
 # -----------------END LINKEDIN CONFIG --------------------------------#
+
 
 
 # -----------------------USER PROFILE ROUTE CONFIG------------------#

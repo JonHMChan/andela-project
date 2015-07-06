@@ -4,6 +4,7 @@ $(function () {
     $('.update-failure').hide();
     $('.upload_loader').hide();
     $('.upload-success').hide();
+    $('.upload-failure').hide();
 
     $('.home-btn').click(function () {
         $.ajax({
@@ -33,6 +34,7 @@ $(function () {
         })
     });
 
+    //------------------------------CLOUDINARY IMAGE UPLOAD
     $('.image-btn').click(function () {
 
         var ext = $('#file_field').val().split('.').pop().toLowerCase();
@@ -60,6 +62,7 @@ $(function () {
                     return true;
                 },
                 error: function (error) {
+                    $('.upload-failure').text('Error, please try again').show();
                     return false;
                 }
             });
@@ -67,7 +70,7 @@ $(function () {
     });
 
 
-    //AUTOCOMPLETE TAG
+    //----------------------------------AUTOCOMPLETE TAG
     var availableTags = [
         "ActionScript",
         "AppleScript",
@@ -134,5 +137,49 @@ $(function () {
                 return false;
             }
         });
+
+    //-------------------------------TOOLTIP------------------
+    $('[data-toggle="tooltip"]').tooltip();
+
+
+    //----------------------------SOCIAL LINKS-----------------
+
+    $('.website-btn').click(function () {
+       return swal({
+            title: "Website Link",
+            text: "Please put in the link to your website",
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "http://->Link"
+        }, function (inputValue) {
+            if (inputValue === false) return false;
+            if (inputValue === "") {
+                swal.showInputError("You need to write something!");
+                return false
+            }
+            swal("Nice!", "You wrote: " + inputValue, "success");
+        });
+    });
+
+    $('.github-btn').click(function () {
+       return swal({
+            title: "Github Link",
+            text: "Please put in the link to your github",
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "Link"
+        }, function (inputValue) {
+            if (inputValue === false) return false;
+            if (inputValue === "") {
+                swal.showInputError("You need to write something!");
+                return false
+            }
+            swal("Nice!", "You wrote: " + inputValue, "success");
+        });
+    });
 
 });
