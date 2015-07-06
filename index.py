@@ -49,7 +49,6 @@ def before_request():
 def home():
     return render_template('index.html', links=links)
 
-
 # Home Page Contact Form
 @app.route('/homeContact', methods=["POST"])
 def homeContactForm():
