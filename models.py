@@ -24,12 +24,12 @@ class User(db.Model):
     social_twitter = db.Column(db.String)
     social_github = db.Column(db.String)
 
-    def __init__(self, uid, firstname, lastname, email, social_profile):
+    def __init__(self, uid, firstname, lastname, email, social_linkedin):
         self.uid = uid
         self.firstname = firstname
         self.lastname = lastname
         self.email = email
-        self.social_profile = social_profile
+        self.social_linkedin = social_linkedin
         self.registeredOn = datetime.utcnow()
 
     def is_authenticated(self):

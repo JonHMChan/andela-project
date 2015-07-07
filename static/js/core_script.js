@@ -165,11 +165,15 @@ $(function () {
                 data: {websitelink: inputValue},
                 type: 'POST',
                 success: function (response) {
+                    weblink = jQuery.parseJSON(response)
+                    $('.profile-website-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
+                    $('.profile-website-link').text(weblink.details[0]).show("drop", {direction: "up"}, "slow");
                     swal({
                         imageUrl: '../static/img/thumbs-up.jpg',
                         title: "Link Added Successfully",
                         text: "It has been added to your public profile"
                     });
+
                 },
                 error: function (error) {
                     console.log(error);
