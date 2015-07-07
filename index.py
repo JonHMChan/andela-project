@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g
+from flask import render_template, request, json, url_for, redirect, session, g, jsonify
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os
 from dummyJson import sampleData
@@ -38,6 +38,18 @@ linkedin = oauth.remote_app(
     authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
 )
 
+github = oauth.remote_app(
+    'github',
+    consumer_key='2060136de8f6079f6d96',
+    consumer_secret='0f39da4747fd987bc1749511ef8c826b9798a9ce',
+    request_token_params={'scope': 'user:email'},
+    base_url='https://api.github.com/',
+    request_token_url=None,
+    access_token_method='POST',
+    access_token_url='https://github.com/login/oauth/access_token',
+    authorize_url='https://github.com/login/oauth/authorize'
+)
+
 
 @app.before_request
 def before_request():
@@ -62,7 +74,6 @@ def homeContactForm():
 
 
 # ----------------------END HOMEPAGE ROUTE---------------------#
-
 
 # Show Link
 @app.route('/link/<link_id>')
@@ -93,6 +104,30 @@ def logout():
     logout_user()
     session.pop('linkedin_token', None)
     return redirect(url_for('home'))
+
+@app.route('/gitconnect')
+def gitconnect():
+    return github.authorize(callback=url_for('gitauthorized', _external=True))
+
+
+@app.route('/github/login/authorized')
+def gitauthorized():
+    resp = github.authorized_response()
+    if resp is None:
+        return 'Access denied: reason=%s error=%s' % (
+            request.args['error'],
+            request.args['error_description']
+        )
+    session['github_token'] = (resp['access_token'], '')
+    github_data = github.get('user')
+    current_user_info = User.query.filter_by(email=current_user.email).first()
+    current_user_info.social_github = github_data.data['html_url']
+    db.session.commit()
+    return get_redirect_email(current_user.email)
+
+@github.tokengetter
+def get_github_oauth_token():
+    return session.get('github_token')
 
 
 # -------------------LINKED IN CONFIG -----------------------#

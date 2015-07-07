@@ -182,8 +182,8 @@ $(function () {
     $('.github-btn').click(function () {
         return swal({
             title: "Github Link",
-            text: "Please put in the link to your github or simply click the icon below<br><i class='fa fa-github" +
-            " fa-2x'></i>",
+            text: "Please put in the link to your github or simply click the icon below<br><a href='/gitconnect'><i class='fa fa-github" +
+            " fa-2x'></i></a>",
             html: true,
             type: "input",
             showCancelButton: true,
