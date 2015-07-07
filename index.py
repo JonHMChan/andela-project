@@ -49,6 +49,7 @@ def before_request():
 def home():
     return render_template('index.html', links=links)
 
+
 # Home Page Contact Form
 @app.route('/homeContact', methods=["POST"])
 def homeContactForm():
@@ -94,13 +95,13 @@ def logout():
     return redirect(url_for('home'))
 
 
-
 # -------------------LINKED IN CONFIG -----------------------#
 def get_redirect_email(email_address):
     sort = User.query.filter_by(email=email_address).first()
     login_user(sort)
     return redirect(request.args.get('next') or url_for('profile', id=sort.id,
                                                         user_id=sort.firstname.lower()))
+
 
 @app.route('/login/authorized')
 def authorized():
@@ -114,8 +115,8 @@ def authorized():
 
     user = linkedin.get('people/~')
     emailaddress = linkedin.get('people/~/email-address')
-    getData = User.query.filter_by(email=emailaddress.data).first()
-    if getData is None:
+    current_user_info = User.query.filter_by(email=emailaddress.data).first()
+    if current_user_info is None:
         reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data,
                    user.data['siteStandardProfileRequest']['url'])
         db.session.add(reg)
@@ -125,7 +126,7 @@ def authorized():
             db.session.rollback()
             raise
     else:
-        login_user(getData)
+        login_user(current_user_info)
     return get_redirect_email(emailaddress.data)
 
 
@@ -186,8 +187,8 @@ def upload_file():
                                                              'color': "#EB5D1E", 'height': 30,
                                                              'gravity': "south_east", 'x': 8, 'y': 8}
                                                         ])
-            getData = User.query.filter_by(email=current_user.email).first()
-            getData.photo = cloudinary_res['secure_url']
+            current_user_info = User.query.filter_by(email=current_user.email).first()
+            current_user_info.photo = cloudinary_res['secure_url']
             db.session.commit()
         return json.dumps({'status': 'Ok', 'details': cloudinary_res})
 
@@ -201,18 +202,30 @@ def profileInfoForm():
         other_skills = request.form['other_skills']
         had_known = request.form['had_known']
         advice = request.form['advice']
-        getData = User.query.filter_by(email=current_user.email).first()
-        getData.job = job
-        getData.major_skill = major_skill
-        getData.other_skills = other_skills
-        getData.about = about
-        getData.had_known = had_known
-        getData.advice = advice
+
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        current_user_info.job = job
+        current_user_info.major_skill = major_skill
+        current_user_info.other_skills = other_skills
+        current_user_info.about = about
+        current_user_info.had_known = had_known
+        current_user_info.advice = advice
         db.session.commit()
     return json.dumps({'status': 'Ok', 'details': [job, about, major_skill,
                                                    had_known]})
 
-# ----------------------END USER PROFILE ROUTE CONFIG --------------------#
+
+@app.route('/profileWeblink', methods=['POST'])
+def websiteLink():
+    if request.method == 'POST':
+        websitelink = request.form['websitelink']
+
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        current_user_info.social_website = websitelink
+        db.session.commit()
+    return json.dumps({'status': 'Ok', 'details': [websitelink]})
+
+    # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
 
 if __name__ == '__main__':

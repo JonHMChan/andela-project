@@ -19,6 +19,10 @@ class User(db.Model):
     about = db.Column(db.String)
     had_known = db.Column(db.String)
     advice = db.Column(db.String)
+    social_website = db.Column(db.String)
+    social_linkedin = db.Column(db.String)
+    social_twitter = db.Column(db.String)
+    social_github = db.Column(db.String)
 
     def __init__(self, uid, firstname, lastname, email, social_profile):
         self.uid = uid
@@ -42,7 +46,8 @@ class User(db.Model):
 
     def __repr__(self):
         return '<{uid}{firstname}{lastname}{email}{social_profile}{registeredOn}{photo}{job}{major_skill}{' \
-               'other_skills}{about}{had_known}{advice}>'.format(
+               'other_skills}{about}{had_known}{advice}{social_website}{social_linkedin}{social_twitter}{' \
+               'social_github}>'.format(
             uid=self.uid,
             firstname=self.firstname,
             lastname=self.lastname,
@@ -55,5 +60,9 @@ class User(db.Model):
             other_skills=self.other_skills,
             about=self.about,
             had_known=self.had_known,
-            advice=self.advice
+            advice=self.advice,
+            social_website=self.social_website,
+            social_linkedin=self.social_linkedin,
+            social_twitter=self.social_twitter,
+            social_github=self.social_github,
         )

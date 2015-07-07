@@ -43,7 +43,7 @@ $(function () {
         }
         else {
             var form_data = new FormData($('#image-form')[0]);
-            $('.upload_loader').show();
+            $('.upload_loader').show("drop", {direction: "up"}, "slow");
             $.ajax({
                 type: 'POST',
                 url: '/fileUpload',
@@ -55,6 +55,7 @@ $(function () {
                 success: function (data) {
                     var dataIT = jQuery.parseJSON(data);
                     $('.profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
+                    $('.header-profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
                 },
                 complete: function () {
                     $('.upload_loader').hide();
@@ -145,7 +146,7 @@ $(function () {
     //----------------------------SOCIAL LINKS-----------------
 
     $('.website-btn').click(function () {
-       return swal({
+        return swal({
             title: "Website Link",
             text: "Please put in the link to your website",
             type: "input",
@@ -159,14 +160,31 @@ $(function () {
                 swal.showInputError("You need to write something!");
                 return false
             }
-            swal("Nice!", "You wrote: " + inputValue, "success");
+            $.ajax({
+                url: '/profileWeblink',
+                data: {websitelink: inputValue},
+                type: 'POST',
+                success: function (response) {
+                    swal({
+                        imageUrl: '../static/img/thumbs-up.jpg',
+                        title: "Link Added Successfully",
+                        text: "It has been added to your public profile"
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+
         });
     });
 
     $('.github-btn').click(function () {
-       return swal({
+        return swal({
             title: "Github Link",
-            text: "Please put in the link to your github",
+            text: "Please put in the link to your github or simply click the icon below<br><i class='fa fa-github" +
+            " fa-2x'></i>",
+            html: true,
             type: "input",
             showCancelButton: true,
             closeOnConfirm: false,
@@ -178,7 +196,21 @@ $(function () {
                 swal.showInputError("You need to write something!");
                 return false
             }
-            swal("Nice!", "You wrote: " + inputValue, "success");
+            $.ajax({
+                url: '/profileGitlink',
+                data: {githublink: inputValue},
+                type: 'POST',
+                success: function (response) {
+                    swal({
+                        imageUrl: '../static/img/thumbs-up.jpg',
+                        title: "Github Link Added Successfully",
+                        text: "It has been added to your public profile"
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
         });
     });
 
