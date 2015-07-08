@@ -50,6 +50,20 @@ github = oauth.remote_app(
     authorize_url='https://github.com/login/oauth/authorize'
 )
 
+google = oauth.remote_app(
+    'google',
+    consumer_key='127726280268-5dsr3to71d74droqo5mpd5k69ardnlm2.apps.googleusercontent.com',
+    consumer_secret='tiuyy-yLbZa8rrTq7zGedZ1g',
+    request_token_params={
+        'scope': 'https://www.googleapis.com/auth/userinfo.email'
+    },
+    base_url='https://www.googleapis.com/oauth2/v1/',
+    request_token_url=None,
+    access_token_method='POST',
+    access_token_url='https://accounts.google.com/o/oauth2/token',
+    authorize_url='https://accounts.google.com/o/oauth2/auth',
+)
+
 
 @app.before_request
 def before_request():
@@ -89,11 +103,6 @@ def load_user(id):
     return User.query.get(id)
 
 
-@app.route('/login')
-def login():
-    return linkedin.authorize(callback=url_for('authorized', _external=True))
-
-
 @app.route('/login_auth')
 def login_auth():
     return render_template('login.html')
@@ -102,13 +111,14 @@ def login_auth():
 @app.route('/logout')
 def logout():
     logout_user()
+    session.pop('google_token', None)
     session.pop('linkedin_token', None)
     return redirect(url_for('home'))
+
 
 @app.route('/gitconnect')
 def gitconnect():
     return github.authorize(callback=url_for('gitauthorized', _external=True))
-
 
 @app.route('/github/login/authorized')
 def gitauthorized():
@@ -131,15 +141,22 @@ def get_github_oauth_token():
 
 
 # -------------------LINKED IN CONFIG -----------------------#
-def get_redirect_email(email_address):
+
+def get_redirect_email(linkedin_info, email_address):
     sort = User.query.filter_by(email=email_address).first()
     login_user(sort)
+    if sort.social_linkedin is None:
+        sort.social_linkedin = linkedin_info
+        db.session.commit()
     return redirect(request.args.get('next') or url_for('profile', id=sort.id,
                                                         user_id=sort.firstname.lower()))
 
+@app.route('/linkedin/login')
+def linkedinlogin():
+    return linkedin.authorize(callback=url_for('linkedinauthorized', _external=True))
 
-@app.route('/login/authorized')
-def authorized():
+@app.route('/linkedin/login/authorized')
+def linkedinauthorized():
     resp = linkedin.authorized_response()
     if resp is None:
         return 'Access denied: reason=%s error=%s' % (
@@ -152,8 +169,7 @@ def authorized():
     emailaddress = linkedin.get('people/~/email-address')
     current_user_info = User.query.filter_by(email=emailaddress.data).first()
     if current_user_info is None:
-        reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data,
-                   user.data['siteStandardProfileRequest']['url'])
+        reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data)
         db.session.add(reg)
         try:
             db.session.commit()
@@ -162,7 +178,7 @@ def authorized():
             raise
     else:
         login_user(current_user_info)
-    return get_redirect_email(emailaddress.data)
+    return get_redirect_email(user.data['siteStandardProfileRequest']['url'], emailaddress.data)
 
 
 @linkedin.tokengetter
@@ -185,6 +201,50 @@ def change_linkedin_query(uri, headers, body):
 linkedin.pre_request = change_linkedin_query
 
 # -----------------END LINKEDIN CONFIG --------------------------------#
+
+
+
+
+# -------------------GOOGLE LOGIN CONFIG -----------------------------#
+
+@app.route('/google/login')
+def googlelogin():
+    return google.authorize(callback=url_for('googleauthorized', _external=True))
+
+@app.route('/google/login/authorized')
+def googleauthorized():
+    resp = google.authorized_response()
+    if resp is None:
+        return 'Access denied: reason=%s error=%s' % (
+            request.args['error_reason'],
+            request.args['error_description']
+        )
+    session['google_token'] = (resp['access_token'], '')
+    person = google.get('userinfo')
+    current_user_info = User.query.filter_by(email=person.data['email']).first()
+    if current_user_info is None:
+        reg = User(person.data['id'], person.data['given_name'], person.data['family_name'], person.data['email'])
+        db.session.add(reg)
+        try:
+            db.session.commit()
+        except:
+            db.session.rollback()
+            raise
+    else:
+        login_user(current_user_info)
+    return get_redirect_email(person.data['email'])
+
+@google.tokengetter
+def get_google_oauth_token():
+    return session.get('google_token')
+
+
+
+# ---------------------END GOOGLE CONFIG ---------------------------------#
+
+
+
+
 
 
 

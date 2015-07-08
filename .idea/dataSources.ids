@@ -2369,11 +2369,10 @@
     </table>
     <table name="users" schema="public" catalog="nowwehere" type="TABLE">
       <column name="id" sqlType="bigserial" precision="19" scale="0" nullable="false" jdbcType="-5" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="uid" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="uid" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="firstname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="lastname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="email" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="social_profile" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="registeredOn" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="photo" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="job" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>

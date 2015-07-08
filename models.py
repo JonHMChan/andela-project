@@ -10,7 +10,6 @@ class User(db.Model):
     firstname = db.Column(db.String)
     lastname = db.Column(db.String)
     email = db.Column(db.String(80), unique=True)
-    social_profile = db.Column(db.String)
     registeredOn = db.Column(db.DateTime)
     photo = db.Column(db.String)
     job = db.Column(db.String)
@@ -24,12 +23,11 @@ class User(db.Model):
     social_twitter = db.Column(db.String)
     social_github = db.Column(db.String)
 
-    def __init__(self, uid, firstname, lastname, email, social_linkedin):
+    def __init__(self, uid, firstname, lastname, email):
         self.uid = uid
         self.firstname = firstname
         self.lastname = lastname
         self.email = email
-        self.social_linkedin = social_linkedin
         self.registeredOn = datetime.utcnow()
 
     def is_authenticated(self):
@@ -45,14 +43,13 @@ class User(db.Model):
         return self.id
 
     def __repr__(self):
-        return '<{uid}{firstname}{lastname}{email}{social_profile}{registeredOn}{photo}{job}{major_skill}{' \
+        return '<{uid}{firstname}{lastname}{email}{registeredOn}{photo}{job}{major_skill}{' \
                'other_skills}{about}{had_known}{advice}{social_website}{social_linkedin}{social_twitter}{' \
                'social_github}>'.format(
             uid=self.uid,
             firstname=self.firstname,
             lastname=self.lastname,
             email=self.email,
-            social_profile=self.social_profile,
             registeredOn=self.registeredOn,
             photo=self.photo,
             job=self.job,
