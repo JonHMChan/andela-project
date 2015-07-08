@@ -142,7 +142,7 @@ def get_github_oauth_token():
 
 # -------------------LINKED IN CONFIG -----------------------#
 
-def get_redirect_email(linkedin_info, email_address):
+def linkedin_get_redirect_email(linkedin_info, email_address):
     sort = User.query.filter_by(email=email_address).first()
     login_user(sort)
     if sort.social_linkedin is None:
@@ -178,7 +178,7 @@ def linkedinauthorized():
             raise
     else:
         login_user(current_user_info)
-    return get_redirect_email(user.data['siteStandardProfileRequest']['url'], emailaddress.data)
+    return linkedin_get_redirect_email(user.data['siteStandardProfileRequest']['url'], emailaddress.data)
 
 
 @linkedin.tokengetter
@@ -206,6 +206,12 @@ linkedin.pre_request = change_linkedin_query
 
 
 # -------------------GOOGLE LOGIN CONFIG -----------------------------#
+def google_get_redirect_email(email_address):
+    sort = User.query.filter_by(email=email_address).first()
+    login_user(sort)
+    return redirect(request.args.get('next') or url_for('profile', id=sort.id,
+                                                        user_id=sort.firstname.lower()))
+
 
 @app.route('/google/login')
 def googlelogin():
@@ -232,7 +238,7 @@ def googleauthorized():
             raise
     else:
         login_user(current_user_info)
-    return get_redirect_email(person.data['email'])
+    return google_get_redirect_email(person.data['email'])
 
 @google.tokengetter
 def get_google_oauth_token():
