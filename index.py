@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g, jsonify
+from flask import render_template, request, json, url_for, redirect, session, g
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os
 from dummyJson import sampleData
@@ -40,8 +40,8 @@ linkedin = oauth.remote_app(
 
 github = oauth.remote_app(
     'github',
-    consumer_key='2060136de8f6079f6d96',
-    consumer_secret='0f39da4747fd987bc1749511ef8c826b9798a9ce',
+    consumer_key=app.config['GITHUB_CONSUMER_KEY'],
+    consumer_secret=app.config['GITHUB_CONSUMER_SECRET'],
     request_token_params={'scope': 'user:email'},
     base_url='https://api.github.com/',
     request_token_url=None,
@@ -52,8 +52,8 @@ github = oauth.remote_app(
 
 google = oauth.remote_app(
     'google',
-    consumer_key='127726280268-5dsr3to71d74droqo5mpd5k69ardnlm2.apps.googleusercontent.com',
-    consumer_secret='tiuyy-yLbZa8rrTq7zGedZ1g',
+    consumer_key=app.config['GOOGLE_CONSUMER_KEY'],
+    consumer_secret=app.config['GOOGLE_CONSUMER_SECRET'],
     request_token_params={
         'scope': 'https://www.googleapis.com/auth/userinfo.email'
     },
