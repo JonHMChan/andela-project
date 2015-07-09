@@ -1,19 +1,29 @@
-from setup import db
+from setup import db, BaseQuery
 from sqlalchemy.dialects.postgresql import JSON
 from datetime import datetime
+from sqlalchemy_searchable import SearchQueryMixin
+from sqlalchemy_utils.types import TSVectorType
+from sqlalchemy_searchable import make_searchable
+
+
+make_searchable()
+
+class UserQuery(BaseQuery, SearchQueryMixin):
+    pass
 
 
 class User(db.Model):
+    query_class = UserQuery
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     uid = db.Column(db.String, unique=True)
-    firstname = db.Column(db.String)
-    lastname = db.Column(db.String)
+    firstname = db.Column(db.Unicode(255))
+    lastname = db.Column(db.Unicode(255))
     email = db.Column(db.String(80), unique=True)
     registeredOn = db.Column(db.DateTime)
     photo = db.Column(db.String)
     job = db.Column(db.String)
-    major_skill = db.Column(db.String(20))
+    major_skill = db.Column(db.Unicode(50))
     other_skills = db.Column(JSON)
     about = db.Column(db.String)
     had_known = db.Column(db.String)
@@ -22,6 +32,7 @@ class User(db.Model):
     social_linkedin = db.Column(db.String)
     social_twitter = db.Column(db.String)
     social_github = db.Column(db.String)
+    search_vector = db.Column(TSVectorType('firstname', 'lastname', 'major_skill'))
 
     def __init__(self, uid, firstname, lastname, email):
         self.uid = uid

@@ -66,13 +66,15 @@ google = oauth.remote_app(
 
 twitter = oauth.remote_app(
     'twitter',
-    consumer_key='JLZf0gzpnApezPLi2sGweHbMF',
-    consumer_secret='fpX6vls06myv3IqaTUMEJF0I0wZ4AVyyVG9lrlcNsHttxcO0oB',
+    consumer_key=app.config['TWITTER_CONSUMER_KEY'],
+    consumer_secret=app.config['TWITTER_CONSUMER_SECRET'],
     base_url='https://api.twitter.com/1.1/',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authenticate',
 )
+
+print User.query.search(u'Effect').all()
 
 
 @app.before_request
