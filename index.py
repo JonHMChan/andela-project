@@ -4,7 +4,7 @@ import os
 from dummyJson import sampleData
 from flask_oauthlib.client import OAuth
 from setup import app
-from models import User, db
+from models import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -73,8 +73,6 @@ twitter = oauth.remote_app(
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authenticate',
 )
-
-print User.query.search(u'Effect').all()
 
 
 @app.before_request

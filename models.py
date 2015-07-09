@@ -2,9 +2,7 @@ from setup import db, BaseQuery
 from sqlalchemy.dialects.postgresql import JSON
 from datetime import datetime
 from sqlalchemy_searchable import SearchQueryMixin
-from sqlalchemy_utils.types import TSVectorType
 from sqlalchemy_searchable import make_searchable
-
 
 make_searchable()
 
@@ -17,8 +15,8 @@ class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     uid = db.Column(db.String, unique=True)
-    firstname = db.Column(db.Unicode(255))
-    lastname = db.Column(db.Unicode(255))
+    firstname = db.Column(db.String)
+    lastname = db.Column(db.String)
     email = db.Column(db.String(80), unique=True)
     registeredOn = db.Column(db.DateTime)
     photo = db.Column(db.String)
@@ -32,7 +30,6 @@ class User(db.Model):
     social_linkedin = db.Column(db.String)
     social_twitter = db.Column(db.String)
     social_github = db.Column(db.String)
-    search_vector = db.Column(TSVectorType('firstname', 'lastname', 'major_skill'))
 
     def __init__(self, uid, firstname, lastname, email):
         self.uid = uid
