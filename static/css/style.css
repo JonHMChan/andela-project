@@ -161,6 +161,16 @@ hr {
     margin-top: 30px;
 }
 
+.profile_links {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: black;
+}
+
+.p-d {
+    color: wheat;
+}
 /* --- section color var --- */
 
 .text-light {

@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g
+from flask import render_template, request, json, url_for, redirect, session, g, jsonify
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os
 from dummyJson import sampleData
@@ -64,6 +64,16 @@ google = oauth.remote_app(
     authorize_url='https://accounts.google.com/o/oauth2/auth',
 )
 
+twitter = oauth.remote_app(
+    'twitter',
+    consumer_key='JLZf0gzpnApezPLi2sGweHbMF',
+    consumer_secret='fpX6vls06myv3IqaTUMEJF0I0wZ4AVyyVG9lrlcNsHttxcO0oB',
+    base_url='https://api.twitter.com/1.1/',
+    request_token_url='https://api.twitter.com/oauth/request_token',
+    access_token_url='https://api.twitter.com/oauth/access_token',
+    authorize_url='https://api.twitter.com/oauth/authenticate',
+)
+
 
 @app.before_request
 def before_request():
@@ -116,9 +126,19 @@ def logout():
     return redirect(url_for('home'))
 
 
+def get_redirect_email(email_address):
+    sort = User.query.filter_by(email=email_address).first()
+    login_user(sort)
+    return redirect(request.args.get('next') or url_for('profile', id=sort.id,
+                                                        user_id=sort.firstname.lower()))
+
+
+# -----------------GITHUB CONFIG-------------------#
+
 @app.route('/gitconnect')
 def gitconnect():
     return github.authorize(callback=url_for('gitauthorized', _external=True))
+
 
 @app.route('/github/login/authorized')
 def gitauthorized():
@@ -135,9 +155,23 @@ def gitauthorized():
     db.session.commit()
     return get_redirect_email(current_user.email)
 
+
 @github.tokengetter
 def get_github_oauth_token():
     return session.get('github_token')
+
+@app.route('/profileGitlink', methods=['POST'])
+def githubLink():
+    if request.method == 'POST':
+        githublink = request.form['githublink']
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        current_user_info.social_github = githublink
+        db.session.commit()
+    return json.dumps({'status': 'Ok', 'details': [githublink]})
+
+
+# ------------------------END GITHUB CONFIG ----------------------#
+
 
 
 # -------------------LINKED IN CONFIG -----------------------#
@@ -151,9 +185,11 @@ def linkedin_get_redirect_email(linkedin_info, email_address):
     return redirect(request.args.get('next') or url_for('profile', id=sort.id,
                                                         user_id=sort.firstname.lower()))
 
+
 @app.route('/linkedin/login')
 def linkedinlogin():
     return linkedin.authorize(callback=url_for('linkedinauthorized', _external=True))
+
 
 @app.route('/linkedin/login/authorized')
 def linkedinauthorized():
@@ -206,16 +242,11 @@ linkedin.pre_request = change_linkedin_query
 
 
 # -------------------GOOGLE LOGIN CONFIG -----------------------------#
-def google_get_redirect_email(email_address):
-    sort = User.query.filter_by(email=email_address).first()
-    login_user(sort)
-    return redirect(request.args.get('next') or url_for('profile', id=sort.id,
-                                                        user_id=sort.firstname.lower()))
-
 
 @app.route('/google/login')
 def googlelogin():
     return google.authorize(callback=url_for('googleauthorized', _external=True))
+
 
 @app.route('/google/login/authorized')
 def googleauthorized():
@@ -238,20 +269,54 @@ def googleauthorized():
             raise
     else:
         login_user(current_user_info)
-    return google_get_redirect_email(person.data['email'])
+    return get_redirect_email(person.data['email'])
+
 
 @google.tokengetter
 def get_google_oauth_token():
     return session.get('google_token')
 
 
-
 # ---------------------END GOOGLE CONFIG ---------------------------------#
 
 
+# ---------------------TWITTER CONFIG------------------------------#
 
 
+@twitter.tokengetter
+def get_twitter_token():
+    resp = session['twitter_oauth']
+    return resp['oauth_token'], resp['oauth_token_secret']
 
+
+@app.route('/twitconnect')
+def login():
+    callback_url = url_for('twitteroauthorized', next=request.args.get('next'))
+    return twitter.authorize(callback=callback_url or request.referrer or None)
+
+
+@app.route('/twitter/oauthorized')
+def twitteroauthorized():
+    resp = twitter.authorized_response()
+    if resp is None:
+        return get_redirect_email(current_user.email)
+    else:
+        session['twitter_oauth'] = resp
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        current_user_info.social_twitter = resp['screen_name']
+        db.session.commit()
+    return get_redirect_email(current_user.email)
+
+@app.route('/profileTweetLink', methods=['POST'])
+def twitterLink():
+    if request.method == 'POST':
+        twitterlink = request.form['twitterlink']
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        current_user_info.social_twitter = twitterlink
+        db.session.commit()
+    return json.dumps({'status': 'Ok', 'details': [twitterlink]})
+
+# ---------------------------END TWITTER CONFIG--------------------------#
 
 
 # -----------------------USER PROFILE ROUTE CONFIG------------------#

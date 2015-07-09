@@ -165,7 +165,7 @@ $(function () {
                 data: {websitelink: inputValue},
                 type: 'POST',
                 success: function (response) {
-                    weblink = jQuery.parseJSON(response)
+                    weblink = jQuery.parseJSON(response);
                     $('.profile-website-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
                     $('.profile-website-link').text(weblink.details[0]).show("drop", {direction: "up"}, "slow");
                     swal({
@@ -182,6 +182,7 @@ $(function () {
 
         });
     });
+
 
     $('.github-btn').click(function () {
         return swal({
@@ -205,9 +206,52 @@ $(function () {
                 data: {githublink: inputValue},
                 type: 'POST',
                 success: function (response) {
+                    weblink = jQuery.parseJSON(response);
+                    $('.profile-github-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
+                    $('.git span').html("<a href=" + weblink.details[0] + ">" + weblink.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
                     swal({
                         imageUrl: '../static/img/thumbs-up.jpg',
                         title: "Github Link Added Successfully",
+                        text: "It has been added to your public profile"
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+
+
+    $('.twitter-btn').click(function () {
+        return swal({
+            title: "Twitter Link",
+            text: "Please put in your twitter username or simply click the icon below<br><a href='/twitconnect'>" +
+            "<i class='fa fa-twitter" +
+            " fa-2x'></i></a>",
+            html: true,
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "Username(no need for the @symbol)"
+        }, function (inputValue) {
+            if (inputValue === false) return false;
+            if (inputValue === "") {
+                swal.showInputError("You need to write something!");
+                return false
+            }
+            $.ajax({
+                url: '/profileTweetLink',
+                data: {twitterlink: inputValue},
+                type: 'POST',
+                success: function (response) {
+                    weblink = jQuery.parseJSON(response);
+                     $('.profile-github-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
+                    $('.tweet span').html("<a href=https://twitter.com/" + weblink.details[0] + "target='_blank'>" + weblink.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
+                    swal({
+                        imageUrl: '../static/img/thumbs-up.jpg',
+                        title: "Twitter username Added Successfully",
                         text: "It has been added to your public profile"
                     });
                 },
