@@ -336,7 +336,7 @@ def profile(id, person=None):
 # handle error
 @app.errorhandler(404)
 def page_not_found(error):
-    return 'This page does not exist', 404
+    return render_template('login.html'), 404
 
 
 # cloudinary file upload
