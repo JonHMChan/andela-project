@@ -10,3 +10,4 @@ requests==2.7.0
 oauthlib==0.7.2
 psycopg2==2.6.1
 SQLAlchemy-Searchable==0.9.3
+SQLAlchemy-Utils==0.30.12
