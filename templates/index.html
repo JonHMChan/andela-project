@@ -31,21 +31,22 @@
         <div class="container">
 
           <div class="row">
-              {% for link in links if link.vip == True%}
-                <div class="col-xs-6 col-sm-3 col-md-3">
-
+              {% for link in links %}
+                  <div class="col-xs-6 col-sm-3 col-md-3">
                   <div class="team boxed-grey">
                       <div class="inner">
-                          <h5><a href='link/{{link.slug}}'>{{link.name}}</a></h5>
-                          <p class="subtitle">{{link.title}}</p>
-                          <div class="avatar"><img src="{{url_for('static', filename=link.image)}}" alt=""
+                          <h5><a href='link/{{link.id}}'>{{link.firstname}} {{ link.lastname }}</a></h5>
+                          <p class="subtitle">{{link.job |  default('Software Developer', true)}}</p>
+                          <div class="avatar"><img src="{{link.photo | default(url_for('static',
+                          filename='img/gravatar-60-grey.jpg'), true)}}" alt=""
                                                    class="img-responsive" /></div>
+
                       </div>
                   </div>
-            
-                </div>
+
+              </div>
               {% endfor %}
-          </div>      
+          </div>
         </div>
     </section>
     <!-- /Section: contribs -->

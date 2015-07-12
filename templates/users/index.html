@@ -4,7 +4,7 @@
     <!-- Add your site or application content here -->
 	<div class="container profile-section">
 		<div class="row">
-			<div class="col-md-4 col-xs-12">
+			<div class="col-md-4 col-xs-12 avatar">
                 {% if person.photo %}
 					<img src="{{ person.photo }}" class="profile-img" width="350" height="350">
                 {% endif %}
@@ -51,13 +51,12 @@
             </span>
 
 				<div class="publink">
-					<a href='link'>Public Link</a>
+					<a href='http://nowwehere.herokuapp.com/link/{{ person.id }}'>Public Link</a>
 				</div>
 				<div class="profile_links">
 					<p class="p-d">Website Link: <a class="profile-website-link" href="{{ person.social_website |
 					default
-					('#',
-					true) }}"> {{ person.social_website | default('Please add link', true) }}</a></p>
+					('#', true) }}"> {{ person.social_website | default('Please add link', true) }}</a></p>
 
 					<p class="p-d git">Github Link:
                         {% if person.social_github %}
@@ -87,7 +86,7 @@
 			</div>
 			<div class="profile-second-section col-md-8 col-xs-12">
             <span>
-                <h5>Name</h5>
+                <h5 class="profile-highlight">Name</h5>
                 <p>{{ person.firstname }} {{ person.lastname }}</p>
 				<hr/>
             </span>
@@ -95,16 +94,17 @@
 				<form action="" id="profile-form" method="POST">
             <span>
 
-				<label for="jobInput"><h5>Job</h5></label>
-					<input type="text" class="form-control" value="{{ person.job }}" name="job" id="jobInput"
-						   placeholder="Job
-					Descrtiption">
+				<label for="jobInput"><h5 class="profile-highlight">Job<i class="text-danger">*</i></h5></label>
+					<input type="text" class="form-control" value="{{ person.job | default('', true) }}" name="job"
+						   id="jobInput"
+						   placeholder="Job Description">
 				<hr/>
             </span>
             <span>
-                <label for="about"><h5>Brief Summary About Yourself</h5></label>
-					<textarea id="about" class="form-control" name="about"
-							  rows="3">{{ person.about }}</textarea>
+                <label for="about"><h5 class="profile-highlight">Brief Summary About Yourself<i
+						class="text-danger">*</i></h5></label>
+					<textarea id="about" class="form-control" name="about" placeholder="Summary"
+							  rows="3">{{ person.about | default('', true) }}</textarea>
 				<hr/>
             </span>
 
@@ -112,16 +112,21 @@
 						<p>Skills</p>
 					</div>
 			<span>
-				<h5>Major Skill</h5><small> i.e Ruby, Javascript (only one)</small>
-					<input type="text" class="form-control" value="{{ person.major_skill }}" name="major_skill"
+				<h5 class="profile-highlight">Major Skill<i class="text-danger">*</i></h5><small> i.e Ruby, Javascript
+				(only one)
+			</small>
+					<input type="text" class="form-control" value="{{ person.major_skill  | default('', true) }}"
+						   name="major_skill"
 						   placeholder="What technology do you use">
-				</span>
+			</span>
 					<hr/>
 				<span>
-                <h5>Other Skills</h5><small>separate by commas</small>
+                <h5 class="profile-highlight">Other Skills</h5><small>separate by commas</small>
 					<div class="ui-widget">
 						<label for="tags"></label>
-						<input type="text" class="form-control" value="{{ person.other_skills }}" name="other_skills"
+						<input type="text" class="form-control" value="{{ person.other_skills | default('', true) }}"
+							   name="other_skills"
+							   placeholder="Other programming languages you know?"
 							   id="tags"
 							   size="50">
 					</div>
@@ -132,19 +137,22 @@
 						<p>Advice</p>
 					</div>
 			<span>
-                <h5>What you wished you had Known while starting as a programmer</h5>
-					<textarea class="form-control" name="had_known"
-							  rows="3">{{ person.had_known }}</textarea>
+                <h5>What you wished you had Known while starting as a programmer<i class="text-danger">*</i></h5>
+					<textarea class="form-control" name="had_known" placeholder=".... :)"
+							  rows="3">{{ person.had_known | default('', true) }}</textarea>
 				<hr/>
             </span>
 			<span>
-                <h5>Recommended Reads for Upcoming Developers</h5><small>That want to learn your tech stack</small>
+                <h5 class="profile-highlight">Recommended Reads for Upcoming Developers</h5><small>That want to learn
+				your tech stack
+			</small>
                 <p><a href="#">Intro to javascript</a>, <a href="#">Intro to Python</a></p>
 				<hr/>
             </span>
 			<span>
                 <h5>Advice to Upcoming Software Developers</h5>
-					<textarea class="form-control" name="advice" rows="3">{{ person.advice }}</textarea>
+					<textarea class="form-control" name="advice" rows="3" placeholder="Advice">{{ person.advice |
+					default('', true) }}</textarea>
 				<hr/>
             </span>
 					<button type="button" class="btn btn-block btn-dark profile-btn">Update Profile</button>

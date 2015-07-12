@@ -20,9 +20,6 @@ cloudinary.config(
     api_secret=app.config['CLOUDINARY_SECRET']
 )
 
-demoJson = sampleData()
-links = demoJson.content()
-
 linkedin = oauth.remote_app(
     'linkedin',
     consumer_key=app.config['LINKEDIN_CONSUMER_KEY'],
@@ -77,13 +74,14 @@ twitter = oauth.remote_app(
 
 @app.before_request
 def before_request():
+    g.links = User.query.all()
     g.user = current_user
 
 
 # --------------------------HOMEPAGE ROUTE
 @app.route('/')
 def home():
-    return render_template('index.html', links=links)
+    return render_template('index.html', links=g.links)
 
 
 # Home Page Contact Form
@@ -100,11 +98,12 @@ def homeContactForm():
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
 # Show Link
-@app.route('/link/<link_id>')
-def link(link_id):
-    for link in links:
-        if link["slug"] == link_id:
-            return render_template('link/index.html', link=link)
+@app.route('/link/<user_id>')
+def link(user_id):
+    # from database, retrieve user object from database
+    user = User.query.get(user_id)
+    if user:
+        return render_template('link/index.html', user=user )
     return "No link found"
 
 

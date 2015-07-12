@@ -2,71 +2,111 @@
 {% block content %}
 
     <!-- Add your site or application content here -->
-    <div class="container profile-section">
-        <div class="col-md-4 col-xs-6">
-            <img src="{{ url_for('static', filename=link.image) }}" class="profile-img">
+	<div class="container profile-section">
+		<div class="col-md-4 col-xs-6 avatar">
+			<img src="{{ user.photo | default(url_for('static',
+                          filename='img/gravatar-60-grey.jpg'), true) }}" class="profile-img">
             <span>
-                <i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn" title="LinkedIn">
-                </i>
-                <i class="profile-social profile-social-twitter fa fa-twitter fa-2x" alt="Twitter" title="Twitter">
-                </i>
-                <i class="profile-social profile-social-github fa fa-github fa-2x" alt="Github" title="Github"></i>
-                <i class="profile-social profile-social-globe fa fa-globe fa-2x" alt="Website" title="Website"></i>
-				{% if link.vip == True %}
-				<i class="profile-social-verified profile-social-verified fa fa-check-square fa-2x" alt="verified"
-				   title="veirified"></i>
-				{% endif %}
+			{% if user.social_linkedin %}
+				<a href="{{ user.social_linkedin }}" target="_blank" class="pub_social"><i
+						class="profile-social
+                    profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn" title="LinkedIn">
+				</i></a>
+            {% endif %}
+                {% if user.social_twitter %}
+
+					<a href="{{ user.social_twitter }}" target="_blank" class="pub_social"><i
+							class="profile-social profile-social-twitter fa fa-twitter fa-2x" alt="Twitter"
+							title="Twitter">
+					</i></a>
+                {% endif %}
+                {% if user.social_github %}
+					<a href="{{ user.social_github | default('#', true) }}" target="_blank" class="pub_social"><i
+							class="profile-social profile-social-github fa fa-github fa-2x pub-github" alt="Github"
+							title="Github"></i></a>
+                {% endif %}
+                {% if user.social_website %}
+
+					<a href="{{ user.social_website }}" target="_blank" class="pub_social"><i
+							class="profile-social profile-social-globe fa fa-globe fa-2x" alt="Website"
+							title="Website"></i></a>
+                {% endif %}
+
+                {% if user.vip == True %}
+					<i class="profile-social-verified profile-social-verified fa fa-check-square fa-2x"
+					   alt="verified"
+					   title="veirified"></i>
+                {% endif %}
             </span>
-        </div>
-        <div class="profile-second-section col-md-8 col-xs-12">
-            <span>
-                <h5>Name</h5>
-                <p>{{ link.name }}</p>
-				<hr/>
-            </span>
-            <span>
-                <h5>Job</h5>
-                <p>{{ link.title }}</p>
-				<hr/>
-            </span>
-            <span>
-                <h5>About</h5>
-                {% for comment in link.comments %}
-                	<p>{{ comment }}</p>
-                {% endfor %}
-				<hr/>
-            </span>
-			<span>
-                <h5>Technology</h5>
-				{% for tech in link.primary_technology %}
-                	<p>Majors In: {{ tech }}</p>
-				{%  endfor %}
-				<p>also knows:
-					{%  for secondary_tech in link.secondary_technology  %}
-						{{ secondary_tech }}
-						{%  if not loop.last %}
-							,
-						{% endif %}
-					{% endfor %}
-				</p>
-				<hr/>
-            </span>
-			<span>
-                <h5>What they wish they had Known while starting as a programmer</h5>
-                <p>Wish i had the technolgies i am using now</p>
-				<hr/>
-            </span>
-			<span>
-                <h5>Recommended Reads</h5>
-                <p><a href="#">Intro to javascript</a>, <a href="#">Intro to Python</a></p>
-				<hr/>
-            </span>
-			<span>
-                <h5>Advice to Upcoming Software Developers</h5>
-                <p>Don't ever ever give up. Ability to change make it constant</p>
-				<hr/>
-            </span>
-        </div>
-    </div>
+		</div>
+		<div class="profile-second-section col-md-8 col-xs-12">
+			<div class="background-section-container">
+				<div class="section">
+					<h5>Name</h5>
+					<hr/>
+					<p>{{ user.firstname }} {{ user.lastname }}</p>
+				</div>
+			</div>
+
+			<div class="background-section-container">
+				<div class="section">
+					<h5>Job</h5>
+					<hr/>
+					<p>{{ user.job }}</p>
+				</div>
+			</div>
+
+			<div class="background-section-container">
+				<div class="section">
+					<h5>About</h5>
+					<hr/>
+					<p>{{ user.about }}</p>
+
+				</div>
+			</div>
+
+			<div class="background-section-container">
+				<div class="section">
+					<h5>Major Skill</h5>
+					<hr/>
+					<p>{{ user.major_skill }}</p>
+				</div>
+			</div>
+
+			<div class="background-section-container">
+				<div class="section">
+					<h5>Other Skills</h5>
+					<hr/>
+					<p>{{ user.other_skills }}</p>
+				</div>
+			</div>
+
+			<div class="background-section-container">
+				<div class="section">
+					<h5>What they wish they had Known while starting as a programmer</h5>
+					<hr/>
+					<p>{{ user.had_known }}</p>
+
+				</div>
+			</div>
+
+			<div class="background-section-container">
+				<div class="section">
+					<h5>Recommended Reads</h5>
+					<hr/>
+					<p><a href="#">Intro to javascript</a>, <a href="#">Intro to Python</a></p>
+
+				</div>
+			</div>
+			<div class="background-section-container">
+				<div class="section">
+					<h5>Advice to Upcoming Software Developers</h5>
+					<hr/>
+					<p>{{ user.advice }}</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}
