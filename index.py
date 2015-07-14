@@ -1,13 +1,13 @@
-from flask import render_template, request, json, url_for, redirect, session, g, jsonify
+from flask import render_template, request, json, url_for, redirect, session, g
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os
-from dummyJson import sampleData
 from flask_oauthlib.client import OAuth
 from setup import app
 from models import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
 
 oauth = OAuth(app)
 login_manager = LoginManager()
@@ -76,6 +76,7 @@ twitter = oauth.remote_app(
 def before_request():
     g.links = User.query.all()
     g.user = current_user
+
 
 
 # --------------------------HOMEPAGE ROUTE
@@ -261,11 +262,7 @@ def googleauthorized():
     if current_user_info is None:
         reg = User(person.data['id'], person.data['given_name'], person.data['family_name'], person.data['email'])
         db.session.add(reg)
-        try:
-            db.session.commit()
-        except:
-            db.session.rollback()
-            raise
+        db.session.commit()
     else:
         login_user(current_user_info)
     return get_redirect_email(person.data['email'])
@@ -391,6 +388,23 @@ def websiteLink():
     return json.dumps({'status': 'Ok', 'details': [websitelink]})
 
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
+
+MAX_SEARCH_RESULTS = 50
+
+@app.route('/search', methods=['POST'])
+def search():
+    if request.method == 'POST':
+        search_form = request.form['search']
+        return redirect(url_for('search_results', query=search_form))
+    return 'Nope'
+
+@app.route('/search_results/<query>')
+def search_results(query):
+    results = User.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
+    return render_template('search/index.html',
+                           query=query,
+                           results=results)
+
 
 
 if __name__ == '__main__':

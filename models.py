@@ -1,18 +1,12 @@
-from setup import db, BaseQuery
+from setup import db
 from sqlalchemy.dialects.postgresql import JSON
 from datetime import datetime
-from sqlalchemy_searchable import SearchQueryMixin
-from sqlalchemy_searchable import make_searchable
 
-make_searchable()
-
-class UserQuery(BaseQuery, SearchQueryMixin):
-    pass
 
 
 class User(db.Model):
-    query_class = UserQuery
     __tablename__ = 'users'
+
     id = db.Column(db.Integer, primary_key=True)
     uid = db.Column(db.String, unique=True)
     firstname = db.Column(db.String)
