@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g
+from flask import render_template, request, json, url_for, redirect, session, g, jsonify
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os
 from flask_oauthlib.client import OAuth
@@ -391,15 +391,23 @@ def websiteLink():
     return json.dumps({'status': 'Ok', 'details': [websitelink]})
 
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
-
+@app.route('/search/<query>')
+def searchQuery(query=''):
+    if len(query)>0:
+        result = es.search(index="my-index", body={"query": {"fuzzy": {'language':query}}})
+        return jsonify(result)
+    else:
+        return ''
 
 @app.route('/esSync')
 def elasticSync():
     getData = User.query.all()
+    result = []
     for data in getData:
+        result.append(str(data.id))
         es.index(index="my-index", doc_type="test-type", id=data.id, body={"name": data.firstname, "language":
                     data.major_skill})
-
+    return 'Success: ' + ",".join(result)
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.

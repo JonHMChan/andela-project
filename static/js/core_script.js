@@ -6,6 +6,23 @@ $(function () {
     $('.upload-success').hide();
     $('.upload-failure').hide();
 
+    var search = $("#search");
+    search.keyup(function() {
+        $.get("/search/" + search.val(), function(result) {
+            hits = result.hits.hits;
+            if (hits.length > 0) {
+                var result_html = '';
+                for (key in hits) {
+                    var hit = hits[key];
+                    result_html += '<p>' + hit._source['name'] + " " + hit._source['language'] + '</p>';
+                }
+                $("#search_results").html(result_html);
+            } else {
+                $("#search_results").html("");
+            }
+        })
+    })
+
     $('.home-btn').click(function () {
         $.ajax({
             url: '/homeContact',
