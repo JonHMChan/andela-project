@@ -7,6 +7,8 @@ from models import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from elasticsearch import Elasticsearch
+es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
 
 oauth = OAuth(app)
@@ -19,6 +21,7 @@ cloudinary.config(
     api_key=app.config['CLOUDINARY_KEY'],
     api_secret=app.config['CLOUDINARY_SECRET']
 )
+
 
 linkedin = oauth.remote_app(
     'linkedin',
@@ -389,22 +392,13 @@ def websiteLink():
 
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
-MAX_SEARCH_RESULTS = 50
 
-@app.route('/search', methods=['POST'])
-def search():
-    if request.method == 'POST':
-        search_form = request.form['search']
-        return redirect(url_for('search_results', query=search_form))
-    return 'Nope'
-
-@app.route('/search_results/<query>')
-def search_results(query):
-    results = User.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
-    return render_template('search/index.html',
-                           query=query,
-                           results=results)
-
+@app.route('/esSync')
+def elasticSync():
+    getData = User.query.all()
+    for data in getData:
+        es.index(index="my-index", doc_type="test-type", id=data.id, body={"name": data.firstname, "language":
+                    data.major_skill})
 
 
 if __name__ == '__main__':
