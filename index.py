@@ -8,8 +8,8 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from elasticsearch import Elasticsearch
-es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
+es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
 oauth = OAuth(app)
 login_manager = LoginManager()
@@ -21,7 +21,6 @@ cloudinary.config(
     api_key=app.config['CLOUDINARY_KEY'],
     api_secret=app.config['CLOUDINARY_SECRET']
 )
-
 
 linkedin = oauth.remote_app(
     'linkedin',
@@ -81,7 +80,6 @@ def before_request():
     g.user = current_user
 
 
-
 # --------------------------HOMEPAGE ROUTE
 @app.route('/')
 def home():
@@ -107,7 +105,7 @@ def link(user_id):
     # from database, retrieve user object from database
     user = User.query.get(user_id)
     if user:
-        return render_template('link/index.html', user=user )
+        return render_template('link/index.html', user=user)
     return "No link found"
 
 
@@ -162,6 +160,7 @@ def gitauthorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session.get('github_token')
+
 
 @app.route('/profileGitlink', methods=['POST'])
 def githubLink():
@@ -306,6 +305,7 @@ def twitteroauthorized():
         db.session.commit()
     return get_redirect_email(current_user.email)
 
+
 @app.route('/profileTweetLink', methods=['POST'])
 def twitterLink():
     if request.method == 'POST':
@@ -314,6 +314,7 @@ def twitterLink():
         current_user_info.social_twitter = twitterlink
         db.session.commit()
     return json.dumps({'status': 'Ok', 'details': [twitterlink]})
+
 
 # ---------------------------END TWITTER CONFIG--------------------------#
 
@@ -391,13 +392,27 @@ def websiteLink():
     return json.dumps({'status': 'Ok', 'details': [websitelink]})
 
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
+
+
+@app.route('/search')
+def searchQuery():
+    if 'search' in request.args:
+        query = request.args.get('search')
+        result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
+        return render_template('search/index.html', result=result, link=g.links)
+    else:
+        return render_template('search/index.html')
+
+
+# create route to show result on keypress
 @app.route('/search/<query>')
-def searchQuery(query=''):
-    if len(query)>0:
-        result = es.search(index="my-index", body={"query": {"fuzzy": {'language':query}}})
+def logQuery(query=''):
+    if len(query) > 0:
+        result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
         return jsonify(result)
     else:
         return ''
+
 
 @app.route('/esSync')
 def elasticSync():
@@ -406,8 +421,9 @@ def elasticSync():
     for data in getData:
         result.append(str(data.id))
         es.index(index="my-index", doc_type="test-type", id=data.id, body={"name": data.firstname, "language":
-                    data.major_skill})
+            data.major_skill, "image": data.photo})
     return 'Success: ' + ",".join(result)
+
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.

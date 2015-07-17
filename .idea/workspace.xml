@@ -2,8 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b92bea5d-6ea6-4eda-8e9d-9f04b879b299" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_3yk41az2o69kyqoy._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_3yk41az2o69kyqoy.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_3yk41az2o69kyqoy.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5bny56888vtvfgjq._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5bny56888vtvfgjq.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5bny56888vtvfgjq.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5waq7q9k1ndirt9t._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5waq7q9k1ndirt9t.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5waq7q9k1ndirt9t.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_64wxsl8ipo9itl6f._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_64wxsl8ipo9itl6f.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_64wxsl8ipo9itl6f.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_7bcvjskhdp4y594f._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_7bcvjskhdp4y594f.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_7bcvjskhdp4y594f.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_WRITELOCK" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_dj7pvll1p7m3oa10._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_dj7pvll1p7m3oa10.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_dj7pvll1p7m3oa10.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_fu3p5x6cma96atey._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_fu3p5x6cma96atey.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_fu3p5x6cma96atey.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_ol5kcn1niwuxkbyk._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_ol5kcn1niwuxkbyk.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_ol5kcn1niwuxkbyk.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_yz50cg2pb10my7my._stored.col" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_yz50cg2pb10my7my.pst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_yz50cg2pb10my7my.trm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/_MAIN_0.toc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/core_script.js" afterPath="$PROJECT_DIR$/static/js/core_script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/search/index.html" afterPath="$PROJECT_DIR$/templates/search/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/static.html" afterPath="$PROJECT_DIR$/templates/static.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="andela-project.iws" />
@@ -18,7 +51,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/andela-project$andela_project.coverage" NAME="andela-project Coverage Results" MODIFIED="1436673089403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/andela-project$andela_project.coverage" NAME="andela-project Coverage Results" MODIFIED="1437139239491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -80,21 +113,11 @@
       <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53125">
-              <caret line="401" column="0" selection-start-line="401" selection-start-column="0" selection-end-line="401" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.44186047">
+              <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="38" />
               <folding>
-                <element signature="e#0#79#0" expanded="true" />
+                <element signature="e#0#88#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -102,8 +125,8 @@
       <file leaf-file-name="static.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/static.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.958333">
-              <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+            <state vertical-scroll-proportion="-1.875">
+              <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -112,8 +135,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/search/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state vertical-scroll-proportion="-14.375">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.740741">
+              <caret line="787" column="19" selection-start-line="787" selection-start-column="19" selection-end-line="787" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -131,28 +174,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="nowwehere.public.users" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/ddf49d67/728d08ba-1897-4cf1-a00f-9fdd18201077/nowwehere.public.users">
           <provider editor-type-id="text-editor">
@@ -164,6 +185,16 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core_script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -201,20 +232,20 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/728d08ba-1897-4cf1-a00f-9fdd18201077/console.sql" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/upload.html" />
-        <option value="$PROJECT_DIR$/static/js/core_script.js" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/link/index.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/users/index.html" />
-        <option value="$PROJECT_DIR$/templates/static.html" />
-        <option value="$PROJECT_DIR$/templates/search/index.html" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/static/js/core_script.js" />
+        <option value="$PROJECT_DIR$/templates/static.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/index.py" />
+        <option value="$PROJECT_DIR$/templates/search/index.html" />
       </list>
     </option>
   </component>
@@ -315,7 +346,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,25 +374,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="alembic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="andela-project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="andela-project" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="alembic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="versions" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -629,14 +646,14 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34801763" sideWeight="0.49030694" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28781205" sideWeight="0.49030694" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23667206" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3979442" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30396476" sideWeight="0.509693" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274596" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274596" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22051696" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -685,7 +702,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
           <folding>
-            <element signature="e#0#79#0" expanded="true" />
+            <element signature="e#0#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -761,7 +778,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
           <folding>
-            <element signature="e#0#79#0" expanded="true" />
+            <element signature="e#0#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -823,7 +840,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#79#0" expanded="true" />
+            <element signature="e#0#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1132,14 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="250" column="111" selection-start-line="250" selection-start-column="111" selection-end-line="250" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16816144">
@@ -1180,45 +1189,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.958333">
-          <caret line="166" column="48" selection-start-line="166" selection-start-column="48" selection-end-line="166" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.925926">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.25">
-          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/link/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,27 +1205,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/search/index.html">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.958333">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.3938731">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.065645516">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#23#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1261,6 +1238,46 @@
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/users/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13856813">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.740741">
+          <caret line="787" column="19" selection-start-line="787" selection-start-column="19" selection-end-line="787" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/static.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1277,20 +1294,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/templates/search/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53125">
-          <caret line="401" column="0" selection-start-line="401" selection-start-column="0" selection-end-line="401" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.44186047">
+          <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="38" />
           <folding>
-            <element signature="e#0#79#0" expanded="true" />
+            <element signature="e#0#88#0" expanded="true" />
           </folding>
         </state>
       </provider>

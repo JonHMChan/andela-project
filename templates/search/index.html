@@ -1,7 +1,29 @@
 {% extends "static.html" %}
 {% block content %}
+	<div class="container profile-section">
+        {#<h1>Search results for "{{ query }}":</h1>#}
 
-<h1>Search results for "{{ query }}":</h1>
-{{ results }}
+		<div class="row">
+            {% if result %}
+                {% for key,value in result.iteritems() %}
+                    {% for data in value.hits %}
+						<div class="col-md-3 col-xs-3">
+							<div class="search-grid">
+								<div><img src="{{ data._source.image }}" width="250" height="250"/></div>
+                                {% for link in link %}
+                                    {% if link.firstname == data._source.name %}
+										<p class="center-block search-name">
+											<a href="link/{{ link.id }}">{{ data._source.name }}</a></p>
+                                    {% endif %}
+                                {% endfor %}
+								<span><i class="fa fa-chain"></i> {{ data._source.language | upper }}</span>
+							</div>
+						</div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+		</div>
+	</div>
+	<div class="extra-margin"></div>
 
 {% endblock %}

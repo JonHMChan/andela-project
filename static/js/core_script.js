@@ -16,12 +16,15 @@ $(function () {
                     var hit = hits[key];
                     result_html += '<p>' + hit._source['name'] + " " + hit._source['language'] + '</p>';
                 }
-                $("#search_results").html(result_html);
+                setTimeout(function() {
+                    $("#search_results").html(result_html);
+                }, 300)
+
             } else {
                 $("#search_results").html("");
             }
         })
-    })
+    });
 
     $('.home-btn').click(function () {
         $.ajax({
