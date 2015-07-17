@@ -9,7 +9,8 @@ import cloudinary.uploader
 import cloudinary.api
 from elasticsearch import Elasticsearch
 
-es = Elasticsearch([{'host': 'localhost', 'port': 'http://127.0.0.1:9200'}])
+es_port = int(os.get.environ('PORT', 9200))
+es = Elasticsearch([{'host': '0.0.0.0', 'port': es_port}])
 
 oauth = OAuth(app)
 login_manager = LoginManager()
