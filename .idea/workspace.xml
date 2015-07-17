@@ -2,42 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b92bea5d-6ea6-4eda-8e9d-9f04b879b299" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_3yk41az2o69kyqoy._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_3yk41az2o69kyqoy.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_3yk41az2o69kyqoy.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5bny56888vtvfgjq._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5bny56888vtvfgjq.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5bny56888vtvfgjq.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5waq7q9k1ndirt9t._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5waq7q9k1ndirt9t.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_5waq7q9k1ndirt9t.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_64wxsl8ipo9itl6f._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_64wxsl8ipo9itl6f.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_64wxsl8ipo9itl6f.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_7bcvjskhdp4y594f._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_7bcvjskhdp4y594f.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_7bcvjskhdp4y594f.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_WRITELOCK" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_dj7pvll1p7m3oa10._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_dj7pvll1p7m3oa10.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_dj7pvll1p7m3oa10.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_fu3p5x6cma96atey._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_fu3p5x6cma96atey.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_fu3p5x6cma96atey.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_ol5kcn1niwuxkbyk._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_ol5kcn1niwuxkbyk.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_ol5kcn1niwuxkbyk.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_yz50cg2pb10my7my._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_yz50cg2pb10my7my.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/MAIN_yz50cg2pb10my7my.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/whoosh_index/User/_MAIN_0.toc" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/core_script.js" afterPath="$PROJECT_DIR$/static/js/core_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/search/index.html" afterPath="$PROJECT_DIR$/templates/search/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/static.html" afterPath="$PROJECT_DIR$/templates/static.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="andela-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,11 +75,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44186047">
-              <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="38" />
+            <state vertical-scroll-proportion="-6.111111">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding>
                 <element signature="e#0#88#0" expanded="true" />
               </folding>
@@ -132,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/search/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7621247">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -147,6 +112,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-5.0">
               <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -1213,14 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3938731">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.065645516">
@@ -1294,21 +1261,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/search/index.html">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44186047">
-          <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="38" />
+        <state vertical-scroll-proportion="-6.111111">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="e#0#88#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7621247">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
