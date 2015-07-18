@@ -13,7 +13,7 @@ from urlparse import urlparse
 
 swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
 client = swiftype.Client(api_key=swiftype_url.username, host=swiftype_url.hostname)
-engine_slug = 'contributors'
+engine_slug = 'engine'
 # es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 client.create_document_type(engine_slug, 'qsearch')
 
@@ -435,7 +435,7 @@ def elasticSync():
                         'language': data.major_skill,
                         'image': data.photo}]
         }
-        client.create_document(engine_slug, 'contributors', document)
+        client.create_document(engine_slug, 'qsearch', document)
 
         client.search(engine_slug, 'master')
     return 'Success: ' + ",".join(result)
