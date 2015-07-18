@@ -8,11 +8,14 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from elasticsearch import Elasticsearch
+import swiftype
 from urlparse import urlparse
 
-es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
-port = es.port or 80
-es = Elasticsearch([{'port': port}])
+swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
+client = swiftype.Client(api_key=swiftype_url.username, host=swiftype_url.hostname)
+engine_slug = 'engine'
+# es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+client.create_document_type(engine_slug, 'contributors')
 
 oauth = OAuth(app)
 login_manager = LoginManager()
@@ -397,24 +400,25 @@ def websiteLink():
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
 
-@app.route('/search')
-def searchQuery():
-    if 'search' in request.args:
-        query = request.args.get('search')
-        result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
-        return render_template('search/index.html', result=result, link=g.links)
-    else:
-        return render_template('search/index.html')
+# @app.route('/search')
+# def searchQuery():
+#     if 'search' in request.args:
+#         query = request.args.get('search')
+#         result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
+#         return render_template('search/index.html', result=result, link=g.links)
+#     else:
+#         return render_template('search/index.html')
+
+        # create route to show result on keypress
 
 
-# create route to show result on keypress
-@app.route('/search/<query>')
-def logQuery(query=''):
-    if len(query) > 0:
-        result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
-        return jsonify(result)
-    else:
-        return ''
+# @app.route('/search/<query>')
+# def logQuery(query=''):
+#     if len(query) > 0:
+#         result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
+#         return jsonify(result)
+#     else:
+#         return ''
 
 
 @app.route('/esSync')
@@ -423,8 +427,17 @@ def elasticSync():
     result = []
     for data in getData:
         result.append(str(data.id))
-        es.index(index="my-index", doc_type="test-type", id=data.id, body={"name": data.firstname, "language":
-            data.major_skill, "image": data.photo})
+        # es.index(index="my-index", doc_type="test-type", id=data.id, body={"name": data.firstname, "language":
+        #     data.major_skill, "image": data.photo})
+        document = {
+            'external_id': 1,  # ID in your database
+            'fields': [{'name': data.firstname,
+                        'language': data.major_skill,
+                        'image': data.photo}]
+        }
+        client.create_document(engine_slug, 'contributors', document)
+
+        client.search(engine_slug, 'master')
     return 'Success: ' + ",".join(result)
 
 
