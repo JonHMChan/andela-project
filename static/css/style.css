@@ -783,13 +783,14 @@ input.gn-search:focus {
     border: 1px solid #FFFFFF;
     border-radius: 5px;
 }
-.search-name {
+.search-name, .search-name a {
     background-color: #253540;
     color: #FFFFFF;
+    text-decoration: underline;
 }
 
 .extra-margin {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 /* ===========================
 --- Works

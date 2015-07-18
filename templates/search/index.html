@@ -5,21 +5,21 @@
 
 		<div class="row">
             {% if result %}
-                {% for key,value in result.iteritems() %}
-                    {% for data in value.hits %}
+				{{ result.id }}
+                {% for result in result %}
+
 						<div class="col-md-3 col-xs-3">
 							<div class="search-grid">
-								<div><img src="{{ data._source.image }}" width="250" height="250"/></div>
+								<div><img src="{{ result.photo }}" width="250" height="250"/></div>
                                 {% for link in link %}
-                                    {% if link.firstname == data._source.name %}
+                                    {% if link.firstname == result.firstname %}
 										<p class="center-block search-name">
-											<a href="link/{{ link.id }}">{{ data._source.name }}</a></p>
+											<a href="link/{{ link.id }}">{{ result.firstname }}</a></p>
                                     {% endif %}
                                 {% endfor %}
-								<span><i class="fa fa-chain"></i> {{ data._source.language | upper }}</span>
+								<span><i class="fa fa-chain"></i> {{ result.skill | upper }}</span>
 							</div>
 						</div>
-                    {% endfor %}
                 {% endfor %}
             {% endif %}
 		</div>

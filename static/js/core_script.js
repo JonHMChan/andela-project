@@ -8,13 +8,14 @@ $(function () {
 
     var search = $("#search");
     search.keyup(function() {
-        $.get("/search/" + search.val(), function(result) {
-            hits = result.hits.hits;
+        $.get("/search/" + search.val(), function(result){
+            result = jQuery.parseJSON(result);
+            hits = result;
             if (hits.length > 0) {
                 var result_html = '';
                 for (key in hits) {
                     var hit = hits[key];
-                    result_html += '<p>' + hit._source['name'] + " " + hit._source['language'] + '</p>';
+                    result_html += '<p>' + hit['firstname'] + " " + hit['skill'] + '</p>';
                 }
                 setTimeout(function() {
                     $("#search_results").html(result_html);

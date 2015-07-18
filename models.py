@@ -1,6 +1,7 @@
-from setup import db
+from setup import db, mongodb
 from sqlalchemy.dialects.postgresql import JSON
 from datetime import datetime
+
 
 
 
@@ -65,3 +66,15 @@ class User(db.Model):
             social_twitter=self.social_twitter,
             social_github=self.social_github,
         )
+
+class MongoIndex(mongodb.Document):
+    firstname = mongodb.StringField(required=True)
+    skill = mongodb.StringField(required=True, max_length=100)
+    photo = mongodb.StringField(required=True)
+
+    meta = {
+        'allow_inheritance': True,
+        'indexes': [{'fields': ['$firstname', '$skill', 'photo'],
+           'default_language': 'english'}],
+        'ordering': ['-firstname']
+    }

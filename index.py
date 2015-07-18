@@ -8,14 +8,9 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from elasticsearch import Elasticsearch
-from swiftype import swiftype
-from urlparse import urlparse
 
-swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
-client = swiftype.Client(api_key=swiftype_url.username, host=swiftype_url.hostname)
-engine = 'engine'
-# es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-client.create_document_type('engine', 'qsearch')
+
+es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
 oauth = OAuth(app)
 login_manager = LoginManager()
@@ -400,46 +395,46 @@ def websiteLink():
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
 
-# @app.route('/search')
-# def searchQuery():
-#     if 'search' in request.args:
-#         query = request.args.get('search')
-#         result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
-#         return render_template('search/index.html', result=result, link=g.links)
-#     else:
-#         return render_template('search/index.html')
-
-        # create route to show result on keypress
+@app.route('/search')
+def searchQuery():
+    if 'search' in request.args:
+        query = request.args.get('search')
+        result = MongoIndex.objects.search_text(query).all()
+        return render_template('search/index.html', result=result, link=g.links)
+    else:
+        return render_template('search/index.html')
 
 
-# @app.route('/search/<query>')
-# def logQuery(query=''):
-#     if len(query) > 0:
-#         result = es.search(index="my-index", body={"query": {"fuzzy": {'language': query}}})
-#         return jsonify(result)
-#     else:
-#         return ''
+# create route to show result on keypress
+@app.route('/search/<query>')
+def logQuery(query=''):
+    if len(query) > 0:
+        result = MongoIndex.objects.search_text(query).all()
+        return json.dumps(result)
+    else:
+        return ''
+
+def MongoData():
+    checkMongoIndex = MongoIndex.objects
+    count = 0
+    for data in checkMongoIndex:
+        count+=count
+        return data.firstname
 
 
 @app.route('/esSync')
 def elasticSync():
     getData = User.query.all()
     result = []
+    fetchMongoData = MongoData()
     for data in getData:
-        result.append(str(data.id))
-        # es.index(index="my-index", doc_type="test-type", id=data.id, body={"name": data.firstname, "language":
-        #     data.major_skill, "image": data.photo})
-        document = {
-            'external_id': 1,  # ID in your database
-            'fields': [{'name': data.firstname,
-                        'language': data.major_skill,
-                        'image': data.photo}]
-        }
-        client.create_document(engine, 'qsearch', document)
-
-        client.search(engine, 'swiftype')
+        if data.firstname != fetchMongoData:
+            result.append(str(data.id))
+            mIndex = MongoIndex(firstname=data.firstname, skill=data.major_skill, photo=data.photo)
+            mIndex.save()
+        else:
+            return 'data sync already exists'
     return 'Success: ' + ",".join(result)
-
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
