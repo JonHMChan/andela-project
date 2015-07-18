@@ -8,7 +8,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from elasticsearch import Elasticsearch
-import swiftype
+from swiftype import swiftype
 from urlparse import urlparse
 
 swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
