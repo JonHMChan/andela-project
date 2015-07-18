@@ -8,9 +8,11 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from elasticsearch import Elasticsearch
+from urlparse import urlparse
 
-# es_port = int(os.environ.get('PORT', 9200))
-es = Elasticsearch([{'host': '0.0.0.0'}])
+es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
+port = es.port or 80
+es = Elasticsearch([{'port': port}])
 
 oauth = OAuth(app)
 login_manager = LoginManager()

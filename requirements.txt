@@ -11,3 +11,4 @@ oauthlib==0.7.2
 psycopg2==2.6.1
 SQLAlchemy-Utils==0.30.12
 elasticsearch==1.6.0
+mongoengine==0.10.0
