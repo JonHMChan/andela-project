@@ -13,9 +13,9 @@ from urlparse import urlparse
 
 swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
 client = swiftype.Client(api_key=swiftype_url.username, host=swiftype_url.hostname)
-engine_slug = 'engine'
+engine = client.create_engine('contributors')
 # es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-client.create_document_type(engine_slug, 'qsearch')
+client.create_document_type('contributors', 'qsearch')
 
 oauth = OAuth(app)
 login_manager = LoginManager()
@@ -435,9 +435,9 @@ def elasticSync():
                         'language': data.major_skill,
                         'image': data.photo}]
         }
-        client.create_document(engine_slug, 'qsearch', document)
+        client.create_document(engine, 'qsearch', document)
 
-        client.search(engine_slug, 'master')
+        client.search(engine, 'swiftype')
     return 'Success: ' + ",".join(result)
 
 
