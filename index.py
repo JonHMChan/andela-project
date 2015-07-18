@@ -13,9 +13,9 @@ from urlparse import urlparse
 
 swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
 client = swiftype.Client(api_key=swiftype_url.username, host=swiftype_url.hostname)
-engine = client.create_engine('contributors')
+engine = client.create_engine('engine')
 # es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-client.create_document_type('contributors', 'qsearch')
+client.create_document_type('engine', 'qsearch')
 
 oauth = OAuth(app)
 login_manager = LoginManager()
