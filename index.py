@@ -13,7 +13,7 @@ from urlparse import urlparse
 
 swiftype_url = urlparse(os.environ['SWIFTYPE_URL'])
 client = swiftype.Client(api_key=swiftype_url.username, host=swiftype_url.hostname)
-engine_slug = 'engine'
+engine_slug = 'contributors'
 # es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 client.create_document_type(engine_slug, 'qsearch')
 
