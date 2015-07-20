@@ -4,7 +4,6 @@
     <list default="true" id="b92bea5d-6ea6-4eda-8e9d-9f04b879b299" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/core_script.js" afterPath="$PROJECT_DIR$/static/js/core_script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/custom.validate.js" afterPath="$PROJECT_DIR$/static/js/custom.validate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="andela-project.iws" />
@@ -139,7 +138,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+              <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -148,8 +147,8 @@
       <file leaf-file-name="custom.validate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/custom.validate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39050537">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.55798686">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -212,8 +211,8 @@
         <option value="$PROJECT_DIR$/templates/users/index.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/static/js/core_script.js" />
         <option value="$PROJECT_DIR$/templates/static.html" />
+        <option value="$PROJECT_DIR$/static/js/core_script.js" />
         <option value="$PROJECT_DIR$/static/js/custom.validate.js" />
       </list>
     </option>
@@ -580,7 +579,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28781205" sideWeight="0.49030694" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28781205" sideWeight="0.49030694" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274596" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23667206" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1223,15 +1222,15 @@
     <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/custom.validate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39050537">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.55798686">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
