@@ -230,5 +230,4 @@ $(function () {
         ' @symbol)', '/profileTweetLink', '.profile-twitter-link', 'Twitter username Added Successfully', '',  '.tweet' +
         ' span');
 
-})
-;
+});
