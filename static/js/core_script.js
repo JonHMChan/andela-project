@@ -13,7 +13,10 @@ $(function () {
             data: $('#profile-form').serialize(),
             type: 'POST',
             success: function (response) {
-                $('.update-success').show("drop", {direction: "down"}, "slow");
+                setTimeout(function() {
+                  $('.update-success').show("drop", {direction: "down"}, "slow");
+                }, 2000)
+
             },
             error: function (error) {
                 $('.update-failure').show("drop", {direction: "down"}, "slow");

@@ -15,14 +15,11 @@ $(function () {
             var count = 0;
             for (var i = 0; i < this.inputId.length; i++) {
                 count++;
-                if ($('#' + this.inputId[i])) {
-                    if ($('#' + this.inputId[i]).val().length < 1) {
-                        return $('#profile-btn').attr('disabled', 'disabled').html('Please fill required fields');
-                    } else {
-                        $('#profile-btn').attr('disabled', false).html('Update Profile');
-                    }
+                if ($('#' + this.inputId[i]).val() < 1) {
+                    return $('#profile-btn').attr('disabled', 'disabled').html('Please fill required fields');
+                } else {
+                    $('#profile-btn').attr('disabled', false).html('Update Profile');
                 }
-
             }
         },
 
@@ -34,5 +31,6 @@ $(function () {
             }
         }
     };
+
     validate.init();
 });
