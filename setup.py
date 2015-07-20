@@ -12,6 +12,7 @@ for key in os.environ.keys():
 db = SQLAlchemy(app)
 db.create_all()
 db.session.commit()
+
 db_user = app.config['MONGOLAB_USER']
 db_password = app.config['MONGOLAB_PASSWORD']
 connect(host='mongodb://'+db_user+':'+db_password+'@ds047602.mongolab.com:47602/nowdb')

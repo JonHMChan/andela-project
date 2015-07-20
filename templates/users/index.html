@@ -3,6 +3,8 @@
 
     <!-- Add your site or application content here -->
 	<div class="container profile-section">
+		<p class="left">All fields marked with asterisk(*) are required. Including Having a photo :). Thank you.</p>
+
 		<div class="row">
 			<div class="col-md-4 col-xs-12 avatar">
                 {% if person.photo %}
@@ -80,7 +82,7 @@
 							<a class="profile-linked-link" href="{{ person.social_linkedin }}" target="_blank">LinkedIn
 								Connected</a></p>
                         {% else %}
-							<p>Please Connect your linkedin public profile</p>
+							<span>Please Connect your linkedin public profile</span>
                         {% endif %}
 				</div>
 			</div>
@@ -95,7 +97,8 @@
             <span>
 
 				<label for="jobInput"><h5 class="profile-highlight">Job<i class="text-danger">*</i></h5></label>
-					<input type="text" class="form-control" value="{{ person.job | default('', true) }}" name="job"
+					<input type="text" class="form-control" value="{{ person.job | default('', true) }}"
+						   name="job"
 						   id="jobInput"
 						   placeholder="Job Description">
 				<hr/>
@@ -104,7 +107,7 @@
                 <label for="about"><h5 class="profile-highlight">Brief Summary About Yourself<i
 						class="text-danger">*</i></h5></label>
 					<textarea id="about" class="form-control" name="about" placeholder="Summary"
-							  rows="3">{{ person.about | default('', true) }}</textarea>
+							  rows="3" required>{{ person.about | default('', true) }}</textarea>
 				<hr/>
             </span>
 
@@ -115,7 +118,8 @@
 				<h5 class="profile-highlight">Major Skill<i class="text-danger">*</i></h5><small> i.e Ruby, Javascript
 				(only one)
 			</small>
-					<input type="text" class="form-control" value="{{ person.major_skill  | default('', true) }}"
+					<input type="text" class="form-control" id="major_skill" value="{{ person.major_skill  | default
+					('', true) }}"
 						   name="major_skill"
 						   placeholder="What technology do you use">
 			</span>
@@ -139,23 +143,27 @@
 			<span>
                 <h5>What you wished you had Known while starting as a programmer<i class="text-danger">*</i></h5>
 					<textarea class="form-control" name="had_known" placeholder=".... :)"
-							  rows="3">{{ person.had_known | default('', true) }}</textarea>
+							  rows="3" id="had_known">{{ person.had_known | default('', true) }}</textarea>
 				<hr/>
             </span>
 			<span>
-                <h5 class="profile-highlight">Recommended Reads for Upcoming Developers</h5><small>That want to learn
+                <h5 class="profile-highlight">Recommended Reads for Upcoming Developers<i
+						class="text-danger">*</i></h5><small>That want to learn
 				your tech stack
 			</small>
                 <p><a href="#">Intro to javascript</a>, <a href="#">Intro to Python</a></p>
 				<hr/>
             </span>
 			<span>
-                <h5>Advice to Upcoming Software Developers</h5>
-					<textarea class="form-control" name="advice" rows="3" placeholder="Advice">{{ person.advice |
+                <h5>Advice to Upcoming Software Developers<i
+						class="text-danger">*</i></h5>
+					<textarea class="form-control" name="advice" rows="3" placeholder="Advice" id="advice">{{ person
+					.advice |
 					default('', true) }}</textarea>
 				<hr/>
             </span>
-					<button type="button" class="btn btn-block btn-dark profile-btn">Update Profile</button>
+					<button type="button" class="btn btn-block btn-dark profile-btn" id="profile-btn">Update
+						Profile</button>
 				</form>
 				<p class="update-success bg-success">Profile Successfully Updated</p>
 

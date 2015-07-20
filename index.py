@@ -7,10 +7,6 @@ from models import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from elasticsearch import Elasticsearch
-
-
-es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
 oauth = OAuth(app)
 login_manager = LoginManager()
@@ -166,7 +162,7 @@ def get_github_oauth_token():
 @app.route('/profileGitlink', methods=['POST'])
 def githubLink():
     if request.method == 'POST':
-        githublink = request.form['githublink']
+        githublink = request.form['ajaxDataJsObj']
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_github = githublink
         db.session.commit()
@@ -262,6 +258,7 @@ def googleauthorized():
     session['google_token'] = (resp['access_token'], '')
     person = google.get('userinfo')
     current_user_info = User.query.filter_by(email=person.data['email']).first()
+    print(person.data)
     if current_user_info is None:
         reg = User(person.data['id'], person.data['given_name'], person.data['family_name'], person.data['email'])
         db.session.add(reg)
@@ -310,7 +307,7 @@ def twitteroauthorized():
 @app.route('/profileTweetLink', methods=['POST'])
 def twitterLink():
     if request.method == 'POST':
-        twitterlink = request.form['twitterlink']
+        twitterlink = request.form['ajaxDataJsObj']
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_twitter = twitterlink
         db.session.commit()
@@ -385,7 +382,7 @@ def profileInfoForm():
 @app.route('/profileWeblink', methods=['POST'])
 def websiteLink():
     if request.method == 'POST':
-        websitelink = request.form['websitelink']
+        websitelink = request.form['ajaxDataJsObj']
 
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_website = websitelink

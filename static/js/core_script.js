@@ -6,9 +6,24 @@ $(function () {
     $('.upload-success').hide();
     $('.upload-failure').hide();
 
+
+    $('.profile-btn').click(function () {
+        $.ajax({
+            url: '/profileInfo',
+            data: $('#profile-form').serialize(),
+            type: 'POST',
+            success: function (response) {
+                $('.update-success').show("drop", {direction: "down"}, "slow");
+            },
+            error: function (error) {
+                $('.update-failure').show("drop", {direction: "down"}, "slow");
+            }
+        })
+    });
+
     var search = $("#search");
-    search.keyup(function() {
-        $.get("/search/" + search.val(), function(result){
+    search.keyup(function () {
+        $.get("/search/" + search.val(), function (result) {
             result = jQuery.parseJSON(result);
             hits = result;
             if (hits.length > 0) {
@@ -17,7 +32,7 @@ $(function () {
                     var hit = hits[key];
                     result_html += '<p>' + hit['firstname'] + " " + hit['skill'] + '</p>';
                 }
-                setTimeout(function() {
+                setTimeout(function () {
                     $("#search_results").html(result_html);
                 }, 300)
 
@@ -41,19 +56,6 @@ $(function () {
         });
     });
 
-    $('.profile-btn').click(function () {
-        $.ajax({
-            url: '/profileInfo',
-            data: $('#profile-form').serialize(),
-            type: 'POST',
-            success: function (response) {
-                $('.update-success').show("drop", {direction: "down"}, "slow");
-            },
-            error: function (error) {
-                $('.update-failure').show("drop", {direction: "down"}, "slow");
-            }
-        })
-    });
 
     //------------------------------CLOUDINARY IMAGE UPLOAD
     $('.image-btn').click(function () {
@@ -166,121 +168,67 @@ $(function () {
 
     //----------------------------SOCIAL LINKS-----------------
 
-    $('.website-btn').click(function () {
-        return swal({
-            title: "Website Link",
-            text: "Please put in the link to your website",
-            type: "input",
-            showCancelButton: true,
-            closeOnConfirm: false,
-            animation: "slide-from-top",
-            inputPlaceholder: "http://->Link"
-        }, function (inputValue) {
-            if (inputValue === false) return false;
-            if (inputValue === "") {
-                swal.showInputError("You need to write something!");
-                return false
-            }
-            $.ajax({
-                url: '/profileWeblink',
-                data: {websitelink: inputValue},
-                type: 'POST',
-                success: function (response) {
-                    weblink = jQuery.parseJSON(response);
-                    $('.profile-website-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
-                    $('.profile-website-link').text(weblink.details[0]).show("drop", {direction: "up"}, "slow");
-                    swal({
-                        imageUrl: '../static/img/thumbs-up.jpg',
-                        title: "Link Added Successfully",
-                        text: "It has been added to your public profile"
-                    });
-
-                },
-                error: function (error) {
-                    console.log(error);
+    function ConfigSocialLink(btnClass, swalTitle, swalText, swalInputPlaceholder, ajaxUrl, successClassId,
+                              swalSuccessTitle, successClassIdHtml, twitterClassLink) {
+        $(btnClass).click(function () {
+            return swal({
+                title: swalTitle,
+                text: swalText,
+                type: "input",
+                html: true,
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: swalInputPlaceholder
+            }, function (inputValue) {
+                if (inputValue === false) return false;
+                if (inputValue === "") {
+                    swal.showInputError("You need to write something!");
+                    return false;
                 }
-            });
+                $.ajax({
+                    url: ajaxUrl,
+                    data: {ajaxDataJsObj: inputValue},
+                    type: 'POST',
+                    success: function (response) {
+                        link = jQuery.parseJSON(response);
+                        $(successClassId).attr('href', link.details[0]).show("drop", {direction: "up"}, "slow");
+                        $(successClassId).text(link.details[0]).show("drop", {direction: "up"}, "slow");
+                        $(successClassIdHtml).html("<a href=" + link.details[0] + ">" + link.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
+                        if (twitterClassLink) {
+                            $('.profile-twitter-link').attr('href', 'https://twitter.com/'+link.details[0]).show("drop",
+                                {direction:"up"}, "slow");
+                            $(twitterClassLink).text(link.details[0]).show("drop", {direction: "up"}, "slow");
+                        }
+                        swal({
+                            imageUrl: '../static/img/thumbs-up.jpg',
+                            title: swalSuccessTitle,
+                            text: "It has been added to your public profile"
+                        });
 
-        });
-    });
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
 
-
-    $('.github-btn').click(function () {
-        return swal({
-            title: "Github Link",
-            text: "Please put in the link to your github or simply click the icon below<br><a href='/gitconnect'><i class='fa fa-github" +
-            " fa-2x'></i></a>",
-            html: true,
-            type: "input",
-            showCancelButton: true,
-            closeOnConfirm: false,
-            animation: "slide-from-top",
-            inputPlaceholder: "Link"
-        }, function (inputValue) {
-            if (inputValue === false) return false;
-            if (inputValue === "") {
-                swal.showInputError("You need to write something!");
-                return false
-            }
-            $.ajax({
-                url: '/profileGitlink',
-                data: {githublink: inputValue},
-                type: 'POST',
-                success: function (response) {
-                    weblink = jQuery.parseJSON(response);
-                    $('.profile-github-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
-                    $('.git span').html("<a href=" + weblink.details[0] + ">" + weblink.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
-                    swal({
-                        imageUrl: '../static/img/thumbs-up.jpg',
-                        title: "Github Link Added Successfully",
-                        text: "It has been added to your public profile"
-                    });
-                },
-                error: function (error) {
-                    console.log(error);
-                }
             });
         });
-    });
+    }
 
+    //Website
+    ConfigSocialLink('.website-btn', 'Website Link', 'Please put in the link to your website', 'http://->Link',
+        '/profileWeblink', '.profile-website-link', 'Link Added Successfully');
+    //github
+    ConfigSocialLink('.github-btn', 'Github Link', 'Please put in the link to your github or simply click the icon' +
+        'below<br><a href=\'/gitconnect\'><i class=\'fa fa-github fa-2x\'></i></a>', 'Please enter your github' +
+        ' profile link', '/profileGitlink', '.profile-github-link', 'Github Link Added Successfully', '.git span');
 
-    $('.twitter-btn').click(function () {
-        return swal({
-            title: "Twitter Link",
-            text: "Please put in your twitter username or simply click the icon below<br><a href='/twitconnect'>" +
-            "<i class='fa fa-twitter" +
-            " fa-2x'></i></a>",
-            html: true,
-            type: "input",
-            showCancelButton: true,
-            closeOnConfirm: false,
-            animation: "slide-from-top",
-            inputPlaceholder: "Username(no need for the @symbol)"
-        }, function (inputValue) {
-            if (inputValue === false) return false;
-            if (inputValue === "") {
-                swal.showInputError("You need to write something!");
-                return false
-            }
-            $.ajax({
-                url: '/profileTweetLink',
-                data: {twitterlink: inputValue},
-                type: 'POST',
-                success: function (response) {
-                    weblink = jQuery.parseJSON(response);
-                     $('.profile-github-link').attr('href', weblink.details[0]).show("drop", {direction: "up"}, "slow");
-                    $('.tweet span').html("<a href=https://twitter.com/" + weblink.details[0] + "target='_blank'>" + weblink.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
-                    swal({
-                        imageUrl: '../static/img/thumbs-up.jpg',
-                        title: "Twitter username Added Successfully",
-                        text: "It has been added to your public profile"
-                    });
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        });
-    });
+    //twitter
+    ConfigSocialLink('.twitter-btn', 'Twitter Link', 'Please put in your twitter username or simply click the icon' +
+        ' below<br><a href=\'/twitconnect\'> <i class=\'fa fa-twitter fa-2x\'></i></a>', 'Username(no need for the' +
+        ' @symbol)', '/profileTweetLink', '.profile-twitter-link', 'Twitter username Added Successfully', '',  '.tweet' +
+        ' span');
 
-});
+})
+;
