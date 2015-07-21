@@ -26,7 +26,7 @@ $(function () {
 
     var search = $("#search");
     search.keyup(function () {
-        $.get("/search/" + search.val(), function (result) {
+        $.get("/queryroute/" + search.val(), function (result) {
             result = jQuery.parseJSON(result);
             hits = result;
             if (hits.length > 0) {

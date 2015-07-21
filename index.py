@@ -402,8 +402,17 @@ def searchQuery():
         return render_template('search/index.html')
 
 
-# create route to show result on keypress
+#/search/language route
 @app.route('/search/<query>')
+def programLangCategory(query=''):
+    if len(query) > 0:
+        result = MongoIndex.objects.search_text(query).all()
+        return render_template('search/index.html', result=result, link=g.links)
+    else:
+        return ''
+
+# create route to show result on keypress
+@app.route('/queryroute/<query>')
 def logQuery(query=''):
     if len(query) > 0:
         result = MongoIndex.objects.search_text(query).all()
