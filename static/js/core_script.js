@@ -194,6 +194,11 @@ $(function () {
             }
         });
 
+    //Autocomplete to select only one language
+    $( "#major_skill" ).autocomplete({
+      source: availableTags
+    });
+
     //-------------------------------TOOLTIP------------------
     $('[data-toggle="tooltip"]').tooltip();
 
