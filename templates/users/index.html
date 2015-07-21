@@ -89,6 +89,10 @@
 			<div class="profile-second-section col-md-8 col-xs-12">
             <span>
                 <h5 class="profile-highlight">Name</h5>
+				{% if not person.firstname %}
+				<input type="text" class="form-control" placeholder="firstname">
+				<input type="text" class="form-control" placeholder="lastname">
+				{% endif %}
                 <p>{{ person.firstname }} {{ person.lastname }}</p>
 				<hr/>
             </span>

@@ -130,7 +130,7 @@ hr {
 .home-section {
     background-color: #FFFFFF;
     padding-top: 110px;
-    padding-bottom: 110px;
+    padding-bottom: 90px;
     display: block;
     position: relative;
     z-index: 120;
@@ -155,6 +155,7 @@ hr.pub-splitter {
 .profile-highlight {
     margin-bottom: 5px;
 }
+
 /* --- section bg var --- */
 
 .bg-white {
@@ -702,7 +703,7 @@ input.gn-search:focus {
     margin-top: 100px;
 }
 
-.profile-section .avatar{
+.profile-section .avatar {
     padding-top: 20px;
 }
 
@@ -762,7 +763,7 @@ input.gn-search:focus {
 
 .background-section-container {
     background: #fff;
-     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
 }
@@ -779,14 +780,16 @@ input.gn-search:focus {
     margin: auto;
     text-align: center;
     background: #fff;
-     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
 }
+
 .search-grid img {
     border: 1px solid #FFFFFF;
     border-radius: 5px;
 }
+
 .search-name, .search-name a {
     background-color: #253540;
     color: #FFFFFF;
@@ -796,6 +799,7 @@ input.gn-search:focus {
 .extra-margin {
     margin-bottom: 150px;
 }
+
 /* ===========================
 --- Works
 ============================ */
@@ -996,6 +1000,13 @@ footer a:hover {
 .btn-circle.btn-dark :hover i,
 .btn-circle.btn-dark :focus i {
     color: #999;
+}
+
+.btn-prog-lang {
+    background-color: #ffffff;
+    border: 2px solid #EB6124;
+    border-radius: 5px;
+    margin-top: 30px;
 }
 
 .page-scroll .btn-circle i.animated {
