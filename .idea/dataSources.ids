@@ -2367,28 +2367,31 @@
       <column name="viewowner" sqlType="name" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="definition" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
     </table>
+    <table name="alembic_version" schema="public" catalog="nowwehere" type="TABLE">
+      <column name="version_num" sqlType="varchar" precision="32" scale="0" nullable="false" jdbcType="12"/>
+    </table>
     <table name="users" schema="public" catalog="nowwehere" type="TABLE">
-      <column name="id" sqlType="bigserial" precision="19" scale="0" nullable="false" jdbcType="-5" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="uid" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="uid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="firstname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="lastname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="email" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="varchar" precision="80" scale="0" nullable="true" jdbcType="12"/>
       <column name="registeredOn" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="photo" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="job" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="job" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="major_skill" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="other_skills" sqlType="json" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
-      <column name="major_skill" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
       <column name="about" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="had_known" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="advice" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="social_website" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="social_linkedin" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="social_github" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="social_twitter" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="search_vector" sqlType="tsvector" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
+      <column name="social_github" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="vip" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
       <primary-key name="users_pkey" columns="id"/>
-      <index name="unique_id" unique="true" columns="id"/>
-      <index name="unique_photo" unique="true" columns="photo"/>
+      <index name="users_email_key" unique="true" columns="email"/>
+      <index name="users_uid_key" unique="true" columns="uid"/>
     </table>
     <table name="users_id_seq" schema="public" catalog="nowwehere" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -13546,6 +13549,47 @@
         <parameter name="path" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="4" index="4"/>
       </prototype>
     </procedure>
+    <procedure name="pg_file_length" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="returnValue" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_file_read" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="$2" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="2"/>
+        <parameter name="$3" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="3"/>
+        <parameter name="returnValue" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_file_rename" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="$2" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="2"/>
+        <parameter name="$3" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="3"/>
+        <parameter name="returnValue" sqlType="bool" precision="0" scale="0" nullable="true" jdbcType="-7" type="5" index="0"/>
+      </prototype>
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="$2" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="2"/>
+        <parameter name="returnValue" sqlType="bool" precision="0" scale="0" nullable="true" jdbcType="-7" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_file_unlink" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="returnValue" sqlType="bool" precision="0" scale="0" nullable="true" jdbcType="-7" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_file_write" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="$2" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="2"/>
+        <parameter name="$3" sqlType="bool" precision="0" scale="0" nullable="true" jdbcType="-7" type="1" index="3"/>
+        <parameter name="returnValue" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="5" index="0"/>
+      </prototype>
+    </procedure>
     <procedure name="pg_filenode_relation" schema="pg_catalog" catalog="nowwehere" type="2" remarks="cmVsYXRpb24gT0lEIGZvciBmaWxlbm9kZSBhbmQgdGFibGVzcGFjZQ==">
       <prototype>
         <parameter name="$1" sqlType="oid" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="1"/>
@@ -13823,6 +13867,16 @@
         <parameter name="mode" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="4" index="13"/>
         <parameter name="granted" sqlType="bool" precision="0" scale="0" nullable="true" jdbcType="-7" type="4" index="14"/>
         <parameter name="fastpath" sqlType="bool" precision="0" scale="0" nullable="true" jdbcType="-7" type="4" index="15"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_logdir_ls" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="record" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_logfile_rotate" schema="pg_catalog" catalog="nowwehere" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="int4" precision="0" scale="0" nullable="true" jdbcType="4" type="5" index="0"/>
       </prototype>
     </procedure>
     <procedure name="pg_logical_slot_get_binary_changes" schema="pg_catalog" catalog="nowwehere" type="2" remarks="Z2V0IGJpbmFyeSBjaGFuZ2VzIGZyb20gcmVwbGljYXRpb24gc2xvdA==">
