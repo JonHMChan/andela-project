@@ -71,10 +71,11 @@ class MongoIndex(mongodb.Document):
     firstname = mongodb.StringField(required=True)
     skill = mongodb.StringField(required=True, max_length=100)
     photo = mongodb.StringField(required=True)
+    email = mongodb.StringField(required=True)
 
     meta = {
         'allow_inheritance': True,
-        'indexes': [{'fields': ['$firstname', '$skill', 'photo'],
+        'indexes': [{'fields': ['$firstname', '$skill', 'photo', 'email'],
            'default_language': 'english'}],
         'ordering': ['-firstname']
     }

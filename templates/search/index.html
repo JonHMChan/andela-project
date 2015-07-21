@@ -5,12 +5,12 @@
 
 		<div class="row">
             {% if result %}
-                {% for result in result %}
+                {% for result in result%}
 						<div class="col-md-3 col-xs-3">
 							<div class="search-grid">
 								<div><img src="{{ result.photo }}" width="250" height="250"/></div>
                                 {% for link in link %}
-                                    {% if link.firstname == result.firstname %}
+                                    {% if link.email == result.email %}
 										<p class="center-block search-name">
 											<a href="../link/{{ link.id }}">{{ result.firstname }}</a></p>
                                     {% endif %}

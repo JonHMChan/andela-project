@@ -402,7 +402,7 @@ def searchQuery():
         return render_template('search/index.html')
 
 
-#/search/language route
+# /search/language route
 @app.route('/search/<query>')
 def programLangCategory(query=''):
     if len(query) > 0:
@@ -410,6 +410,7 @@ def programLangCategory(query=''):
         return render_template('search/index.html', result=result, link=g.links)
     else:
         return ''
+
 
 # create route to show result on keypress
 @app.route('/queryroute/<query>')
@@ -420,12 +421,13 @@ def logQuery(query=''):
     else:
         return ''
 
+
 def MongoData():
     checkMongoIndex = MongoIndex.objects
     count = 0
     for data in checkMongoIndex:
-        count+=count
-        return data.firstname
+        count += count
+        return data
 
 
 @app.route('/esSync')
@@ -434,13 +436,14 @@ def elasticSync():
     result = []
     fetchMongoData = MongoData()
     for data in getData:
-        if data.firstname != fetchMongoData:
-            result.append(str(data.id))
-            mIndex = MongoIndex(firstname=data.firstname, skill=data.major_skill, photo=data.photo)
+        result.append(str(data.id))
+        mIndex = MongoIndex(firstname=data.firstname, skill=data.major_skill, photo=data.photo, email=data.email)
+        mIndex.save()
+        if(fetchMongoData is not None):
+            mIndex.delete()
             mIndex.save()
-        else:
-            return 'data sync already exists'
     return 'Success: ' + ",".join(result)
+
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
