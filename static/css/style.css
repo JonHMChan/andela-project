@@ -682,6 +682,10 @@ input.gn-search:focus {
     background: #71c6f3;
 }
 
+.team-stage {
+    margin-top: 30px;
+}
+
 /* ===========================
 --- Services
 ============================ */
