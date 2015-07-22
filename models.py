@@ -13,7 +13,7 @@ class User(db.Model):
     email = db.Column(db.String(80), unique=True)
     registeredOn = db.Column(db.DateTime)
     photo = db.Column(db.String,
-                      default='https://photos-4.dropbox.com/t/2/AAD319Bvyn9kvro8Xr_bIrCJHATB4FkbHfIQphqf2-9ucw/12/361580150/jpeg/32x32/1/1437490800/0/2/gravatar-60-grey.jpg/CPaMtawBIAEgAiADIAQgBSAGIAcoAg/Iw51usTm6UShHbHahHF-ZcwIau5oCgZnuHwjdU4cPXs?size=1280x960&size_mode=2')
+                      default='https://lh3.googleusercontent.com/0LLwXvYMpMQRF-ntK8Wx3zl1F569WxLeLeAD43Ct9g=s300-no')
     job = db.Column(db.String)
     major_skill = db.Column(db.String(100), default='Nothing')
     other_skills = db.Column(JSON)
@@ -48,7 +48,7 @@ class User(db.Model):
     def __repr__(self):
         return '<{uid}{firstname}{lastname}{email}{registeredOn}{photo}{job}{major_skill}{' \
                'other_skills}{about}{had_known}{advice}{social_website}{social_linkedin}{social_twitter}{' \
-               'social_github}>'.format(
+               'social_github}{vip}>'.format(
             uid=self.uid,
             firstname=self.firstname,
             lastname=self.lastname,
@@ -65,6 +65,7 @@ class User(db.Model):
             social_linkedin=self.social_linkedin,
             social_twitter=self.social_twitter,
             social_github=self.social_github,
+            vip=self.vip
         )
 
 

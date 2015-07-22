@@ -5,6 +5,7 @@ $(function () {
     $('.upload_loader').hide();
     $('.upload-success').hide();
     $('.upload-failure').hide();
+    $('.vip-check-mark').hide();
 
 
     $('.profile-btn').click(function () {
@@ -13,13 +14,35 @@ $(function () {
             data: $('#profile-form').serialize(),
             type: 'POST',
             success: function (response) {
-                setTimeout(function() {
-                  $('.update-success').show("drop", {direction: "down"}, "slow");
-                }, 2000)
+
+                $('.update-success').show("drop", {direction: "down"}, "slow");
 
             },
             error: function (error) {
                 $('.update-failure').show("drop", {direction: "down"}, "slow");
+            }
+        });
+        setTimeout(function () {
+            $('.update-success').hide();
+        }, 3000)
+    });
+
+    $('.btn-coupon').click(function () {
+        $.ajax({
+            url: '/getVipCode',
+            data: $('#vip-form').serialize(),
+            type: 'POST',
+            success: function (response) {
+                $('.vip-check-mark').show();
+                $('.btn-coupon').text('Verified Vip');
+                setTimeout(function () {
+                    $('.coupon').hide();
+                    $('.profile-social-verified').show("drop", {direction: "down"}, "slow");
+                    $('.success-vip-message').text('Verified Vip').show("drop", {direction: "down"}, "slow");
+                }, 5000);
+            },
+            error: function (error) {
+                return error;
             }
         })
     });
@@ -105,6 +128,7 @@ $(function () {
         "Assembly",
         "Asp",
         "BASIC",
+        "Bootstrap"
         "C",
         "C sharp",
         "C++",
@@ -116,6 +140,7 @@ $(function () {
         "Common Lisp",
         "D3",
         "Erlang",
+        "Firebase",
         "Fortran",
         "GO",
         "Groovy",
@@ -125,6 +150,7 @@ $(function () {
         "Java",
         "JavaScript",
         "JavaFX Script",
+        "Jquery",
         "Julia",
         "Kamailio Script",
         "K",
@@ -137,7 +163,9 @@ $(function () {
         "Lua",
         "Lucid",
         "MATLAB",
+        "MongoDb",
         "MySQL",
+        "NodeJs",
         "Objective-C",
         "Perl",
         "PHP",
@@ -195,8 +223,8 @@ $(function () {
         });
 
     //Autocomplete to select only one language
-    $( "#major_skill" ).autocomplete({
-      source: availableTags
+    $("#major_skill").autocomplete({
+        source: availableTags
     });
 
     //-------------------------------TOOLTIP------------------
@@ -233,8 +261,8 @@ $(function () {
                         $(successClassId).text(link.details[0]).show("drop", {direction: "up"}, "slow");
                         $(successClassIdHtml).html("<a href=" + link.details[0] + ">" + link.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
                         if (twitterClassLink) {
-                            $('.profile-twitter-link').attr('href', 'https://twitter.com/'+link.details[0]).show("drop",
-                                {direction:"up"}, "slow");
+                            $('.profile-twitter-link').attr('href', 'https://twitter.com/' + link.details[0]).show("drop",
+                                {direction: "up"}, "slow");
                             $(twitterClassLink).text(link.details[0]).show("drop", {direction: "up"}, "slow");
                         }
                         swal({
@@ -264,7 +292,7 @@ $(function () {
     //twitter
     ConfigSocialLink('.twitter-btn', 'Twitter Link', 'Please put in your twitter username or simply click the icon' +
         ' below<br><a href=\'/twitconnect\'> <i class=\'fa fa-twitter fa-2x\'></i></a>', 'Username(no need for the' +
-        ' @symbol)', '/profileTweetLink', '.profile-twitter-link', 'Twitter username Added Successfully', '',  '.tweet' +
+        ' @symbol)', '/profileTweetLink', '.profile-twitter-link', 'Twitter username Added Successfully', '', '.tweet' +
         ' span');
 
 });

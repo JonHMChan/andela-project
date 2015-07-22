@@ -800,6 +800,11 @@ input.gn-search:focus {
     margin-bottom: 150px;
 }
 
+.vip-check-mark {
+    color: #009900;
+    margin-top: 10px;
+    float: right;
+}
 /* ===========================
 --- Works
 ============================ */

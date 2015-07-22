@@ -15,11 +15,16 @@
 					img-responsive center-block">
                 {% endif %}
 				<span>
-
-                <i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn"
-				   data-toggle="tooltip"
-				   data-placement="bottom" title="LinkedIn">
-				</i>
+				<p class="upload-failure bg-danger"></p>
+                    {% if person.vip == True %}
+						<i class="profile-social-verified fa fa-check-square fa-2x"
+						   alt="verified" data-toggle="tooltip" data-placement="right"
+						   title="verified"></i>
+                    {% endif %}
+					<i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn"
+					   data-toggle="tooltip"
+					   data-placement="bottom" title="LinkedIn">
+					</i>
 
                 <i class="profile-social profile-social-twitter fa fa-twitter fa-2x twitter-btn" alt="Twitter"
 				   data-toggle="tooltip"
@@ -34,7 +39,7 @@
                 <i class="profile-social profile-social-globe fa fa-globe fa-2x website-btn" alt="Website"
 				   data-toggle="tooltip" name="websitelink"
 				   data-placement="bottom" title="Website Link"></i>
-
+				<br/><br/>
 				<span><img class="upload_loader" src="{{ url_for('static', filename='img/ajax-loader.gif') }}"></span>
 				<form action="" id="image-form" method="POST" enctype="multipart/form-data">
 					<input id="file_field" type="file" name="image"/>
@@ -43,13 +48,6 @@
 				<span>Please upload images of format: jpg, png, jpeg, and of equal width and height e.g 575px x
 					575px</span>
 				<p class="upload-success bg-success"></p>
-				<p class="upload-failure bg-danger"></p>
-
-                    {% if person.vip == True %}
-						<i class="profile-social-verified profile-social-verified fa fa-check-square fa-2x"
-						   alt="verified"
-						   title="veirified"></i>
-                    {% endif %}
             </span>
 
 				<div class="publink">
@@ -85,15 +83,28 @@
 							<span>Please Connect your linkedin public profile</span>
                         {% endif %}
 				</div>
+				<br/><br/>
+				{% if person.vip == False %}
+				<div class="coupon">
+					<span>VIP MEMBERS: Please enter VIP Code</span>
+					<form class="form" id="vip-form" action="" method="POST">
+						<input type="text" name="input-code" class="form-control clearfix" id="vip-check">
+						<br/>
+						<button type="button" class="btn btn-danger btn-coupon">Validate VIP Code</button>
+						<i class="fa fa-check right solar-green vip-check-mark"></i>
+					</form>
+				</div>
+				{% endif %}
+				<div class="help-block center-block codemirror-gutter success-vip-message"></div>
 			</div>
 			<div class="profile-second-section col-md-8 col-xs-12">
             <span>
                 <h5 class="profile-highlight">Name</h5>
-				{% if not person.firstname %}
-				<input type="text" class="form-control" placeholder="firstname">
-				<input type="text" class="form-control" placeholder="lastname">
-				{% endif %}
-                <p>{{ person.firstname }} {{ person.lastname }}</p>
+                {% if not person.firstname %}
+					<input type="text" class="form-control" placeholder="firstname">
+					<input type="text" class="form-control" placeholder="lastname">
+                {% endif %}
+				<p>{{ person.firstname }} {{ person.lastname }}</p>
 				<hr/>
             </span>
 
@@ -167,7 +178,8 @@
 				<hr/>
             </span>
 					<button type="button" class="btn btn-block btn-dark profile-btn" id="profile-btn">Update
-						Profile</button>
+						Profile
+					</button>
 				</form>
 				<p class="update-success bg-success">Profile Successfully Updated</p>
 

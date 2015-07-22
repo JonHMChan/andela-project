@@ -392,6 +392,7 @@ def websiteLink():
     # ----------------------END USER PROFILE ROUTE CONFIG --------------------#
 
 
+# -------------------------------------SEARCH QUERY CONFIG --------------------------#
 @app.route('/search')
 def searchQuery():
     if 'search' in request.args:
@@ -439,10 +440,26 @@ def elasticSync():
         result.append(str(data.id))
         mIndex = MongoIndex(firstname=data.firstname, skill=data.major_skill, photo=data.photo, email=data.email)
         mIndex.save()
-        if(fetchMongoData is not None):
+        if (fetchMongoData is not None):
             mIndex.delete()
             mIndex.save()
     return 'Success: ' + ",".join(result)
+
+
+# ------------------------------------------END SEARCH QUERY CONFIG ----------------------------#
+
+@app.route('/getVipCode', methods=['POST'])
+def vipConfig():
+    if request.method == 'POST':
+        codes = ['codility', 'sugarpop', 'regex']
+        coupon_form = request.form['input-code']
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        for code in codes:
+            if code == coupon_form:
+                current_user_info.vip = True
+                db.session.commit()
+                return  jsonify({'res': code})
+        return jsonify({'error': 'Code invalid'})
 
 
 if __name__ == '__main__':
