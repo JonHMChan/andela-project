@@ -128,7 +128,7 @@ $(function () {
         "Assembly",
         "Asp",
         "BASIC",
-        "Bootstrap"
+        "Bootstrap",
         "C",
         "C sharp",
         "C++",
