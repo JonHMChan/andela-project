@@ -4,24 +4,42 @@
         {#<h1>Search results for "{{ query }}":</h1>#}
 
 		<div class="row">
-            {% if result %}
-                {% for result in result%}
-						<div class="col-md-3 col-xs-3">
-							<div class="search-grid">
-								<div><img src="{{ result.photo }}" width="250" height="250"/></div>
-                                {% for link in link %}
-                                    {% if link.email == result.email %}
-										<p class="center-block search-name">
-											<a href="../link/{{ link.id }}">{{ result.firstname }}</a></p>
-                                    {% endif %}
-                                {% endfor %}
-								<span><i class="fa fa-chain"></i> {{ result.skill | upper }}</span>
-							</div>
+            {% if result.items %}
+                {% for result in result.items %}
+					<div class="col-md-3 col-xs-3">
+						<div class="search-grid">
+							<div><img src="{{ result.photo }}" width="250" height="250"/></div>
+                            {% for link in link %}
+                                {% if link.email == result.email %}
+									<p class="center-block search-name">
+										<a href="../link/{{ link.id }}">{{ result.firstname }}</a></p>
+                                {% endif %}
+                            {% endfor %}
+							<span><i class="fa fa-chain"></i> {{ result.skill | upper }}</span>
 						</div>
+					</div>
                 {% endfor %}
+				<div class="row clearfix pagination">
+                    {% if result.has_prev %}
+						<a href="{{ url_for('programLangCategory', page=result.prev_num, query=query) }}">&lt;
+							&lt; Previous
+							Page</a>{% else %}&lt;&lt; Previous Page{% endif %} |
+                    {% if result.has_next %}
+						<a href="{{ url_for('programLangCategory', page=result.next_num, query=query ) }}">Next
+							Page &gt;&gt;
+						</a>{% else %}Next
+						Page &gt;&gt;{% endif %}
+				</div>
+            {% else %}
+				<h1>I'm Sorry, No search results found </h1>
+				<h2>Please try a different search</h2>
+				<h3><span><a href="/">Go home ;D</a></span></h3>
+				<img class="center-block img-responsive"
+					 src="{{ url_for('static', filename='img/nwh.png') }}">
             {% endif %}
 		</div>
 	</div>
+
 	<div class="extra-margin"></div>
 
 {% endblock %}

@@ -9,13 +9,14 @@ $(function () {
 
 
     $('.profile-btn').click(function () {
+        $('#profile-btn').text('UPDATING.....').attr('disabled', 'disabled');
         $.ajax({
             url: '/profileInfo',
             data: $('#profile-form').serialize(),
             type: 'POST',
             success: function (response) {
-
                 $('.update-success').show("drop", {direction: "down"}, "slow");
+                $('#profile-btn').text('UPDATE PROFILE').attr('disabled', false);
 
             },
             error: function (error) {
@@ -124,11 +125,13 @@ $(function () {
     var availableTags = [
         "ActionScript",
         "Apache Spark",
+        "AngularJs",
         "AppleScript",
         "Assembly",
         "Asp",
         "BASIC",
         "Bootstrap",
+        "Brainfuck",
         "C",
         "C sharp",
         "C++",
@@ -139,7 +142,9 @@ $(function () {
         "ColdFusion",
         "Common Lisp",
         "D3",
+        "DotNet",
         "Erlang",
+        "ExpressJs",
         "Firebase",
         "Fortran",
         "GO",

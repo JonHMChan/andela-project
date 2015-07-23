@@ -12,6 +12,7 @@ oauth = OAuth(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login_auth'
+PAGINATION_VIEWS_PER_PAGE = 6
 
 cloudinary.config(
     cloud_name=app.config['CLOUDINARY_NAME'],
@@ -258,7 +259,6 @@ def googleauthorized():
     session['google_token'] = (resp['access_token'], '')
     person = google.get('userinfo')
     current_user_info = User.query.filter_by(email=person.data['email']).first()
-    print(person.data)
     if current_user_info is None:
         reg = User(person.data['id'], person.data['given_name'], person.data['family_name'], person.data['email'])
         db.session.add(reg)
@@ -394,10 +394,10 @@ def websiteLink():
 
 # -------------------------------------SEARCH QUERY CONFIG --------------------------#
 @app.route('/search')
-def searchQuery():
+def searchQuery(page=1):
     if 'search' in request.args:
         query = request.args.get('search')
-        result = MongoIndex.objects.search_text(query).all()
+        result = MongoIndex.objects.search_text(query).paginate(page=page, per_page=PAGINATION_VIEWS_PER_PAGE)
         return render_template('search/index.html', result=result, link=g.links)
     else:
         return render_template('search/index.html')
@@ -405,10 +405,11 @@ def searchQuery():
 
 # /search/language route
 @app.route('/search/<query>')
-def programLangCategory(query=''):
+@app.route('/search/<query>/<int:page>')
+def programLangCategory(page=1, query=''):
     if len(query) > 0:
-        result = MongoIndex.objects.search_text(query).all()
-        return render_template('search/index.html', result=result, link=g.links)
+        result = MongoIndex.objects.search_text(query).paginate(page=page, per_page=PAGINATION_VIEWS_PER_PAGE)
+        return render_template('search/index.html', result=result, link=g.links, query=query)
     else:
         return ''
 
@@ -417,7 +418,7 @@ def programLangCategory(query=''):
 @app.route('/queryroute/<query>')
 def logQuery(query=''):
     if len(query) > 0:
-        result = MongoIndex.objects.search_text(query).all()
+        result = MongoIndex.objects.search_text(query)[:5]
         return json.dumps(result)
     else:
         return ''
@@ -461,6 +462,12 @@ def vipConfig():
                 return  jsonify({'res': code})
         return jsonify({'error': 'Code invalid'})
 
+
+@app.route('/vipMembers')
+@app.route('/vipMembers/<int:page>')
+def vipMembers(page=1):
+    link = User.query.paginate(page, PAGINATION_VIEWS_PER_PAGE, False)
+    return render_template('vip/index.html', link=link)
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.

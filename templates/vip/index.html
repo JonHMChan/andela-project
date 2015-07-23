@@ -1,0 +1,41 @@
+{% extends "static.html" %}
+{% block content %}
+	<section class="text-center text-muted">
+		<div class="container profile-section">
+			<div class="row">
+                {% for link in link.items %}
+                    {% if link.vip %}
+						<div class="col-xs-6 col-sm-3 col-md-3 team-stage">
+							<div class="team boxed-grey boxed-grey-vip">
+								<div class="inner">
+									<h5><a href='link/{{ link.id }}'>{{ link.firstname }} {{ link.lastname }}</a></h5>
+
+									<p class="subtitle">{{ link.job |  default('Software Developer', true) }}</p>
+
+									<div class="avatar"><img src="{{ link.photo | default(url_for('static',
+                          filename='img/gravatar-60-grey.jpg'), true) }}" alt=""
+															 class="img-responsive"/></div>
+									<i class="text-left profile-social-verified fa
+									fa-check-square fa-2x"
+									   alt="verified" data-toggle="tooltip" data-placement="right"
+									   title="verified"></i>
+								</div>
+							</div>
+
+						</div>
+                    {% endif %}
+                {% endfor %}
+
+			</div>
+			<div class="row clearfix pagination">
+                {% if link.has_prev %}<a href="{{ url_for('vipMembers', page=link.prev_num) }}">&lt;&lt; Previous
+					Page</a>{% else %}&lt;&lt; Previous Page{% endif %} |
+                {% if link.has_next %}
+					<a href="{{ url_for('vipMembers', page=link.next_num) }}">Next Page &gt;&gt;</a>{% else %}Next
+					Page &gt;&gt;{% endif %}
+			</div>
+		</div>
+	</section>
+	<div class="extra-margin"></div>
+
+{% endblock %}

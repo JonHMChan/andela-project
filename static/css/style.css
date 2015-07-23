@@ -578,6 +578,17 @@ input.gn-search:focus {
     color: #fff;
 }
 
+/* PAGINATION */
+
+.pagination {
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.anchor-home {
+    color: #666666;
+}
+
 /* ===========================
 --- About
 ============================ */
@@ -585,6 +596,12 @@ input.gn-search:focus {
 .boxed-grey {
     background: #eee;
     padding: 20px;
+}
+
+.boxed-grey-vip {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .team h5 {
@@ -805,6 +822,7 @@ input.gn-search:focus {
     margin-top: 10px;
     float: right;
 }
+
 /* ===========================
 --- Works
 ============================ */
