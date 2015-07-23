@@ -7,7 +7,7 @@ $(function () {
     $('.upload-failure').hide();
     $('.vip-check-mark').hide();
 
-
+    //UPDATE PROFILE
     $('.profile-btn').click(function () {
         $('#profile-btn').text('UPDATING.....').attr('disabled', 'disabled');
         $.ajax({
@@ -28,6 +28,7 @@ $(function () {
         }, 3000)
     });
 
+    //VIP MEMBER CODE CHECK
     $('.btn-coupon').click(function () {
         $.ajax({
             url: '/getVipCode',
@@ -48,18 +49,19 @@ $(function () {
         })
     });
 
+    //RUN SEARCH ON KEY PRESS
     var search = $("#search");
     search.keyup(function () {
         $.get("/queryroute/" + search.val(), function (result) {
             result = jQuery.parseJSON(result);
             hits = result;
+            hitsLength = hits.length;
+            $('.upload_loader').show();
             if (hits.length > 0) {
                 var result_html = '';
-                for (key in hits) {
-                    var hit = hits[key];
-                    result_html += '<p>' + hit['firstname'] + " " + hit['skill'] + '</p>';
-                }
+                result_html += hitsLength + ' results found <p><a href="/search/'+search.val()+'">View Search Results</a></p>';
                 setTimeout(function () {
+                    $('.upload_loader').hide();
                     $("#search_results").html(result_html);
                 }, 300)
 
@@ -69,6 +71,7 @@ $(function () {
         })
     });
 
+    //SUBMIT CNTACT FORM
     $('.home-btn').click(function () {
         $.ajax({
             url: '/homeContact',

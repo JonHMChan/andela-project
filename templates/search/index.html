@@ -19,6 +19,7 @@
 						</div>
 					</div>
                 {% endfor %}
+				</div>
 				<div class="row clearfix pagination">
                     {% if result.has_prev %}
 						<a href="{{ url_for('programLangCategory', page=result.prev_num, query=query) }}">&lt;
@@ -37,7 +38,7 @@
 				<img class="center-block img-responsive"
 					 src="{{ url_for('static', filename='img/nwh.png') }}">
             {% endif %}
-		</div>
+
 	</div>
 
 	<div class="extra-margin"></div>

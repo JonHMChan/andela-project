@@ -589,6 +589,14 @@ input.gn-search:focus {
     color: #666666;
 }
 
+.search_queue {
+    color: #666666;
+    background-color: antiquewhite;
+    margin: 0 auto;
+    padding-right: 50px;
+    text-align: center;
+}
+
 /* ===========================
 --- About
 ============================ */
