@@ -5,7 +5,7 @@
 
 $(function () {
     var validate = {
-        inputId: ['jobInput', 'about', 'major_skill', 'had_known', 'advice'],
+        inputId: ['jobInput', 'about', 'major_skill', 'had_known', 'advice', 'recommended_reads'],
         init: function () {
             this.checkDirtyInput();
             this.onKeyUpDirtyInputCheck();

@@ -84,17 +84,18 @@
                         {% endif %}
 				</div>
 				<br/><br/>
-				{% if person.vip == False %}
-				<div class="coupon">
-					<span>VIP MEMBERS: Please enter VIP Code</span>
-					<form class="form" id="vip-form" action="" method="POST">
-						<input type="text" name="input-code" class="form-control clearfix" id="vip-check">
-						<br/>
-						<button type="button" class="btn btn-danger btn-coupon">Validate VIP Code</button>
-						<i class="fa fa-check right solar-green vip-check-mark"></i>
-					</form>
-				</div>
-				{% endif %}
+                {% if person.vip == False %}
+					<div class="coupon">
+						<span>VIP MEMBERS: Please enter VIP Code</span>
+
+						<form class="form" id="vip-form" action="" method="POST">
+							<input type="text" name="input-code" class="form-control clearfix" id="vip-check">
+							<br/>
+							<button type="button" class="btn btn-danger btn-coupon">Validate VIP Code</button>
+							<i class="fa fa-check right solar-green vip-check-mark"></i>
+						</form>
+					</div>
+                {% endif %}
 				<div class="help-block center-block codemirror-gutter success-vip-message"></div>
 			</div>
 			<div class="profile-second-section col-md-8 col-xs-12">
@@ -166,7 +167,10 @@
 						class="text-danger">*</i></h5><small>That want to learn
 				your tech stack
 			</small>
-                <p><a href="#">Intro to javascript</a>, <a href="#">Intro to Python</a></p>
+               <textarea class="form-control" name="recommended_reads" rows="3" placeholder="Recommended Reads for
+               upcoming developers"
+						 id="recommended_reads">
+				   		{{ person.recommended_reads | default('', true) }}</textarea>
 				<hr/>
             </span>
 			<span>

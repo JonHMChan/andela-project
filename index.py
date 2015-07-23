@@ -365,6 +365,7 @@ def profileInfoForm():
         major_skill = request.form['major_skill']
         other_skills = request.form['other_skills']
         had_known = request.form['had_known']
+        recommended_reads = request.form['recommended_reads']
         advice = request.form['advice']
 
         current_user_info = User.query.filter_by(email=current_user.email).first()
@@ -373,6 +374,7 @@ def profileInfoForm():
         current_user_info.other_skills = other_skills
         current_user_info.about = about
         current_user_info.had_known = had_known
+        current_user_info.recommended_reads = recommended_reads
         current_user_info.advice = advice
         db.session.commit()
     return json.dumps({'status': 'Ok', 'details': [job, about, major_skill,
