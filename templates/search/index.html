@@ -13,13 +13,23 @@
                                 {% if link.email == result.email %}
 									<p class="center-block search-name">
 										<a href="../link/{{ link.id }}">{{ result.firstname }}</a></p>
+                                    {% if link.vip %}
+										<i class="profile-social-verified fa fa-check-square fa-2x"
+										   alt="verified" data-toggle="tooltip"
+										   data-placement="left"
+										   title="verified"></i>
+                                    {% endif %}
                                 {% endif %}
                             {% endfor %}
-							<span><i class="fa fa-chain"></i> {{ result.skill | upper }}</span>
+							<span>
+								<i class="text-left fa fa-chain"></i>
+                                {{ result.skill | upper }}
+							</span>
 						</div>
 					</div>
                 {% endfor %}
-				</div>
+
+
 				<div class="row clearfix pagination">
                     {% if result.has_prev %}
 						<a href="{{ url_for('programLangCategory', page=result.prev_num, query=query) }}">&lt;
@@ -38,7 +48,7 @@
 				<img class="center-block img-responsive"
 					 src="{{ url_for('static', filename='img/nwh.png') }}">
             {% endif %}
-
+		</div>
 	</div>
 
 	<div class="extra-margin"></div>

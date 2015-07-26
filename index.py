@@ -1,6 +1,6 @@
 from flask import render_template, request, json, url_for, redirect, session, g, jsonify
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
-import os
+import os, requests, base64
 from flask_oauthlib.client import OAuth
 from setup import app
 from models import *
@@ -434,7 +434,7 @@ def MongoData():
         return data
 
 
-@app.route('/esSync')
+@app.route('/mgSync')
 def elasticSync():
     getData = User.query.all()
     result = []
@@ -461,7 +461,7 @@ def vipConfig():
             if code == coupon_form:
                 current_user_info.vip = True
                 db.session.commit()
-                return  jsonify({'res': code})
+                return jsonify({'res': code})
         return jsonify({'error': 'Code invalid'})
 
 
@@ -470,6 +470,24 @@ def vipConfig():
 def vipMembers(page=1):
     link = User.query.paginate(page, PAGINATION_VIEWS_PER_PAGE, False)
     return render_template('vip/index.html', link=link)
+
+
+@app.route('/devjson')
+def devJson():
+    response = requests.get(
+        'https://api.github.com/repos/andela-bfowotade/partial-nowwehere/contents/nowwehere-tools.json?client_id=' +
+        app.config['GITHUB_CONSUMER_KEY'] + '&client_secret=' + app.config['GITHUB_CONSUMER_SECRET'])
+    assert response.status_code == 200
+    serializeData = response.json()
+    if serializeData:
+        DecodeserializeData = base64.b64decode(serializeData['content'])
+        return jsonify({'data': DecodeserializeData})
+
+
+@app.route('/devtools')
+def devRoute():
+    return render_template('tools/index.html')
+
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
