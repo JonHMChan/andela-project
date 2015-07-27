@@ -22,7 +22,7 @@ $(function () {
 
             $('.stepped-tech').click(function () {
                 var ideLink = '';
-                $("#toggle").toggle("explode");
+                $("#toggle").toggle("fadeIn");
                 thisList = $(this).text();
 
                 //create element after click, so ide-block doesn't so one first page load
@@ -47,7 +47,7 @@ $(function () {
                     }
                 });
 
-                $("#toggle").toggle("explode");
+                $("#toggle").toggle("fadeIn");
             });
         });
     }
