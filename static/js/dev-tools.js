@@ -1,9 +1,14 @@
-$(function() {
-
-     //CONSUME GITHUB AND MANIPULATE DOM EXTENSIVELY
+$(function () {
+    $('#tag-loader').hide();
+    //CONSUME GITHUB AND MANIPULATE DOM EXTENSIVELY
     PATH_TO_CALL_API = '/devtools';
-    if(window.location.pathname === '/devtools') {
+    if (window.location.pathname === '/devtools') {
+        $('#tag-loader').show();
         $.get('/devjson', function (data) {
+
+                $('#tag-loader').hide();
+
+
             var parseResult, count = '';
             _.forEach(data, function (result) {
                 parseResult = JSON.parse(result)
