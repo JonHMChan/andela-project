@@ -22,7 +22,7 @@ $(function () {
 
             $('.stepped-tech').click(function () {
                 $("#toggle").toggle("fadeOut");
-                var ideLink = '';
+                var ideLink = '', mtLink = '';
                 thisList = $(this).text();
 
                 //create element after click, so ide-block doesn't so one first page load
@@ -44,8 +44,16 @@ $(function () {
                             for (ide in valueIde) {
                                 ideLink = valueIde[ide];
                             }
-                            $('#tech-ide').remove();
-                            $('#append-others').append('<ul><li><a href=' + ideLink + ' target="_blank">' + ide + '</a></ul></li>');
+                            $('#append-ide').append('<ul><li><a href=' + ideLink + ' target="_blank">' + ide + '</a></ul></li>');
+                        }
+
+                        //loop through materials and materials link
+                        for (var j = 0; j < value.materials.length; j++) {
+                            var materials = value.materials[j];
+                            for (material in materials) {
+                                mtLink = materials[material];
+                            }
+                            $('#append-materials').append('<ul><li><a href=' + mtLink + ' target="_blank">' + material + '</a></ul></li>');
                         }
                     }
                 });
