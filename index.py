@@ -97,7 +97,7 @@ def homeContactForm():
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'img/favicon.ico', mimetype='image/png')
+                               'img/favicon-96x96.png', mimetype='image/png')
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
 # Show Link
