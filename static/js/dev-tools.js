@@ -21,8 +21,8 @@ $(function () {
             });
 
             $('.stepped-tech').click(function () {
+                $("#toggle").toggle("fadeOut");
                 var ideLink = '';
-                $("#toggle").toggle("fadeIn");
                 thisList = $(this).text();
 
                 //create element after click, so ide-block doesn't so one first page load
@@ -42,7 +42,7 @@ $(function () {
                                 ideLink = valueIde[ide];
                             }
                             $('#tech-ide').remove();
-                            $('#append-others').append('<div id="tech-ide"></div>').append('<ul><li><a href=' + ideLink + ' target="_blank">' + ide + '</a></ul></li>');
+                            $('#append-others').append('<ul><li><a href=' + ideLink + ' target="_blank">' + ide + '</a></ul></li>');
                         }
                     }
                 });

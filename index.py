@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g, jsonify
+from flask import render_template, request, json, url_for, redirect, session, g, jsonify, send_from_directory
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os, requests, base64
 from flask_oauthlib.client import OAuth
@@ -94,7 +94,10 @@ def homeContactForm():
         message = request.form['message']
         return json.dumps({'status': 'Ok', 'details': [name, email, subject, message]})
 
-
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'img/favicon.ico', mimetype='image/png')
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
 # Show Link
