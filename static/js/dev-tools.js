@@ -26,14 +26,17 @@ $(function () {
                 thisList = $(this).text();
 
                 //create element after click, so ide-block doesn't so one first page load
-                var CreateElem = $('<br/><br/><div class="tech-ide"><h4>IDE\'s</h4>' +
+                var createIdeElem = $('<br/><br/><div class="tech-ide"><h4>IDE\'s</h4>' +
+                    '<hr/>');
+                var createMatrialsElem = $('<br/><br/><div class="tech-materials"><h4>Materials</h4>' +
                     '<hr/>');
 
                 $.each(parseResult, function (key, value) {
                     if (thisList == value.category) {
                         $('#tech-lang').text(value.category);
                         $('#tech-about').text(value.about);
-                        $('#append-others').html(CreateElem);
+                        $('#append-ide').html(createIdeElem);
+                        $('#append-materials').html(createMatrialsElem);
 
                         //loop through ides and ide links
                         for (var i = 0; i < value.IDE.length; i++) {

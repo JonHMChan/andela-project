@@ -51,27 +51,26 @@ $(function () {
 
     //RUN SEARCH ON KEY PRESS
     var search = $("#search");
-    if(search.onkeydown) {
-        search.keyup(function () {
-            $.get("/queryroute/" + search.val(), function (result) {
-                result = jQuery.parseJSON(result);
-                hits = result;
-                hitsLength = hits.length;
-                $('.upload_loader').show();
-                if (hits.length > 0) {
-                    var result_html = '';
-                    result_html += hitsLength + ' results found <p><a href="/search/' + search.val() + '">View Search Results</a></p>';
-                    setTimeout(function () {
-                        $('.upload_loader').hide();
-                        $("#search_results").html(result_html);
-                    }, 300)
+    search.keyup(function () {
+        $.get("/queryroute/" + search.val(), function (result) {
+            result = jQuery.parseJSON(result);
+            hits = result;
+            hitsLength = hits.length;
+            $('.upload_loader').show();
+            if (hits.length > 0) {
+                var result_html = '';
+                result_html += hitsLength + ' results found <p><a href="/search/' + search.val() + '">View Search Results</a></p>';
+                setTimeout(function () {
+                    $('.upload_loader').hide();
+                    $("#search_results").html(result_html);
+                }, 300)
 
-                } else {
-                    $("#search_results").html("");
-                }
-            })
-        });
-    }
+            } else {
+                $('.upload_loader').hide();
+                $("#search_results").html("Nothing Found");
+            }
+        })
+    });
     //SUBMIT CNTACT FORM
     $('.home-btn').click(function () {
         $.ajax({
