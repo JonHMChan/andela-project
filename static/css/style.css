@@ -520,7 +520,7 @@ input.gn-search:focus {
 --- Intro
 ============================ */
 
-.intro {
+.intro, .about {
     width: 100%;
     position: relative;
 }
@@ -555,6 +555,32 @@ input.gn-search:focus {
 
 .intro-text {
     font-size: 18px;
+}
+
+#about {
+    background-image: url(../img/Sci-Fi.jpg);
+}
+
+.about .slogan {
+    padding: 250px 0 60px;
+    text-align: center;
+
+}
+
+.about .slogan h1 {
+    color: #fff;
+    line-height: 1.1em;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.about .slogan p {
+    color: #eee;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+.btn-intro-headline {
+    background-color: #ffffff;
 }
 
 /* slider */
@@ -636,6 +662,10 @@ li.stepped-tech:hover {
     }
 }
 
+.real-tools {
+    line-height: 30px;
+    list-style-type: square;
+}
 /* ===========================
 --- About
 ============================ */

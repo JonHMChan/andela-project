@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g, jsonify, send_from_directory
+from flask import render_template, request, json, url_for, redirect, session, g, jsonify
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os, requests, base64
 from flask_oauthlib.client import OAuth
@@ -83,6 +83,10 @@ def before_request():
 def home():
     return render_template('index.html', links=g.links)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 
 # Home Page Contact Form
 @app.route('/homeContact', methods=["POST"])
@@ -94,10 +98,6 @@ def homeContactForm():
         message = request.form['message']
         return json.dumps({'status': 'Ok', 'details': [name, email, subject, message]})
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'img/favicon-96x96.png', mimetype='image/png')
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
 # Show Link
@@ -468,8 +468,8 @@ def vipConfig():
         return jsonify({'error': 'Code invalid'})
 
 
-@app.route('/vipMembers')
-@app.route('/vipMembers/<int:page>')
+@app.route('/vipmembers')
+@app.route('/vipmembers/<int:page>')
 def vipMembers(page=1):
     link = User.query.paginate(page, PAGINATION_VIEWS_PER_PAGE, False)
     return render_template('vip/index.html', link=link)
