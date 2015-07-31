@@ -518,6 +518,10 @@ def devJson():
 def devRoute():
     return render_template('tools/index.html')
 
+@app.route('/proglang')
+def progLangRoute():
+        return render_template('tools/proglang.html')
+
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
