@@ -87,7 +87,7 @@ $(function () {
                 $('.comment-failure').show("drop", {direction: "up"}, "slow").text('Error Occured, please check all fields and accept captcha');
             }
         });
-        setTimeout(function() {
+        setTimeout(function () {
             $('.comment-success').hide();
             $('.comment-failure').hide();
         }, 5000);
@@ -96,14 +96,14 @@ $(function () {
 
     //------------------------------CLOUDINARY IMAGE UPLOAD
     $('.image-btn').click(function () {
-
+        $('.upload_loader').attr('src', "{{ url_for('static', filename='img/ajax-loader.gif') }}");
         var ext = $('#file_field').val().split('.').pop().toLowerCase();
         if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
             alert('invalid extension!');
         }
         else {
             var form_data = new FormData($('#image-form')[0]);
-            $('.upload_loader').show("drop", {direction: "up"}, "slow");
+
             $.ajax({
                 type: 'POST',
                 url: '/fileUpload',
@@ -118,7 +118,6 @@ $(function () {
                     $('.header-profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
                 },
                 complete: function () {
-                    $('.upload_loader').hide();
                     $('.upload-success').text('Image Successfully Uploaded').show();
                     return true;
                 },
@@ -128,6 +127,7 @@ $(function () {
                 }
             });
         }
+        $('.upload_loader').hide();
     });
 
 
@@ -307,7 +307,12 @@ $(function () {
     //twitter
     ConfigSocialLink('.twitter-btn', 'Twitter Link', 'Please put in your twitter username or simply click the icon' +
         ' below<br><a href=\'/twitconnect\'> <i class=\'fa fa-twitter fa-2x\'></i></a>', 'Username(no need for the' +
-        ' @symbol)', '/profileTweetLink', '.profile-twitter-pub', 'Twitter username Added Successfully', '', '.tweet' +
+        ' @symbol)', '/profileTweetLink', '.profile-linkedin-pub', 'LinkedIn profile Link added', '', '.tweet' +
+        ' span');
+
+    //linkedin
+    ConfigSocialLink('.linkedin-btn', 'Linkedin Profile', 'Please put in your linkedin profile public link', 'http://->Link',
+        '/profileLinkedIn', '.profile-linked-link', 'LinkedIn profile Link successfuly Added', '', '.linkedin' +
         ' span');
 
 

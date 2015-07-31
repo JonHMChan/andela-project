@@ -21,7 +21,7 @@
 						   alt="verified" data-toggle="tooltip" data-placement="right"
 						   title="verified"></i>
                     {% endif %}
-					<i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x" alt="LinkedIn"
+					<i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x linkedin-btn" alt="LinkedIn"
 					   data-toggle="tooltip"
 					   data-placement="bottom" title="LinkedIn">
 					</i>
@@ -40,7 +40,7 @@
 				   data-toggle="tooltip" name="websitelink"
 				   data-placement="bottom" title="Website Link"></i>
 				<br/><br/>
-				<span><img class="upload_loader" src="{{ url_for('static', filename='img/ajax-loader.gif') }}"></span>
+				<span><img class="upload_loader" src=""></span>
 				<form action="" id="image-form" method="POST" enctype="multipart/form-data">
 					<input id="file_field" type="file" name="image"/>
 					<button type="button" class="btn btn-block btn-dark image-btn">Upload Image</button>
@@ -75,7 +75,7 @@
 							<span> Please connect your twitter public profile</span>
                         {% endif %}
 
-					<p class="p-d">LinkedIn Link:
+					<p class="p-d linkedin">LinkedIn Link:
                         {% if person.social_linkedin %}
 							<a class="profile-linked-link" href="{{ person.social_linkedin }}" target="_blank">LinkedIn
 								Connected</a></p>

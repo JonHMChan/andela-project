@@ -259,6 +259,15 @@ def change_linkedin_query(uri, headers, body):
 
 linkedin.pre_request = change_linkedin_query
 
+@app.route('/profileLinkedIn', methods=['POST'])
+def linkedInProfileConfig():
+    if request.method == 'POST':
+        linkedinProfile = request.form['ajaxDataJsObj']
+        current_user_info = User.query.filter_by(email=current_user.email).first()
+        current_user_info.social_linkedin = linkedinProfile
+        db.session.commit()
+    return json.dumps({'status': 'Ok', 'details': [linkedinProfile]})
+
 # -----------------END LINKEDIN CONFIG --------------------------------#
 
 
@@ -331,7 +340,8 @@ def twitterLink():
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_twitter = twitterlink
         db.session.commit()
-    return json.dumps({'status': 'Ok', 'details': [twitterlink]})
+    return json.dumps({'status': 'Ok', 'details': [twitterlink]})\
+
 
 
 # ---------------------------END TWITTER CONFIG--------------------------#
