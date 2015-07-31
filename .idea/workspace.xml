@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b92bea5d-6ea6-4eda-8e9d-9f04b879b299" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/link/index.html" afterPath="$PROJECT_DIR$/templates/pub/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/core_script.js" afterPath="$PROJECT_DIR$/static/js/core_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/dev-tools.js" afterPath="$PROJECT_DIR$/static/js/dev-tools.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/users/index.html" afterPath="$PROJECT_DIR$/templates/users/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/vip/index.html" afterPath="$PROJECT_DIR$/templates/vip/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery-1.10.2.js" afterPath="$PROJECT_DIR$/static/js/jquery-1.10.2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery.min.js" afterPath="$PROJECT_DIR$/static/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/about.html" afterPath="$PROJECT_DIR$/templates/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/search/index.html" afterPath="$PROJECT_DIR$/templates/search/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="andela-project.iws" />
@@ -66,11 +60,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75813955">
-              <caret line="225" column="58" selection-start-line="225" selection-start-column="58" selection-end-line="225" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
               <folding>
                 <element signature="e#0#95#0" expanded="true" />
               </folding>
@@ -78,61 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.392157">
-              <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+            <state vertical-scroll-proportion="-22.074074">
+              <caret line="609" column="31" selection-start-line="609" selection-start-column="31" selection-end-line="609" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/vip/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7083335">
-              <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contactForm.validate.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/contactForm.validate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="static.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/static.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.958333">
-              <caret line="141" column="58" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+            <state vertical-scroll-proportion="1.2101617">
+              <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -203,12 +157,9 @@
         <option value="$PROJECT_DIR$/static/js/custom.validate.js" />
         <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/templates/users/index.html" />
-        <option value="$PROJECT_DIR$/templates/search/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/static/js/dev-tools.js" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/tools/index.html" />
-        <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/static/js/contactForm.validate.js" />
@@ -217,6 +168,9 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/vip/index.html" />
         <option value="$PROJECT_DIR$/index.py" />
+        <option value="$PROJECT_DIR$/templates/search/index.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/about.html" />
       </list>
     </option>
   </component>
@@ -321,7 +275,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vip" />
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andela-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andela-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andela-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andela-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andela-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andela-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -592,9 +596,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28781205" sideWeight="0.49030694" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28781205" sideWeight="0.49030694" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599118" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23667206" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -645,198 +649,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://DATABASE/728d08ba-1897-4cf1-a00f-9fdd18201077">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>728d08ba-1897-4cf1-a00f-9fdd18201077</OriginalElement>
-          <nodes>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_data_wrappers</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.triggered_update_columns</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_description</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_default_acl</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_locks</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_group</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.constraint_table_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_user_functions</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_roles</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_sizing_profiles</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_sys_sequences</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_largeobject_metadata</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_database</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_servers</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_dict</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.user_defined_types</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_conversion</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_available_extension_versions</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_collation</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.columns</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_operator</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_features</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_constraint</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.data_type_privileges</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.enabled_roles</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_attribute</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_udt_grants</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_sys_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_archiver</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.check_constraints</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_config_map</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.view_routine_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_config</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_foreign_table</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.information_schema_catalog_name</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_all_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_servers</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_namespace</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_prepared_statements</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.routine_privileges</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_trigger</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_server_options</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_user_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.user_mapping_options</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_settings</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.character_sets</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_pltemplate</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shadow</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_all_sequences</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stats</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_all_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_parts</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_user_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_domain_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_extension</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.attributes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_tablespace</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_column_grants</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.check_constraint_routine_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_rules</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_user_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_cursors</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_replication_slots</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_opclass</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shdepend</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_languages</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_cast</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_foreign_data_wrapper</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_data_wrappers</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_enum</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_all_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.routines</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_data_wrapper_options</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_seclabels</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sequences</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.usage_privileges</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.table_privileges</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_sys_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.administrable_role_authorizations</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_timezone_abbrevs</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_index</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_largeobject</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_type</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_event_trigger</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.table_constraints</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_opfamily</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_aggregate</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_proc</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_sys_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_depend</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_user_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.schemata</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_activity</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_database</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_database_conflicts</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.collation_character_set_applicability</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_user</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_user_mappings</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.parameters</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.udt_privileges</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.triggers</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_rewrite</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_parser</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_user_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_timezone_names</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_inherits</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_routine_grants</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_foreign_table_columns</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.constraint_column_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_class</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_implementation_info</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.domain_constraints</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_udt_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_options</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_prepared_xacts</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_matviews</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_usage_grants</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_sizing</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_sys_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.user_mappings</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_all_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.domain_udt_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shseclabel</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.role_table_grants</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_language</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_amop</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_am</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_auth_members</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_all_tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.view_column_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.element_types</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.foreign_table_options</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statistic</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.key_column_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_bgwriter</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.view_table_usage</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_db_role_setting</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.views</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_shdescription</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.sql_packages</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.collations</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.applicable_roles</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_attrdef</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_amproc</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_replication</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_foreign_server</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_views</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.public.users</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema._pg_user_mappings</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.referential_constraints</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_user_mapping</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_available_extensions</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.column_privileges</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_user_sequences</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_ts_template</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_seclabel</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_range</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_stat_xact_user_functions</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_authid</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.tables</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.pg_catalog.pg_statio_sys_indexes</node>
-            <node x="" y="">728d08ba-1897-4cf1-a00f-9fdd18201077.table:nowwehere.information_schema.domains</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.06914985342300396" x="2686.0" y="2530.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydev_import_hook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33175355">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/ddf49d67/728d08ba-1897-4cf1-a00f-9fdd18201077/nowwehere.public.users_id_seq">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1008,14 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/search/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.25">
-          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1109,74 +913,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33255813">
-          <caret line="945" column="4" selection-start-line="945" selection-start-column="1" selection-end-line="945" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/userform.validate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29862174">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/contactForm.validate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.958333">
-          <caret line="141" column="58" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.392157">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1189,13 +929,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/contactForm.validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27565083">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20673813">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/static.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59634554">
+          <caret line="141" column="58" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66613674">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9761526">
+          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-62.169983">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3598775">
+          <caret line="733" column="6" selection-start-line="733" selection-start-column="1" selection-end-line="733" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/core_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75813955">
-          <caret line="225" column="58" selection-start-line="225" selection-start-column="58" selection-end-line="225" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
           <folding>
             <element signature="e#0#95#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.074074">
+          <caret line="609" column="31" selection-start-line="609" selection-start-column="31" selection-end-line="609" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2101617">
+          <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

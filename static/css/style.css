@@ -582,7 +582,33 @@ input.gn-search:focus {
 .btn-intro-headline {
     background-color: #ffffff;
 }
+.twitter-conversation-header {
+    text-decoration: underline;
+    color: #62c6f8;
+}
 
+.about-main-section ul li {
+    list-style-type: none;
+}
+.about-me-info {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.thanks ul li {
+    list-style-type: none;
+    text-align: left;
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.thanks ul li p {
+    background-color: #dedbd7;
+    border-radius: 5px;
+    font-weight: normal;
+    padding: 5px 15px 5px 15px;
+}
 /* slider */
 
 .tp-caption.custom_large_white {

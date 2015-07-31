@@ -2,40 +2,109 @@
 {% block content %}
 
 
-<!-- Section: about -->
-<section id="about" class="about">
-	<div class="slogan">
-		<h1>About Nowwehere.io</h1>
-		<p>Knowledge is like money: it must circulate to be of value, and in circulation it can increase
-			in quantity and, hopefully, in value.</p>
-	</div>
-</section>
-<!-- /Section: about -->
+  <!-- Section: about -->
+    <section id="about" class="about" xmlns="http://www.w3.org/1999/html">
+        <div class="slogan">
+            <h1>About Nowwehere.io</h1>
 
-	<section id="contact" class="home-section text-center bg-gray">
-		<div class="heading-contact marginbot-50">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
+            <p>Knowledge is like money: it must circulate to be of value, and in circulation it can increase
+                in quantity and, hopefully, in value.</p>
+        </div>
+    </section>
+  <!-- /Section: about -->
 
-						<div class="section-heading">
-							<h2>Get in touch</h2>
+    <section id="conversation" class="home-section text-center bg-gray">
+        <div class="heading-about marginbot-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <img src="{{ url_for('static', filename='img/090.jpg') }}" width="350" height="350"/>
 
-							<p>If you have any suggestions, complaints, noticed a bug? or would like to contribute,
-								kindly
-								leave a message
-								and you would get a response asap. Thank you.</p>
-						</div>
+                        <p></p><i>
+                        <small>photo credit: @unicodeveloper</small>
+                    </i></p>
+                    </div>
+                    <div class="col-md-6 col-xs-12 about-main-section">
+                        <div class="section section-heading">
+                            <h5 class="twitter-conversation-header">Twitter Conversation</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <p><i><b>Upcoming Software developer:</b> I want to work with you</i></p></li>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
+                            <li><p><i><b>Senior Software Developer:</b> What version control system do you use and can i
+                                see
+                                your github repo url?</i></p></li>
 
-			</div>
-		</div>
-	</section>
+                            <li><p><i><b>Upcoming Software developer:</b> 8.1 ->> (windows 8.1)</i></p></li>
+                        </ul>
+                        <br/>
+                        <br/>
 
+                        <img src="{{ url_for('static', filename='img/sadsmiley.png') }}" width="50" height="50">
+
+                        <p>please visit <a href="/devtools">developer tools</a></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="aboutme" class="home-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="section section-heading">
+                        <h6>A man says: <i> Brilliance is evenly distributed but opportunity is not.<i>
+                            <small>-Jeremy Johnson(ceo Andela)</small>
+                        </i></i></h6>
+                    </div>
+                    <br/>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <h5>My name is Babajide Fowotade</h5>
+                                <img src="{{ url_for('static', filename='img/founder.png') }}" width="250" height="250">
+                            </div>
+                            <div class="col-md-6 col-xs-12 about-me-info">
+                                <p> I'm a self taught developer who read 6 different books on PHP and
+                                    realised in future i learnt 'sort of' the wrong thing, which turned out to be a
+                                    waste.</p>
+
+                                <p>I work with <a href="http://andela.com"> Andela</a>, a company that trains youths in
+                                    Africa how to code and develop professionally.</p>
+
+                                <p>Nowwehere is a platform to inform you about the resources you need to know about when
+                                    starting up as a
+                                    developer and you don't waste time learning what you shouldn't.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="thanks" class="home-section text-center bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="section section-heading">
+                    <h3>A Very Big Thank You.</h3>
+                </div>
+                <div class="col-md-12 col-xs-12 col-lg-12 thanks">
+                    <ul>
+                        <li>
+                            <p><a href="http://andela.com" target="_blank">Andela</a> </p>
+                        </li>
+                        <li>
+                            <p>Jon Chan <a href="http://bento.io" target="_blank">BENTO</a> </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
