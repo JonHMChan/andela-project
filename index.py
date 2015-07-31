@@ -1,4 +1,4 @@
-from flask import render_template, request, json, url_for, redirect, session, g, jsonify
+from flask import render_template, request, json, url_for, redirect, session, g, jsonify, abort
 from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
 import os, requests, base64
 from flask_oauthlib.client import OAuth
@@ -7,12 +7,15 @@ from models import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from flask.ext.mandrill import Mandrill
 
 oauth = OAuth(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login_auth'
 PAGINATION_VIEWS_PER_PAGE = 6
+
+mandrill = Mandrill(app)
 
 cloudinary.config(
     cloud_name=app.config['CLOUDINARY_NAME'],
@@ -83,6 +86,7 @@ def before_request():
 def home():
     return render_template('index.html', links=g.links)
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -91,12 +95,30 @@ def about():
 # Home Page Contact Form
 @app.route('/homeContact', methods=["POST"])
 def homeContactForm():
+    cptKey=app.config['GOOGLE_RECAPTCHA_SECRET']
+    mail=app.config['MANDRILL_DEFAULT_EMAIL_TO']
+
     if request.method == "POST":
         name = request.form['name']
         email = request.form['email']
         subject = request.form['subject']
         message = request.form['message']
-        return json.dumps({'status': 'Ok', 'details': [name, email, subject, message]})
+        cptResponse = request.form['g-recaptcha-response']
+
+        googleCaptchaRequest = requests.get('https://www.google.com/recaptcha/api/siteverify?secret='+cptKey+'&response='+cptResponse)
+        response = googleCaptchaRequest.json()
+
+        if response['success'] == True:
+            mandrill.send_email(
+                from_email='admin@nowwehere.io',
+                subject=subject,
+                to=[{'email': mail}],
+                html='<p>From: '+ email +'</p><br/><p>Name:'+ name+'</p><br/><p>'+message+'</p>'
+            )
+            return json.dumps({'status': 'Ok', 'details': [cptResponse, email, subject, message]})
+        else:
+            return abort(401)
+
 
 # ----------------------END HOMEPAGE ROUTE---------------------#
 

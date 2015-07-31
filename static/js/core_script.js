@@ -1,5 +1,4 @@
 $(function () {
-    $('.comment-success').hide();
     $('.update-success').hide();
     $('.update-failure').hide();
     $('.upload_loader').hide();
@@ -73,17 +72,25 @@ $(function () {
     });
     //SUBMIT CNTACT FORM
     $('.home-btn').click(function () {
+        $('.home-btn').text('Sending...');
         $.ajax({
             url: '/homeContact',
             data: $('#contact-form').serialize(),
             type: 'POST',
             success: function (response) {
-                $('.comment-success').show("drop", {direction: "up"}, "slow");
+                $('.home-btn').text('SEND MESSAGE');
+                $('.comment-success').show("drop", {direction: "up"}, "slow").text('Comment Successfully Sent');
             },
             error: function (error) {
-                console.log(error);
+                $('.home-btn').text('SEND MESSAGE');
+                grecaptcha.reset();
+                $('.comment-failure').show("drop", {direction: "up"}, "slow").text('Error Occured, please check all fields and accept captcha');
             }
         });
+        setTimeout(function() {
+            $('.comment-success').hide();
+            $('.comment-failure').hide();
+        }, 5000);
     });
 
 

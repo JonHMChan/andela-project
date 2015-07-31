@@ -1,244 +1,248 @@
 {% extends 'static.html' %}
 {% block content %}
 
-    <!-- Section: intro -->
-	<section id="intro" class="intro">
-		<div class="slogan">
-			<h1>Now We're Here</h1>
+  <!-- Section: intro -->
+    <section id="intro" class="intro">
+        <div class="slogan">
+            <h1>Now We're Here</h1>
 
-			<p>A tool that lets you see what a senior developer used to learn. And others to help you through
-				becoming a better software developer</p>
-			<a href="/about" class="btn btn-intro-headline scroll">About Nowwehere</a>
-			<a href="/devtools" class="btn btn-intro-headline scroll">Developer Tools</a>
-		</div>
-	</section>
-    <!-- /Section: intro -->
+            <p>A tool that lets you see what a senior developer used to learn. And others to help you through
+                becoming a better software developer</p>
+            <a href="/about" class="btn btn-intro-headline scroll">About Nowwehere</a>
+            <a href="/devtools" class="btn btn-intro-headline scroll">Developer Tools</a>
+        </div>
+    </section>
+  <!-- /Section: intro -->
 
-    <!-- Section: contribs -->
-	<section id="contributors" class="home-section text-center bg-gray">
-		<div class="heading-about marginbot-50">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
+  <!-- Section: contribs -->
+    <section id="contributors" class="home-section text-center bg-gray">
+        <div class="heading-about marginbot-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
 
-						<div class="section-heading">
-							<h2>Contributors</h2>
+                        <div class="section-heading">
+                            <h2>Contributors</h2>
 
-							<p>Thanks to the contributors here that have offered to help and share a bit about
-								themselves
-								and what tools every upcoming developer could find useful.</p>
-						</div>
+                            <p>Thanks to the contributors here that have offered to help and share a bit about
+                                themselves
+                                and what tools every upcoming developer could find useful.</p>
+                        </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
 
-			<div class="row">
-                {% for link in links %}
-                    {% if link.vip == True %}
-						<div class="col-xs-6 col-sm-3 col-md-3 team-stage">
-							<div class="team boxed-grey">
-								<div class="inner">
-									<h5><a href='link/{{ link.id }}'>{{ link.firstname }} {{ link.lastname }}</a></h5>
+            <div class="row">
+              {% for link in links %}
+                {% if link.vip == True %}
+                    <div class="col-xs-6 col-sm-3 col-md-3 team-stage">
+                        <div class="team boxed-grey">
+                            <div class="inner">
+                                <h5><a href='link/{{ link.id }}'>{{ link.firstname }} {{ link.lastname }}</a></h5>
 
-									<p class="subtitle">{{ link.job |  default('Software Developer', true) }}</p>
+                                <p class="subtitle">{{ link.job |  default('Software Developer', true) }}</p>
 
-									<div class="avatar"><img src="{{ link.photo | default(url_for('static',
+                                <div class="avatar"><img src="{{ link.photo | default(url_for('static',
                           filename='img/gravatar-60-grey.jpg'), true) }}" alt=""
-															 class="img-responsive"/></div>
-								</div>
-							</div>
+                                                         class="img-responsive"/></div>
+                            </div>
+                        </div>
 
-						</div>
-                    {% endif %}
-                {% endfor %}
-			</div>
-			<div class="container center-block">
-				<button type="button" class="btn btn-prog-lang"><a class="anchor-home" href="/vipmembers">Browse
-					More!</a></button>
-			</div>
-		</div>
-	</section>
-    <!-- /Section: contribs -->
+                    </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="container center-block">
+                <button type="button" class="btn btn-prog-lang"><a class="anchor-home" href="/vipmembers">Browse
+                    More!</a></button>
+            </div>
+        </div>
+    </section>
+  <!-- /Section: contribs -->
 
 
-    <!-- Section: languages -->
-	<section id="service" class="home-section text-center">
+  <!-- Section: languages -->
+    <section id="service" class="home-section text-center">
 
-		<div class="heading-about marginbot-50">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
+        <div class="heading-about marginbot-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
 
-						<div class="section-heading">
-							<h2>Languages</h2>
+                        <div class="section-heading">
+                            <h2>Languages</h2>
 
-							<p>Choose your preferred programming language, educate yourself and study wisely</p>
-						</div>
+                            <p>Choose your preferred programming language, educate yourself and study wisely</p>
+                        </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3 col-md-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
 
-					<div class="service-box">
-						<div class="service-icon">
-							<i class="language">
-								<img src="static/img/languages/js.png" width="42px" height="43px">
-							</i>
-						</div>
-						<div class="service-desc">
-							<h5>Javascript</h5>
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="language">
+                                <img src="static/img/languages/js.png" width="42px" height="43px">
+                            </i>
+                        </div>
+                        <div class="service-desc">
+                            <h5>Javascript</h5>
 
-							<p>An object-oriented computer programming language commonly used to create interactive
-								effects within web browsers. <a href="/search/javascript">Meet the pros</a></p>
-						</div>
-					</div>
+                            <p>An object-oriented computer programming language commonly used to create interactive
+                                effects within web browsers. <a href="/search/javascript">Meet the pros</a></p>
+                        </div>
+                    </div>
 
-				</div>
-				<div class="col-sm-3 col-md-3">
+                </div>
+                <div class="col-sm-3 col-md-3">
 
-					<div class="service-box">
-						<div class="service-icon">
-							<i class="language">
-								<img src="static/img/languages/python.png" width="42px" height="43px">
-							</i>
-						</div>
-						<div class="service-desc">
-							<h5>Python</h5>
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="language">
+                                <img src="static/img/languages/python.png" width="42px" height="43px">
+                            </i>
+                        </div>
+                        <div class="service-desc">
+                            <h5>Python</h5>
 
-							<p>An interpreted, object-oriented, high-level programming language with dynamic semantics.
-								<br/><a href="/search/python">Meet the pros</a></p>
-						</div>
-					</div>
+                            <p>An interpreted, object-oriented, high-level programming language with dynamic semantics.
+                                <br/><a href="/search/python">Meet the pros</a></p>
+                        </div>
+                    </div>
 
-				</div>
-				<div class="col-sm-3 col-md-3">
+                </div>
+                <div class="col-sm-3 col-md-3">
 
-					<div class="service-box">
-						<div class="service-icon">
-							<i class="language">
-								<img src="static/img/languages/ruby-on-rails.jpg" width="42px" height="43px">
-							</i>
-						</div>
-						<div class="service-desc">
-							<h5>Ruby on Rails</h5>
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="language">
+                                <img src="static/img/languages/ruby-on-rails.jpg" width="42px" height="43px">
+                            </i>
+                        </div>
+                        <div class="service-desc">
+                            <h5>Ruby on Rails</h5>
 
-							<p>A model–view–controller (MVC) framework, providing default structures for a database, a
-								web service, and web pages. <a href="/search/ruby">Meet the pros</a></p>
-						</div>
-					</div>
+                            <p>A model–view–controller (MVC) framework, providing default structures for a database, a
+                                web service, and web pages. <a href="/search/ruby">Meet the pros</a></p>
+                        </div>
+                    </div>
 
-				</div>
-				<div class="col-sm-3 col-md-3">
+                </div>
+                <div class="col-sm-3 col-md-3">
 
-					<div class="service-box">
-						<div class="service-icon">
-							<i class="language">
-								<img src="static/img/languages/c++.png" width="42px" height="43px">
-							</i>
-						</div>
-						<div class="service-desc">
-							<h5>C++</h5>
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="language">
+                                <img src="static/img/languages/c++.png" width="42px" height="43px">
+                            </i>
+                        </div>
+                        <div class="service-desc">
+                            <h5>C++</h5>
 
-							<p>An object-oriented and generic programming features, also providing facilities for
-								low-level memory manipulation. <a href="/search/c++">Meet the pros</a></p>
-						</div>
-					</div>
+                            <p>An object-oriented and generic programming features, also providing facilities for
+                                low-level memory manipulation. <a href="/search/c++">Meet the pros</a></p>
+                        </div>
+                    </div>
 
-				</div>
-				<button type="button" class="btn btn-prog-lang">View Others!</button>
-			</div>
-		</div>
-	</section>
-    <!-- /Section: languages -->
+                </div>
+                <button type="button" class="btn btn-prog-lang">View Others!</button>
+            </div>
+        </div>
+    </section>
+  <!-- /Section: languages -->
 
-    <!-- Section: contact -->
-	<section id="contact" class="home-section text-center bg-gray">
-		<div class="heading-contact marginbot-50">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
+  <!-- Section: contact -->
+    <section id="contact" class="home-section text-center bg-gray">
+        <div class="heading-contact marginbot-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
 
-						<div class="section-heading">
-							<h2>Get in touch</h2>
+                        <div class="section-heading">
+                            <h2>Get in touch</h2>
 
-							<p>If you have any suggestions, complaints, noticed a bug? or would like to contribute,
-								kindly
-								leave a message
-								and you would get a response asap. Thank you.</p>
-						</div>
+                            <p>If you have any suggestions, complaints, noticed a bug? or would like to contribute,
+                                kindly
+                                leave a message
+                                and you would get a response asap. Thank you.</p>
+                        </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
 
-			<div class="row">
-				<div class="col-lg-8 col-md-offset-2">
-					<div class="boxed-grey">
-						<form id="contact-form" method="post" action="" role="form">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="name">
-											Name</label>
-										<input type="text" class="form-control" name="name" id="name"
-											   placeholder="Enter name"
-											   required="required"/>
-									</div>
-									<div class="form-group">
-										<label for="email">
-											Email Address</label>
+            <div class="row">
+                <div class="col-lg-8 col-md-offset-2">
+                    <div class="boxed-grey">
+                        <form id="contact-form" method="post" action="" role="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">
+                                            Name*</label>
+                                        <input type="text" class="form-control" name="name" id="name"
+                                               placeholder="Enter name"
+                                               required="required"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">
+                                            Email Address*</label>
 
-										<div class="input-group">
+                                        <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                 </span>
-											<input type="email" name="email" class="form-control" id="email"
-												   placeholder="Enter
-                                email" required="required"/></div>
-									</div>
-									<div class="form-group">
-										<label for="subject">
-											Subject</label>
-										<select id="subject" name="subject" class="form-control" required="required">
-											<option value="na" selected="">Choose One:</option>
-											<option value="service">General Customer Service</option>
-											<option value="suggestions">Suggestions</option>
-											<option value="product">Product Support</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="name">
-											Message</label>
+                                            <input type="email" name="email" class="form-control" id="email"
+                                                   placeholder="Enter
+                                email" required/></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject">
+                                            Subject*</label>
+                                        <select id="subject" name="subject" class="form-control" required="required">
+                                            <option value="nothing" selected="">Choose One:</option>
+                                            <option value="service">General Customer Service</option>
+                                            <option value="suggestions">Suggestions</option>
+                                            <option value="product">Product Support</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">
+                                            Message*</label>
                             <textarea name="message" id="message" class="form-control" rows="9" cols="25"
-									  required="required"
-									  placeholder="Message"></textarea>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<button type="button" class="btn btn-skin pull-right home-btn" id="btnContactUs">
-										Send Message
-									</button>
-								</div>
+                                      required="required"
+                                      placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="g-recaptcha"
+                                         data-sitekey="6Lf7iwoTAAAAAOc7UKg3L9ejvv32mqiSgsO2oV8p"></div>
+                                    <button type="button" class="btn btn-skin pull-right home-btn" id="btnContactUs">
+                                        Send Message
+                                    </button>
+                                </div>
+                                <p class="comment-success bg-success"></p>
+                                <p class="comment-failure bg-danger"></p>
 
-								<p class="comment-success bg-success">Comment Successfully Sent</p>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+                                <p></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-		</div>
-	</section>
-    <!-- /Section: contact -->
+        </div>
+    </section>
+  <!-- /Section: contact -->
 
 {% endblock %}
