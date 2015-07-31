@@ -96,7 +96,8 @@ def about():
 @app.route('/homeContact', methods=["POST"])
 def homeContactForm():
     cptKey=app.config['GOOGLE_RECAPTCHA_SECRET']
-    mail=app.config['MANDRILL_DEFAULT_EMAIL_TO']
+    mailto=app.config['MANDRILL_DEFAULT_EMAIL_TO']
+    mailfrom=app.config['MANDRILL_DEFAULT_EMAIL_TO']
 
     if request.method == "POST":
         name = request.form['name']
@@ -110,10 +111,10 @@ def homeContactForm():
 
         if response['success'] == True:
             mandrill.send_email(
-                from_email='admin@nowwehere.io',
+                from_email=mailfrom,
                 subject=subject,
-                to=[{'email': mail}],
-                html='<p>From: '+ email +'</p><br/><p>Name:'+ name+'</p><br/><p>'+message+'</p>'
+                to=[{'email': mailto}],
+                html='<p>From: '+ email +'</p><br/>---------<p>Name: '+ name+'</p>-------<br/><p>Message: ' +message+'</p>'
             )
             return json.dumps({'status': 'Ok', 'details': [cptResponse, email, subject, message]})
         else:
