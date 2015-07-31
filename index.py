@@ -124,13 +124,13 @@ def homeContactForm():
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
 # Show Link
-@app.route('/link/<user_id>')
+@app.route('/pub/<user_id>')
 def link(user_id):
     # from database, retrieve user object from database
     user = User.query.get(user_id)
     if user:
-        return render_template('link/index.html', user=user)
-    return "No link found"
+        return render_template('pub/index.html', user=user)
+    return "No User found"
 
 
 @login_manager.user_loader
@@ -221,12 +221,9 @@ def linkedinlogin():
 def linkedinauthorized():
     resp = linkedin.authorized_response()
     if resp is None:
-        return 'Access denied: reason=%s error=%s' % (
-            request.args['error_reason'],
-            request.args['error_description']
-        )
-    session['linkedin_token'] = (resp['access_token'], '')
+        return page_not_found(request.args['error_reason'])
 
+    session['linkedin_token'] = (resp['access_token'], '')
     user = linkedin.get('people/~')
     emailaddress = linkedin.get('people/~/email-address')
     current_user_info = User.query.filter_by(email=emailaddress.data).first()
@@ -278,10 +275,7 @@ def googlelogin():
 def googleauthorized():
     resp = google.authorized_response()
     if resp is None:
-        return 'Access denied: reason=%s error=%s' % (
-            request.args['error_reason'],
-            request.args['error_description']
-        )
+        return page_not_found(request.args['error_reason'])
     session['google_token'] = (resp['access_token'], '')
     person = google.get('userinfo')
     current_user_info = User.query.filter_by(email=person.data['email']).first()

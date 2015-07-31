@@ -276,7 +276,7 @@ $(function () {
                         $(successClassId).text(link.details[0]).show("drop", {direction: "up"}, "slow");
                         $(successClassIdHtml).html("<a href=" + link.details[0] + ">" + link.details[0] + "</a>").show("drop", {direction: "up"}, "slow");
                         if (twitterClassLink) {
-                            $('.profile-twitter-link').attr('href', 'https://twitter.com/' + link.details[0]).show("drop",
+                            $('.profile-twitter-pub').attr('href', 'https://twitter.com/' + link.details[0]).show("drop",
                                 {direction: "up"}, "slow");
                             $(twitterClassLink).text(link.details[0]).show("drop", {direction: "up"}, "slow");
                         }
@@ -297,17 +297,17 @@ $(function () {
     }
 
     //Website
-    ConfigSocialLink('.website-btn', 'Website Link', 'Please put in the link to your website', 'http://->Link',
-        '/profileWeblink', '.profile-website-link', 'Link Added Successfully');
+    ConfigSocialLink('.website-btn', 'Website Link', 'Please put in the pub to your website', 'http://->Link',
+        '/profileWeblink', '.profile-website-pub', 'Link Added Successfully');
     //github
-    ConfigSocialLink('.github-btn', 'Github Link', 'Please put in the link to your github or simply click the icon' +
+    ConfigSocialLink('.github-btn', 'Github Link', 'Please put in the pub to your github or simply click the icon' +
         'below<br><a href=\'/gitconnect\'><i class=\'fa fa-github fa-2x\'></i></a>', 'Please enter your github' +
-        ' profile link', '/profileGitlink', '.profile-github-link', 'Github Link Added Successfully', '.git span');
+        ' profile pub', '/profileGitlink', '.profile-github-pub', 'Github Link Added Successfully', '.git span');
 
     //twitter
     ConfigSocialLink('.twitter-btn', 'Twitter Link', 'Please put in your twitter username or simply click the icon' +
         ' below<br><a href=\'/twitconnect\'> <i class=\'fa fa-twitter fa-2x\'></i></a>', 'Username(no need for the' +
-        ' @symbol)', '/profileTweetLink', '.profile-twitter-link', 'Twitter username Added Successfully', '', '.tweet' +
+        ' @symbol)', '/profileTweetLink', '.profile-twitter-pub', 'Twitter username Added Successfully', '', '.tweet' +
         ' span');
 
 

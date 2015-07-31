@@ -47,7 +47,7 @@ $(function () {
                             $('#append-ide').append('<ul><li><a href=' + ideLink + ' target="_blank">' + ide + '</a></ul></li>');
                         }
 
-                        //loop through materials and materials link
+                        //loop through materials and materials pub
                         for (var j = 0; j < value.materials.length; j++) {
                             var materials = value.materials[j];
                             for (material in materials) {
