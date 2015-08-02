@@ -13,3 +13,5 @@
     * Css mobile responsiveness
     * Convert code style format to blueprints
     * Write tests
+
+credits: Ninestar, prosper otemuyiwa, oluchi elaine.
