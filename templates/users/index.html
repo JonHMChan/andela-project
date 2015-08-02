@@ -56,7 +56,7 @@
 				<div class="profile_links">
 					<p class="p-d">Website Link: <a class="profile-website-link" href="{{ person.social_website |
 					default
-					('#', true) }}"> {{ person.social_website | default('Please add pub', true) }}</a></p>
+					('#', true) }}"> {{ person.social_website | default('Please add personal website link', true) }}</a></p>
 
 					<p class="p-d git">Github Link:
                         {% if person.social_github %}
