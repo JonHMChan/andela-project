@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b92bea5d-6ea6-4eda-8e9d-9f04b879b299" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tools/proglang.html" afterPath="$PROJECT_DIR$/templates/tools/proglang.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/static.html" afterPath="$PROJECT_DIR$/templates/static.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="andela-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,10 +75,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="10.553611">
               <caret line="522" column="46" selection-start-line="522" selection-start-column="46" selection-end-line="522" selection-end-column="46" />
               <folding />
             </state>
@@ -139,11 +137,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="static.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="static.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/static.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.7459583">
+            <state vertical-scroll-proportion="-85.625">
               <caret line="139" column="83" selection-start-line="139" selection-start-column="83" selection-end-line="139" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -607,9 +615,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28781205" sideWeight="0.48707592" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28781205" sideWeight="0.48707592" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599118" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23667206" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -801,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/dev-tools.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -993,14 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="522" column="46" selection-start-line="522" selection-start-column="46" selection-end-line="522" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.296296">
@@ -1027,8 +1020,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/static.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.7459583">
+        <state vertical-scroll-proportion="-85.625">
           <caret line="139" column="83" selection-start-line="139" selection-start-column="83" selection-end-line="139" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.553611">
+          <caret line="522" column="46" selection-start-line="522" selection-start-column="46" selection-end-line="522" selection-end-column="46" />
           <folding />
         </state>
       </provider>
