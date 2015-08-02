@@ -477,7 +477,6 @@ def elasticSync():
         mIndex.save()
         if (fetchMongoData is not None):
             mIndex.delete()
-            mIndex = MongoIndex(firstname=data.firstname, skill=data.major_skill, photo=data.photo, email=data.email)
             mIndex.save()
     return 'Success: ' + ",".join(result)
 
