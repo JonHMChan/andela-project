@@ -95,9 +95,9 @@ def about():
 # Home Page Contact Form
 @app.route('/homeContact', methods=["POST"])
 def homeContactForm():
-    cptKey=app.config['GOOGLE_RECAPTCHA_SECRET']
-    mailto=app.config['MANDRILL_DEFAULT_EMAIL_TO']
-    mailfrom=app.config['MANDRILL_DEFAULT_EMAIL_TO']
+    cptKey = app.config['GOOGLE_RECAPTCHA_SECRET']
+    mailto = app.config['MANDRILL_DEFAULT_EMAIL_TO']
+    mailfrom = app.config['MANDRILL_DEFAULT_EMAIL_TO']
 
     if request.method == "POST":
         name = request.form['name']
@@ -106,7 +106,8 @@ def homeContactForm():
         message = request.form['message']
         cptResponse = request.form['g-recaptcha-response']
 
-        googleCaptchaRequest = requests.get('https://www.google.com/recaptcha/api/siteverify?secret='+cptKey+'&response='+cptResponse)
+        googleCaptchaRequest = requests.get(
+            'https://www.google.com/recaptcha/api/siteverify?secret=' + cptKey + '&response=' + cptResponse)
         response = googleCaptchaRequest.json()
 
         if response['success'] == True:
@@ -114,7 +115,7 @@ def homeContactForm():
                 from_email=mailfrom,
                 subject=subject,
                 to=[{'email': mailto}],
-                html='<p>From: '+ email +'</p><br/>---------<p>Name: '+ name+'</p>-------<br/><p>Message: ' +message+'</p>'
+                html='<p>From: ' + email + '</p><br/>---------<p>Name: ' + name + '</p>-------<br/><p>Message: ' + message + '</p>'
             )
             return json.dumps({'status': 'Ok', 'details': [cptResponse, email, subject, message]})
         else:
@@ -259,6 +260,7 @@ def change_linkedin_query(uri, headers, body):
 
 linkedin.pre_request = change_linkedin_query
 
+
 @app.route('/profileLinkedIn', methods=['POST'])
 def linkedInProfileConfig():
     if request.method == 'POST':
@@ -267,6 +269,7 @@ def linkedInProfileConfig():
         current_user_info.social_linkedin = linkedinProfile
         db.session.commit()
     return json.dumps({'status': 'Ok', 'details': [linkedinProfile]})
+
 
 # -----------------END LINKEDIN CONFIG --------------------------------#
 
@@ -340,10 +343,9 @@ def twitterLink():
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_twitter = twitterlink
         db.session.commit()
-    return json.dumps({'status': 'Ok', 'details': [twitterlink]})\
-
-
-
+    return json.dumps({'status': 'Ok', 'details': [twitterlink]}) \
+ \
+ \
 # ---------------------------END TWITTER CONFIG--------------------------#
 
 
@@ -475,6 +477,7 @@ def elasticSync():
         mIndex.save()
         if (fetchMongoData is not None):
             mIndex.delete()
+            mIndex = MongoIndex(firstname=data.firstname, skill=data.major_skill, photo=data.photo, email=data.email)
             mIndex.save()
     return 'Success: ' + ",".join(result)
 
@@ -518,9 +521,10 @@ def devJson():
 def devRoute():
     return render_template('tools/index.html')
 
+
 @app.route('/proglang')
 def progLangRoute():
-        return render_template('tools/proglang.html')
+    return render_template('tools/proglang.html')
 
 
 if __name__ == '__main__':
