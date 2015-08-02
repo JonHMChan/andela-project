@@ -6,8 +6,10 @@
 	3. And materials you could find useful while learning
 
 ## Contributors
-    1. Fowotade Babajide
-    2. Jon Chan, founder of Bento.io
-    3. Dayane Lustosa
+    1. Jon Chan, founder of Bento.io
+    2. Dayane Lustosa
 
-
+## TODO
+    * Css mobile responsiveness
+    * Convert code style format to blueprints
+    * Write tests
