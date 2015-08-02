@@ -630,6 +630,16 @@ input.gn-search:focus {
     color: #fff;
 }
 
+/*FOOTER MENU*/
+.footer-menu {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+.footer-menu li {
+    padding: 10px;
+    word-break: break-word;
+}
 /* PAGINATION */
 
 .pagination {
