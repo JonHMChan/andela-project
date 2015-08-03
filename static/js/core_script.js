@@ -309,10 +309,10 @@ $(function () {
     }
 
     //Website
-    ConfigSocialLink('.website-btn', 'Website Link', 'Please put in the pub to your website', 'http://->Link',
+    ConfigSocialLink('.website-btn', 'Website Link', 'Please put in the link to your website', 'http://->Link',
         '/profileWeblink', '.profile-website-pub', 'Link Added Successfully');
     //github
-    ConfigSocialLink('.github-btn', 'Github Link', 'Please put in the pub to your github or simply click the icon' +
+    ConfigSocialLink('.github-btn', 'Github Link', 'Please put in the link to your github or simply click the icon' +
         'below<br><a href=\'/gitconnect\'><i class=\'fa fa-github fa-2x\'></i></a>', 'Please enter your github' +
         ' profile pub', '/profileGitlink', '.profile-github-pub', 'Github Link Added Successfully', '.git span');
 

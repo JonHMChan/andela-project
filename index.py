@@ -9,6 +9,7 @@ import cloudinary.uploader
 import cloudinary.api
 from flask.ext.mandrill import Mandrill
 
+
 oauth = OAuth(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -220,17 +221,23 @@ def linkedinlogin():
 
 @app.route('/linkedin/login/authorized')
 def linkedinauthorized():
+    default_image = 'https://lh3.googleusercontent.com/0LLwXvYMpMQRF-ntK8Wx3zl1F569WxLeLeAD43Ct9g=s300-no'
     resp = linkedin.authorized_response()
     if resp is None:
         return page_not_found(request.args['error_reason'])
 
     session['linkedin_token'] = (resp['access_token'], '')
     user = linkedin.get('people/~')
+    photo = linkedin.get('people/~:(picture-urls::(original))?format=json')
     emailaddress = linkedin.get('people/~/email-address')
     current_user_info = User.query.filter_by(email=emailaddress.data).first()
     if current_user_info is None:
-        reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data)
-        db.session.add(reg)
+        if 'values' in photo.data['pictureUrls']:
+            reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data, photo.data['pictureUrls']['values'][0])
+            db.session.add(reg)
+        else:
+            reg = User(user.data['id'], user.data['firstName'], user.data['lastName'], emailaddress.data, default_image)
+            db.session.add(reg)
         try:
             db.session.commit()
         except:
@@ -331,6 +338,7 @@ def twitteroauthorized():
         return get_redirect_email(current_user.email)
     else:
         session['twitter_oauth'] = resp
+        print resp
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_twitter = resp['screen_name']
         db.session.commit()
@@ -344,9 +352,7 @@ def twitterLink():
         current_user_info = User.query.filter_by(email=current_user.email).first()
         current_user_info.social_twitter = twitterlink
         db.session.commit()
-    return json.dumps({'status': 'Ok', 'details': [twitterlink]}) \
- \
- \
+    return json.dumps({'status': 'Ok', 'details': [twitterlink]})
         # ---------------------------END TWITTER CONFIG--------------------------#
 
 
