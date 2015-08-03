@@ -38,8 +38,8 @@ $(function () {
     });
 
     //VIP MEMBER CODE CHECK
-    $().click(function (event) {
-        if ($('#vip-check').val().length > 0 || x===13) {
+    $('.btn-coupon').click(function () {
+        if ($('#vip-check').val().length > 0) {
             $.ajax({
                 url: '/getVipCode',
                 data: $('#vip-form').serialize(),
