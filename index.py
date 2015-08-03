@@ -292,7 +292,8 @@ def googleauthorized():
     person = google.get('userinfo')
     current_user_info = User.query.filter_by(email=person.data['email']).first()
     if current_user_info is None:
-        reg = User(person.data['id'], person.data['given_name'], person.data['family_name'], person.data['email'])
+        reg = User(person.data['id'], person.data['given_name'], person.data['family_name'], person.data['email'],
+                   person.data['picture'])
         db.session.add(reg)
         db.session.commit()
     else:
@@ -346,7 +347,7 @@ def twitterLink():
     return json.dumps({'status': 'Ok', 'details': [twitterlink]}) \
  \
  \
-# ---------------------------END TWITTER CONFIG--------------------------#
+        # ---------------------------END TWITTER CONFIG--------------------------#
 
 
 # -----------------------USER PROFILE ROUTE CONFIG------------------#

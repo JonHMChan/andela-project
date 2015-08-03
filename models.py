@@ -27,11 +27,12 @@ class User(db.Model):
     social_github = db.Column(db.String)
     vip = db.Column(db.Boolean, default=False)
 
-    def __init__(self, uid, firstname, lastname, email):
+    def __init__(self, uid, firstname, lastname, email, photo):
         self.uid = uid
         self.firstname = firstname
         self.lastname = lastname
         self.email = email
+        self.photo = photo
         self.registeredOn = datetime.utcnow()
 
     def is_authenticated(self):
