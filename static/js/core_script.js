@@ -76,6 +76,8 @@ $(function () {
             }
         })
     });
+
+
     //SUBMIT CNTACT FORM
     $('.home-btn').click(function () {
         $('.home-btn').text('Sending...');
@@ -86,6 +88,10 @@ $(function () {
             success: function (response) {
                 $('.home-btn').text('SEND MESSAGE');
                 $('.comment-success').show("drop", {direction: "up"}, "slow").text('Comment Successfully Sent');
+                $('#contact-form').each(function () {
+                    this.reset();
+                });
+                grecaptcha.reset();
             },
             error: function (error) {
                 $('.home-btn').text('SEND MESSAGE');
