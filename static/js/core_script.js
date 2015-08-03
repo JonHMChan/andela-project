@@ -29,24 +29,29 @@ $(function () {
 
     //VIP MEMBER CODE CHECK
     $('.btn-coupon').click(function () {
-        $.ajax({
-            url: '/getVipCode',
-            data: $('#vip-form').serialize(),
-            type: 'POST',
-            success: function (response) {
-                $('.vip-check-mark').show();
-                $('.btn-coupon').text('Verified Vip');
-                $('.vip-message-style').attr('class', 'vip-message-style bg-success').text('Approved');//if showing already
-                setTimeout(function () {
-                    $('.coupon').hide();
-                    $('.profile-social-verified').show("drop", {direction: "down"}, "slow");
-                    $('.success-vip-message').text('Verified Vip').show("drop", {direction: "down"}, "slow");
-                }, 5000);
-            },
-            error: function (error) {
-                $('.vip-message').attr('class', 'vip-message-style bg-danger').text('Sorry Invalid Code').show();
-            }
-        })
+        if ($('#vip-check').val().length > 0) {
+            $.ajax({
+                url: '/getVipCode',
+                data: $('#vip-form').serialize(),
+                type: 'POST',
+                success: function (response) {
+                    $('.vip-check-mark').show();
+                    $('.btn-coupon').text('Verified Vip');
+                    $('.vip-message-style').attr('class', 'vip-message-style bg-success').text('Approved');//if showing already
+                    setTimeout(function () {
+                        $('.coupon').hide();
+                        $('.profile-social-verified').show("drop", {direction: "down"}, "slow");
+                        $('.success-vip-message').text('Verified Vip').show("drop", {direction: "down"}, "slow");
+                    }, 5000);
+                },
+                error: function (error) {
+                    $('.vip-message').attr('class', 'vip-message-style bg-danger').text('Sorry Invalid Code').show();
+                }
+            })
+        } else {
+            alert('Please enter code');
+        }
+
     });
 
     //RUN SEARCH ON KEY PRESS
