@@ -494,7 +494,7 @@ def vipConfig():
                 current_user_info.vip = True
                 db.session.commit()
                 return jsonify({'res': code})
-        return jsonify({'error': 'Code invalid'})
+        return abort(404);
 
 
 @app.route('/vipmembers')

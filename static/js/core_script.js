@@ -36,6 +36,7 @@ $(function () {
             success: function (response) {
                 $('.vip-check-mark').show();
                 $('.btn-coupon').text('Verified Vip');
+                $('.vip-message-style').attr('class', 'vip-message-style bg-success').text('Approved');//if showing already
                 setTimeout(function () {
                     $('.coupon').hide();
                     $('.profile-social-verified').show("drop", {direction: "down"}, "slow");
@@ -43,7 +44,7 @@ $(function () {
                 }, 5000);
             },
             error: function (error) {
-                return error;
+                $('.vip-message').attr('class', 'vip-message-style bg-danger').text('Sorry Invalid Code').show();
             }
         })
     });

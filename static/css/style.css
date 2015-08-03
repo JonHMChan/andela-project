@@ -629,6 +629,13 @@ input.gn-search:focus {
 .tp-caption a.btn {
     color: #fff;
 }
+.vip-message-style {
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+    padding: 15px;
+    border-radius: 5px;
+}
 
 /*FOOTER MENU*/
 .footer-menu {
