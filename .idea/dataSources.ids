@@ -2389,6 +2389,7 @@
       <column name="social_twitter" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="social_github" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="vip" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="recommended_reads" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="users_pkey" columns="id"/>
       <index name="users_email_key" unique="true" columns="email"/>
       <index name="users_uid_key" unique="true" columns="uid"/>

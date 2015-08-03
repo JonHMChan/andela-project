@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/andela-project.iml" filepath="$PROJECT_DIR$/.idea/andela-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../andela_project/andela-project/.idea/andela-project.iml" filepath="$PROJECT_DIR$/../andela_project/andela-project/.idea/andela-project.iml" />
     </modules>
   </component>
 </project>
