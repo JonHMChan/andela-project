@@ -27,9 +27,19 @@ $(function () {
         }, 3000)
     });
 
+
+    //disable enter key press for code validation
+    $('#vip-check').keydown(function (event) {
+        var x = event.which;
+        console.log(x);
+        if (x === 13) {
+            event.preventDefault();
+        }
+    });
+
     //VIP MEMBER CODE CHECK
-    $('.btn-coupon').click(function () {
-        if ($('#vip-check').val().length > 0) {
+    $().click(function (event) {
+        if ($('#vip-check').val().length > 0 || x===13) {
             $.ajax({
                 url: '/getVipCode',
                 data: $('#vip-form').serialize(),
