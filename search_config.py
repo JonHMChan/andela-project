@@ -1,7 +1,7 @@
 from flask import request, render_template, json
 from setup import app
 from models import *
-PAGINATION_VIEWS_PER_PAGE = 6
+PAGINATION_VIEWS_PER_PAGE = 12
 
 
 # -------------------------------------SEARCH QUERY CONFIG --------------------------#

@@ -2,7 +2,7 @@ from flask import request, render_template, abort, jsonify
 from flask.ext.login import current_user
 from setup import app
 from models import *
-PAGINATION_VIEWS_PER_PAGE = 6
+PAGINATION_VIEWS_PER_PAGE = 12
 
 
 
