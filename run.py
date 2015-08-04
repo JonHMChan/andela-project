@@ -27,6 +27,9 @@ def before_request():
 
 
 # --------------------------HOMEPAGE ROUTE
+def limitData():
+    return User.query.limit(8).all()
+
 
 @app.route('/')
 def home():
