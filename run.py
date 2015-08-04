@@ -28,7 +28,10 @@ def before_request():
 # --------------------------HOMEPAGE ROUTE
 @app.route('/')
 def home():
-    return render_template('index.html', links=g.links)
+    links = []
+    for link in g.links[0:9]:
+        links.append(link)
+    return render_template('index.html', links=links)
 
 
 @app.route('/about')
