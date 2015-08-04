@@ -29,7 +29,7 @@ def before_request():
 @app.route('/')
 def home():
     links = []
-    for link in g.links[:8]:
+    for link in g.links[0:18]:
         links.append(link)
     return render_template('index.html', links=links)
 
