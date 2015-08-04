@@ -29,8 +29,8 @@ def before_request():
 # --------------------------HOMEPAGE ROUTE
 @app.route('/')
 def home():
-    queryDb = User.query.limit(8).all()
-    return render_template('index.html', links=queryDb)
+    # queryDb = User.query.limit(8).all()
+    return render_template('index.html', links=g.links)
 
 
 @app.route('/about')
