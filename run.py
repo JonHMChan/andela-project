@@ -30,7 +30,7 @@ def before_request():
 def limitData():
     ls = []
     count = ''
-    data = User.query.all()
+    data = User.query.filter_by(vip=User.vip).limit(8).all()
     for link in data:
         if link.vip:
             count+=count
