@@ -28,12 +28,20 @@ def before_request():
 
 # --------------------------HOMEPAGE ROUTE
 def limitData():
-    return User.query.limit(8).all()
+    ls = []
+    count = ''
+    data = User.query.all()
+    for link in data:
+        if link.vip:
+            count+=count
+            ls.append(link)
+    return ls
 
 
 @app.route('/')
 def home():
-    return render_template('index.html', links=g.links)
+    fetchData = limitData()
+    return render_template('index.html', links=fetchData)
 
 
 @app.route('/about')

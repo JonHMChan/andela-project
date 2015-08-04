@@ -1,5 +1,5 @@
 from flask import request, json, url_for, redirect, session, render_template,g
-from flask.ext.login import login_required, login_user, LoginManager, logout_user, current_user
+from flask.ext.login import login_user, current_user
 from setup import app
 from models import *
 from flask_oauthlib.client import OAuth
