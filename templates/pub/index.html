@@ -21,7 +21,7 @@
 					</i></a>
                 {% endif %}
                 {% if user.social_github %}
-					<a href="{{ user.social_github | default('#', true) }}" target="_blank" class="pub_social"><i
+					<a href="https://github.com/{{ user.social_github | default('#', true) }}" target="_blank" class="pub_social"><i
 							class="profile-social profile-social-github fa fa-github fa-2x pub-github" alt="Github"
 							title="Github"></i></a>
                 {% endif %}
