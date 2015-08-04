@@ -29,8 +29,10 @@ def before_request():
 @app.route('/')
 def home():
     links = []
-    for link in g.links[0:18]:
-        links.append(link)
+    for link in g.links:
+        if len(link) > 8:
+            newLink = link[:8]
+            links.append(newLink)
     return render_template('index.html', links=links)
 
 
