@@ -27,21 +27,10 @@ def before_request():
 
 
 # --------------------------HOMEPAGE ROUTE
-def limitData():
-    ls = []
-    count = ''
-    data = User.query.filter_by(vip=User.vip).limit(8).all()
-    for link in data:
-        if link.vip:
-            count+=count
-            ls.append(link)
-    return ls
-
 
 @app.route('/')
 def home():
-    fetchData = limitData()
-    return render_template('index.html', links=fetchData)
+    return render_template('index.html', links=g.links)
 
 
 @app.route('/about')
