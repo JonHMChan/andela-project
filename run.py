@@ -30,7 +30,7 @@ def before_request():
 @app.route('/')
 def home():
     links = []
-    queryDb = User.query.order_by(User.vip).limit(8).all()
+    queryDb = User.query.limit(8).all()
     for link in queryDb:
         links.append(link)
     return render_template('index.html', links=links)
