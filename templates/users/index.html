@@ -170,17 +170,13 @@
 				your tech stack
 			</small>
                <textarea class="form-control" name="recommended_reads" rows="3" placeholder="Recommended Reads for
-               upcoming developers"
-						 id="recommended_reads">
-				   		{{ person.recommended_reads | default('', true) }}</textarea>
+               upcoming developers" id="recommended_reads">{{ person.recommended_reads | default('', true) }}</textarea>
 				<hr/>
             </span>
 			<span>
                 <h5>Advice to Upcoming Software Developers<i
 						class="text-danger">*</i></h5>
-					<textarea class="form-control" name="advice" rows="3" placeholder="Advice" id="advice">{{ person
-					.advice |
-					default('', true) }}</textarea>
+					<textarea class="form-control" name="advice" rows="3" placeholder="Advice" id="advice">{{ person.advice | default('', true) }}</textarea>
 				<hr/>
             </span>
 					<button type="button" class="btn btn-block btn-dark profile-btn" id="profile-btn">Update

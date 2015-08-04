@@ -1,6 +1,11 @@
-from flask import Flask
-import os
+from flask import Flask, render_template
 
 app = Flask(__name__)
 app.secret_key = 'development'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ('SQLALCHEMY_DATABASE_URI')
+
+
+
+# handle error
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('login.html'), 404
