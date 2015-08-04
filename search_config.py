@@ -1,4 +1,4 @@
-from flask import request, render_template, json
+from flask import request, render_template, json, g
 from setup import app
 from models import *
 PAGINATION_VIEWS_PER_PAGE = 12

@@ -4,6 +4,7 @@ import os, requests, base64
 from setup import app
 from models import *
 from flask.ext.mandrill import Mandrill
+from collections import deque
 import __init__
 from social_config import socialAuth
 import search_config
