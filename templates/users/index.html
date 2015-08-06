@@ -45,8 +45,8 @@
 					<input id="file_field" type="file" name="image"/>
 					<button type="button" class="btn btn-block btn-dark image-btn">Upload Image</button>
 				</form>
-				<span>Please upload images of format: jpg, png, jpeg, and of equal width and height e.g 575px x
-					575px</span>
+				<div class="invalid-file-format"></div>
+				<span>Please upload images of format: jpg, png, jpeg, and image width above 350px(for good quality)</span>
 				<p class="upload-success bg-success"></p>
             </span>
 
@@ -179,7 +179,7 @@
 					<textarea class="form-control" name="advice" rows="3" placeholder="Advice" id="advice">{{ person.advice | default('', true) }}</textarea>
 				<hr/>
             </span>
-					<button type="button" class="btn btn-block btn-dark profile-btn" id="profile-btn">Update
+					<button type="button" class="btn btn-block btn-dark profile-btn btn-success" id="profile-btn">Update
 						Profile
 					</button>
 				</form>

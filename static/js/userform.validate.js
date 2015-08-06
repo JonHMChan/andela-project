@@ -16,9 +16,9 @@ $(function () {
             for (var i = 0; i < this.inputId.length; i++) {
                 count++;
                 if ($('#' + this.inputId[i]).val() < 1) {
-                    return $('#profile-btn').attr('disabled', 'disabled').html('Please fill required fields');
+                    return $('#profile-btn').attr('disabled', 'disabled').attr('class', 'btn btn-block btn-dark profile-btn').html('Please fill required fields');
                 } else {
-                    $('#profile-btn').attr('disabled', false).html('Update Profile');
+                    $('#profile-btn').attr('disabled', false).attr('class', 'btn btn-block btn-dark profile-btn btn-success').html('Update Profile');
                 }
             }
         },

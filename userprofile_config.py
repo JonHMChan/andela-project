@@ -35,8 +35,8 @@ def upload_file():
     if request.method == 'POST':
         file = request.files['image']
         if file:
-            cloudinary_res = cloudinary.uploader.upload(file, width=350, height=350,
-                                                        allowed_formats=['jpg', 'png', 'jpeg'])
+            cloudinary_res = cloudinary.uploader.upload(file, height=350, width=350, gravity='face',
+                                                        allowed_formats=['jpg', 'png', 'jpeg'], crop="fill")
             current_user_info = User.query.filter_by(email=current_user.email).first()
             current_user_info.photo = cloudinary_res['secure_url']
             db.session.commit()

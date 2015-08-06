@@ -115,42 +115,74 @@ $(function () {
         }, 5000);
     });
 
+//iMAGE CONFIGURATION
+    var ImageValidation = {
+        imageInputField: $('#file_field'),
 
-    //------------------------------CLOUDINARY IMAGE UPLOAD
-    $('.image-btn').click(function () {
-        $('.upload_loader').attr('src', "{{ url_for('static', filename='img/ajax-loader.gif') }}");
-        var ext = $('#file_field').val().split('.').pop().toLowerCase();
-        if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
-            alert('invalid extension!');
-        }
-        else {
-            var form_data = new FormData($('#image-form')[0]);
+        init: function () {
+            this.disableIfNoFile();
+            this.watchForChange();
+            this.sendImage();
+        },
 
-            $.ajax({
-                type: 'POST',
-                url: '/fileUpload',
-                data: form_data,
-                contentType: false,
-                cache: false,
-                processData: false,
-                async: false,
-                success: function (data) {
-                    var dataIT = jQuery.parseJSON(data);
-                    $('.profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
-                    $('.header-profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
-                },
-                complete: function () {
-                    $('.upload-success').text('Image Successfully Uploaded').show();
-                    return true;
-                },
-                error: function (error) {
-                    $('.upload-failure').text('Error, please try again').show();
-                    return false;
+        checkImgFileExt: function () {
+            var ext = this.imageInputField.val().split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+                $('.invalid-file-format').html('<p class="text-danger">Invalid File Type</p>').show();
+                return false;
+            }
+        },
+
+        disableIfNoFile: function () {
+            if (this.imageInputField.val() === '') {
+                $('.image-btn').attr('disabled', 'disabled');
+            }
+        },
+
+        watchForChange: function () {
+            this.imageInputField.change(function () {
+                var checkExt = ImageValidation.checkImgFileExt();
+                if ($(this).val() !== '' && checkExt !== false) {
+                    $('.invalid-file-format').hide();
+                    $('.image-btn').attr('disabled', false).attr('class', 'btn btn-block btn-dark profile-btn btn-success');
                 }
             });
+        },
+
+        sendImage: function () {
+            //------------------------------CLOUDINARY IMAGE UPLOAD
+            $('.image-btn').click(function () {
+                $('.upload_loader').attr('src', "static/img/ajax-loader.gif");
+
+                var form_data = new FormData($('#image-form')[0]);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/fileUpload',
+                    data: form_data,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    async: false,
+                    success: function (data) {
+                        var dataIT = jQuery.parseJSON(data);
+                        $('.profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
+                        $('.header-profile-img').attr('src', dataIT.details.secure_url).show("drop", {direction: "up"}, "slow");
+                    },
+                    complete: function () {
+                        $('.upload-success').text('Image Successfully Uploaded').show();
+                        return true;
+                    },
+                    error: function (error) {
+                        $('.upload-failure').text('Error, please try again').show();
+                        return false;
+                    }
+                });
+                $('.upload_loader').hide();
+            });
         }
-        $('.upload_loader').hide();
-    });
+    };
+    ImageValidation.init();
 
 
     //----------------------------------AUTOCOMPLETE TAG
