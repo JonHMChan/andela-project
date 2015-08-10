@@ -562,9 +562,8 @@ input.gn-search:focus {
 }
 
 .about .slogan {
-    padding: 250px 0 60px;
+    padding: 200px 0 60px;
     text-align: center;
-
 }
 
 .about .slogan h1 {
@@ -585,6 +584,10 @@ input.gn-search:focus {
 .twitter-conversation-header {
     text-decoration: underline;
     color: #62c6f8;
+}
+
+.about-quote {
+    padding-top: 80px;
 }
 
 .about-main-section ul li {
@@ -712,6 +715,10 @@ li.stepped-tech:hover {
 /* ===========================
 --- About
 ============================ */
+
+.youtube-video {
+    width: 100%;
+}
 
 .boxed-grey {
     background: #eee;
