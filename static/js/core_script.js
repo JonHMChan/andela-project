@@ -292,7 +292,10 @@ $(function () {
 
                     },
                     error: function (error) {
-                        console.log(error);
+                        swal({
+                            title: 'Error Occured',
+                            text: "Please try later"
+                        });
                     }
                 });
 
@@ -302,7 +305,7 @@ $(function () {
 
     //Website
     ConfigSocialLink('.website-btn', 'Website Link', 'Please put in the link to your website', 'http://->Link',
-        '/profileWeblink', '.profile-website-pub', 'Link Added Successfully');
+        '/profileWeblink', '.profile-website-link', 'Link Added Successfully');
     //github
     ConfigSocialLink('.github-btn', 'Github Link', 'Please put in the link to your github or simply click the icon' +
         'below<br><a href=\'/gitconnect\'><i class=\'fa fa-github fa-2x\'></i></a>', 'Please enter your github' +
