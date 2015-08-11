@@ -1,192 +1,200 @@
 {% extends "static.html" %}
 {% block content %}
 
-    <!-- Add your site or application content here -->
-	<div class="container profile-section">
-		<p class="left">All fields marked with asterisk(*) are required. Including Having a photo :). Thank you.</p>
+  <!-- Add your site or application content here -->
+    <div class="container profile-section">
+        <p class="left">All fields marked with asterisk(*) are required. Including Having a photo :). Thank you.</p>
 
-		<div class="row">
-			<div class="col-md-4 col-xs-12 avatar">
-                {% if person.photo %}
-					<img src="{{ person.photo }}" class="profile-img" width="350" height="350">
-                {% endif %}
-                {% if not person.photo %}
-					<img src="{{ url_for('static', filename='img/gravatar-60-grey.jpg' ) }}" class="profile-img
+        <div class="row">
+            <div class="col-md-4 col-xs-12 avatar">
+              {% if person.photo %}
+                  <img src="{{ person.photo }}" class="profile-img" width="350" height="350">
+              {% endif %}
+              {% if not person.photo %}
+                  <img src="{{ url_for('static', filename='img/gravatar-60-grey.jpg' ) }}" class="profile-img
 					img-responsive center-block">
-                {% endif %}
-				<span>
+              {% endif %}
+                <span>
 				<p class="upload-failure bg-danger"></p>
-                    {% if person.vip == True %}
-						<i class="profile-social-verified fa fa-check-square fa-2x"
-						   alt="verified" data-toggle="tooltip" data-placement="right"
-						   title="verified"></i>
-                    {% endif %}
-					<i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x linkedin-btn" alt="LinkedIn"
-					   data-toggle="tooltip"
-					   data-placement="bottom" title="LinkedIn">
-					</i>
+                  {% if person.vip == True %}
+                      <i class="profile-social-verified fa fa-check-square fa-2x"
+                         alt="verified" data-toggle="tooltip" data-placement="right"
+                         title="verified"></i>
+                  {% endif %}
+                    <i class="profile-social profile-social-linkedin fa fa-linkedin fa-2x linkedin-btn" alt="LinkedIn"
+                       data-toggle="tooltip"
+                       data-placement="bottom" title="LinkedIn">
+                    </i>
 
                 <i class="profile-social profile-social-twitter fa fa-twitter fa-2x twitter-btn" alt="Twitter"
-				   data-toggle="tooltip"
-				   data-placement="bottom" title="Twitter" name="twitterlink">
-				</i>
+                   data-toggle="tooltip"
+                   data-placement="bottom" title="Twitter" name="twitterlink">
+                </i>
 
                 <i class="profile-social profile-social-github fa fa-github fa-2x github-btn" alt="Github"
-				   data-toggle="tooltip"
-				   data-placement="bottom"
-				   title="Github" name="githublink"></i>
+                   data-toggle="tooltip"
+                   data-placement="bottom"
+                   title="Github" name="githublink"></i>
 
                 <i class="profile-social profile-social-globe fa fa-globe fa-2x website-btn" alt="Website"
-				   data-toggle="tooltip" name="websitelink"
-				   data-placement="bottom" title="Website Link"></i>
+                   data-toggle="tooltip" name="websitelink"
+                   data-placement="bottom" title="Website Link"></i>
 				<br/><br/>
 				<span><img class="upload_loader" src=""></span>
 				<form action="" id="image-form" method="POST" enctype="multipart/form-data">
-					<input id="file_field" type="file" name="image"/>
-					<button type="button" class="btn btn-block btn-dark image-btn">Upload Image</button>
-				</form>
+                    <input id="file_field" type="file" name="image"/>
+                    <button type="button" class="btn btn-block btn-dark image-btn">Upload Image</button>
+                </form>
 				<div class="invalid-file-format"></div>
 				<span>Please upload images of format: jpg, png, jpeg, and image width above 350px(for good quality)</span>
 				<p class="upload-success bg-success"></p>
             </span>
 
-				<div class="publink">
-					<a href='http://nowwehere.io/pub/{{ person.id }}'>Public Link</a>
-				</div>
-				<div class="profile_links">
-					<p class="p-d">Website Link: <a class="profile-website-link" href="{{ person.social_website |
+                <div class="background-section-container">
+                    <p class="p-d">Website Link: <a class="profile-website-link" href="{{ person.social_website |
 					default
-					('#', true) }}"> {{ person.social_website | default('Please add personal website link', true) }}</a></p>
+					('#', true) }}"> {{ person.social_website | default('Please add personal website link', true) }}</a>
+                    </p>
+                </div>
+                <div class="background-section-container">
+                    <p class="p-d git">Github Link:
+                      {% if person.social_github %}
+                          <a class="profile-github-link" href="{{ person.social_github }}" target="_blank">Github Link
+                              Added</a>
+                      {% else %}
+                          <span>Please Connect your Github Public Profile</span></p>
+                      {% endif %}
+                </div>
+                <div class="background-section-container">
+                    <p class="p-d tweet">Twitter Link:
+                      {% if person.social_twitter %}
+                          <a class="profile-twitter-link" href="https://twitter.com/{{ person.social_twitter }}"
+                             target="_blank">Twitter
+                          </a></p>
+                      {% else %}
+                          <span> Please connect your twitter public profile</span>
+                      {% endif %}
+                </div>
+                <div class="background-section-container">
+                    <p class="p-d linkedin">LinkedIn Link:
+                      {% if person.social_linkedin %}
+                          <a class="profile-linked-link" href="{{ person.social_linkedin }}" target="_blank">LinkedIn
+                              Connected</a></p>
+                      {% else %}
+                          <span>Please Connect your linkedin public profile</span>
+                      {% endif %}
+                </div>
+                <div class="background-section-container">
+                    <p class="p-d"><a href='http://nowwehere.io/pub/{{ person.id }}'>Public link to your profile</a></p>
+                </div>
 
-					<p class="p-d git">Github Link:
-                        {% if person.social_github %}
-							<a class="profile-github-link" href="{{ person.social_github }}" target="_blank">Github Link
-								Added</a>
-                        {% else %}
-							<span>Please Connect your Github Public Profile</span></p>
-                        {% endif %}
 
-					<p class="p-d tweet">Twitter Link:
-                        {% if person.social_twitter %}
-							<a class="profile-twitter-link" href="https://twitter.com/{{ person.social_twitter }}"
-							   target="_blank">Twitter
-							</a></p>
-                        {% else %}
-							<span> Please connect your twitter public profile</span>
-                        {% endif %}
+                <br/><br/>
+              {% if person.vip == False %}
+                  <div class="coupon">
+                      <span>VIP MEMBERS: Please enter VIP Code</span>
 
-					<p class="p-d linkedin">LinkedIn Link:
-                        {% if person.social_linkedin %}
-							<a class="profile-linked-link" href="{{ person.social_linkedin }}" target="_blank">LinkedIn
-								Connected</a></p>
-                        {% else %}
-							<span>Please Connect your linkedin public profile</span>
-                        {% endif %}
-				</div>
-				<br/><br/>
-                {% if person.vip == False %}
-					<div class="coupon">
-						<span>VIP MEMBERS: Please enter VIP Code</span>
+                      <form class="form" id="vip-form" action="" method="POST">
+                          <input type="text" name="input-code" class="form-control clearfix" id="vip-check">
+                          <br/>
+                          <button type="button" class="btn btn-danger btn-coupon">Validate VIP Code</button>
+                          <i class="fa fa-check right solar-green vip-check-mark"></i>
+                      </form>
+                      <br>
 
-						<form class="form" id="vip-form" action="" method="POST">
-							<input type="text" name="input-code" class="form-control clearfix" id="vip-check">
-							<br/>
-							<button type="button" class="btn btn-danger btn-coupon">Validate VIP Code</button>
-							<i class="fa fa-check right solar-green vip-check-mark"></i>
-						</form>
-						<br>
-						<div class="vip-message"></div>
-					</div>
-                {% endif %}
-				<div class="help-block center-block codemirror-gutter success-vip-message"></div>
-			</div>
-			<div class="profile-second-section col-md-8 col-xs-12">
+                      <div class="vip-message"></div>
+                  </div>
+              {% endif %}
+                <div class="help-block center-block codemirror-gutter success-vip-message"></div>
+            </div>
+            <div class="profile-second-section col-md-8 col-xs-12">
             <span>
                 <h5 class="profile-highlight">Name</h5>
-                {% if not person.firstname %}
-					<input type="text" class="form-control" placeholder="firstname">
-					<input type="text" class="form-control" placeholder="lastname">
-                {% endif %}
-				<p>{{ person.firstname }} {{ person.lastname }}</p>
+              {% if not person.firstname %}
+                  <input type="text" class="form-control" placeholder="firstname">
+                  <input type="text" class="form-control" placeholder="lastname">
+              {% endif %}
+                <p>{{ person.firstname }} {{ person.lastname }}</p>
 				<hr/>
             </span>
 
-				<form action="" id="profile-form" method="POST">
+                <form action="" id="profile-form" method="POST">
             <span>
 
 				<label for="jobInput"><h5 class="profile-highlight">Job<i class="text-danger">*</i></h5></label>
 					<input type="text" class="form-control" value="{{ person.job | default('', true) }}"
-						   name="job"
-						   id="jobInput"
-						   placeholder="Job Description">
+                           name="job"
+                           id="jobInput"
+                           placeholder="Job Description">
 				<hr/>
             </span>
             <span>
                 <label for="about"><h5 class="profile-highlight">Brief Summary About Yourself<i
-						class="text-danger">*</i></h5></label>
+                        class="text-danger">*</i></h5></label>
 					<textarea id="about-profile" class="form-control" name="about" placeholder="Summary"
-							  rows="3" required>{{ person.about | default('', true) }}</textarea>
+                              rows="3" required>{{ person.about | default('', true) }}</textarea>
 				<hr/>
             </span>
 
-					<div class="space-section">
-						<p>Skills</p>
-					</div>
+                    <div class="space-section">
+                        <p>Skills</p>
+                    </div>
 			<span>
 				<h5 class="profile-highlight">Major Skill<i class="text-danger">*</i></h5><small> i.e Ruby, Javascript
-				(only one)
-			</small>
+                (only one)
+            </small>
 					<input type="text" class="form-control" id="major_skill" value="{{ person.major_skill  | default
 					('', true) }}"
-						   name="major_skill"
-						   placeholder="What technology do you use">
+                           name="major_skill"
+                           placeholder="What technology do you use">
 			</span>
-					<hr/>
+                    <hr/>
 				<span>
                 <h5 class="profile-highlight">Other Skills</h5><small>separate by commas</small>
 					<div class="ui-widget">
-						<label for="tags"></label>
-						<input type="text" class="form-control" value="{{ person.other_skills | default('', true) }}"
-							   name="other_skills"
-							   placeholder="Other programming languages you know?"
-							   id="tags"
-							   size="50">
-					</div>
+                        <label for="tags"></label>
+                        <input type="text" class="form-control" value="{{ person.other_skills | default('', true) }}"
+                               name="other_skills"
+                               placeholder="Other programming languages you know?"
+                               id="tags"
+                               size="50">
+                    </div>
 					</span>
-					<hr/>
+                    <hr/>
 
-					<div class="space-section">
-						<p>Advice</p>
-					</div>
+                    <div class="space-section">
+                        <p>Advice</p>
+                    </div>
 			<span>
                 <h5>What you wished you had Known while starting as a programmer<i class="text-danger">*</i></h5>
 					<textarea class="form-control" name="had_known" placeholder=".... :)"
-							  rows="3" id="had_known">{{ person.had_known | default('', true) }}</textarea>
+                              rows="3" id="had_known">{{ person.had_known | default('', true) }}</textarea>
 				<hr/>
             </span>
 			<span>
                 <h5 class="profile-highlight">Recommended Reads for Upcoming Developers<i
-						class="text-danger">*</i></h5><small>That want to learn
-				your tech stack
-			</small>
+                        class="text-danger">*</i></h5><small>That want to learn
+                your tech stack
+            </small>
                <textarea class="form-control" name="recommended_reads" rows="3" placeholder="Recommended Reads for
                upcoming developers" id="recommended_reads">{{ person.recommended_reads | default('', true) }}</textarea>
 				<hr/>
             </span>
 			<span>
                 <h5>Advice to Upcoming Software Developers<i
-						class="text-danger">*</i></h5>
-					<textarea class="form-control" name="advice" rows="3" placeholder="Advice" id="advice">{{ person.advice | default('', true) }}</textarea>
+                        class="text-danger">*</i></h5>
+					<textarea class="form-control" name="advice" rows="3" placeholder="Advice"
+                              id="advice">{{ person.advice | default('', true) }}</textarea>
 				<hr/>
             </span>
-					<button type="button" class="btn btn-block btn-dark profile-btn btn-success" id="profile-btn">Update
-						Profile
-					</button>
-				</form>
-				<p class="update-success bg-success">Profile Successfully Updated</p>
+                    <button type="button" class="btn btn-block btn-dark profile-btn btn-success" id="profile-btn">Update
+                        Profile
+                    </button>
+                </form>
+                <p class="update-success bg-success">Profile Successfully Updated</p>
 
-				<p class="update-failure bg-danger">Fail :(, Please try again</p>
-			</div>
-		</div>
-	</div>
+                <p class="update-failure bg-danger">Fail :(, Please try again</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

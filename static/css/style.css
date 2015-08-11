@@ -182,7 +182,9 @@ hr.pub-splitter {
 }
 
 .p-d {
-    color: wheat;
+    margin-top: 20px;
+    padding: 10px 10px 5px;
+    font-weight: 400;
 }
 
 /* --- section color var --- */
@@ -590,6 +592,9 @@ input.gn-search:focus {
     padding-top: 80px;
 }
 
+.breakword {
+    word-wrap: break-word;
+}
 .about-main-section ul li {
     list-style-type: none;
 }
