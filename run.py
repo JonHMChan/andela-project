@@ -71,13 +71,14 @@ def homeContactForm():
 # ----------------------END HOMEPAGE ROUTE---------------------#
 
 # Show Link
-@app.route('/pub/<user_id>')
+@app.route('/pub/<int:user_id>')
 def link(user_id):
     # from database, retrieve user object from database
-    user = User.query.get(user_id)
-    if user:
+    user = User.query.get_or_404(user_id)
+    if user is not None:
         return render_template('pub/index.html', user=user)
-    return "No User found"
+    else:
+        return abort(404)
 
 
 @login_manager.user_loader
