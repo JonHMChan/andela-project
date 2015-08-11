@@ -1306,6 +1306,12 @@ footer a:hover {
         padding: 170px 0 60px;
 
     }
+    ul.footer-menu {
+        display: block;
+        text-align: center;
+        right: 30px;
+        position: relative;
+    }
 
 }
 
