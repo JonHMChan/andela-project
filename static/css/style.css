@@ -688,6 +688,13 @@ input.gn-search:focus {
     margin-bottom: 5px;
 }
 
+.align-grid {
+    display: inline-block;
+    height: 450px;
+    position: relative;
+    margin-top: 50px;
+}
+
 ul.list-inline.tech-tag-list .stepped-tech {
     cursor: pointer;
     border: 1px solid #eee;

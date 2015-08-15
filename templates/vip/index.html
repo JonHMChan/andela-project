@@ -5,7 +5,8 @@
 			<div class="row">
                 {% for link in link.items %}
                     {% if link.vip %}
-						<div class="col-xs-6 col-sm-3 col-md-3 team-stage">
+						<div class="col-xs-6 col-md-3 align-grid">
+							<div class="search-grid">
 							<div class="team boxed-grey boxed-grey-vip">
 								<div class="inner">
 									<h5><a href='/pub/{{ link.id }}'>{{ link.firstname }} {{ link.lastname }}</a></h5>
@@ -21,8 +22,8 @@
 									   title="verified"></i>
 								</div>
 							</div>
-
-						</div>
+							</div>
+							</div>
                     {% endif %}
                 {% endfor %}
 
