@@ -191,7 +191,7 @@ $(function () {
             "AppleScript", "Assembly", "Asp", "BASIC", "Bootstrap",
             "Brainfuck", "C", "CSS", "C sharp", "C++", "Clojure",
             "CoffeeScript", "COBOL", "Cobra", "ColdFusion", "Common Lisp",
-            "D3", "DotNet", "Erlang", "ExpressJs", "Firebase", "Fortran",
+            "D3", "DotNet", "Django", "Erlang", "ExpressJs", "Firebase", "FLask", "Fortran",
             "GO", "Git","Graphics", "Groovy", "Haskell", "HTML", "Ionic", "J", "Java",
             "JavaScript", "JavaFX Script", "Jquery", "Julia",
             "Kamailio Script", "K", "Kitten", "Laravel", "Lisp",
